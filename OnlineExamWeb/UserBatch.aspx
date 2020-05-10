@@ -435,7 +435,7 @@
                                     <div class="form-group">
                                         <div class="form-actions">
                                             <div class="text-left">
-                                                <button type="submit" class="btn btn-info" onclick="ShowdvAdd()">Add New</button>
+                                                <button type="submit" class="btn btn-info" onclick="ShowdvAdd()">Add New Batch</button>
                                             </div>
                                         </div>
                                     </div>

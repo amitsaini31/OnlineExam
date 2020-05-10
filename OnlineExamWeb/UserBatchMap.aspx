@@ -438,7 +438,7 @@
                                         <div class="form-group">
                                             <div class="form-actions">
                                                 <div class="text-left">
-                                                    <button type="submit" class="btn btn-info" runat="server" id="btnAdd" onserverclick="btnAdd_ServerClick">Add New</button>
+                                                    <button type="submit" class="btn btn-info" runat="server" id="btnAdd" onserverclick="btnAdd_ServerClick">Add New User to Batch</button>
                                                 </div>
                                             </div>
                                         </div>

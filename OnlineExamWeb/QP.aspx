@@ -478,7 +478,7 @@
                                         <div class="form-group">
                                             <div class="form-actions">
                                                 <div class="text-left">
-                                                    <asp:Button ID="btnAdd" class="btn btn-info" runat="server" Text="Add New" OnClick="btnAdd_Click" />
+                                                    <asp:Button ID="btnAdd" class="btn btn-info" runat="server" Text="Add New Question Paper" OnClick="btnAdd_Click" />
                                                 </div>
                                             </div>
                                         </div>
