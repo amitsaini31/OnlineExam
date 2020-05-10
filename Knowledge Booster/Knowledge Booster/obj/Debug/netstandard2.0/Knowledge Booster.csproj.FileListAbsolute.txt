@@ -1,0 +1,13 @@
+G:\repos\OnlineExam\Knowledge Booster\Knowledge Booster\bin\Debug\netstandard2.0\Knowledge Booster.deps.json
+G:\repos\OnlineExam\Knowledge Booster\Knowledge Booster\bin\Debug\netstandard2.0\Knowledge Booster.dll
+G:\repos\OnlineExam\Knowledge Booster\Knowledge Booster\bin\Debug\netstandard2.0\ref\Knowledge Booster.dll
+G:\repos\OnlineExam\Knowledge Booster\Knowledge Booster\bin\Debug\netstandard2.0\Knowledge Booster.pdb
+G:\repos\OnlineExam\Knowledge Booster\Knowledge Booster\obj\Debug\netstandard2.0\App.xaml.g.cs
+G:\repos\OnlineExam\Knowledge Booster\Knowledge Booster\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+G:\repos\OnlineExam\Knowledge Booster\Knowledge Booster\obj\Debug\netstandard2.0\Knowledge Booster.AssemblyInfoInputs.cache
+G:\repos\OnlineExam\Knowledge Booster\Knowledge Booster\obj\Debug\netstandard2.0\Knowledge Booster.AssemblyInfo.cs
+G:\repos\OnlineExam\Knowledge Booster\Knowledge Booster\obj\Debug\netstandard2.0\XamlC.stamp
+G:\repos\OnlineExam\Knowledge Booster\Knowledge Booster\obj\Debug\netstandard2.0\Knowledge Booster.dll
+G:\repos\OnlineExam\Knowledge Booster\Knowledge Booster\obj\Debug\netstandard2.0\ref\Knowledge Booster.dll
+G:\repos\OnlineExam\Knowledge Booster\Knowledge Booster\obj\Debug\netstandard2.0\Knowledge Booster.pdb
+G:\repos\OnlineExam\Knowledge Booster\Knowledge Booster\obj\Debug\netstandard2.0\Knowledge Booster.csprojAssemblyReference.cache

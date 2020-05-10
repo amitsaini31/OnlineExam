@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js">
+
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js">
+
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js">
+
+    </script>
+</head>
+
+<body style="text-align:center">
+    <h1 style="color:green">GeeksforGeeks</h1>
+    <div class="container mt-3">
+        <h3>Toast Events</h3>
+        <strong>show.bs.toast, </strong>
+        <strong>shown.bs.toast, </strong>
+        <strong>hide.bs.toast, </strong>
+        <strong>hidden.bs.toast </strong>
+        <p>Click on the button below to perform toast.</p>
+        <button type="button"
+                class="btn btn-primary"
+                id="myShowBtn">
+            Show Toast
+        </button>
+
+        <div class="toast mt-3">
+            <div class="toast-header">
+                Toast Header
+            </div>
+            <div class="toast-body">
+                Some text inside the toast body
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+		$(document).ready(function() {
+			$("#myShowBtn").click(function() {
+				$('.toast').toast('show');
+			});
+
+			$('.toast').on('show.bs.toast', function() {
+				alert('The toast is about to be shown.');
+			});
+			$('.toast').on('shown.bs.toast', function() {
+				alert('The toast is now fully shown.');
+			});
+			$('.toast').on('hide.bs.toast', function() {
+				alert('The toast is about to be hidden.');
+			});
+			$('.toast').on('hidden.bs.toast', function() {
+				alert('The toast is now hidden.');
+			});
+		});
+    </script>
+
+</body>
+
+</html>

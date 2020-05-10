@@ -1,0 +1,106 @@
+﻿
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial;
+            font-size: 17px;
+        }
+
+        #myVideo {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+        }
+
+        .content {
+            position: fixed;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            color: #f1f1f1;
+            width: 100%;
+            padding: 20px;
+        }
+
+        #myBtn {
+            width: 200px;
+            font-size: 18px;
+            padding: 10px;
+            border: none;
+            background: #000;
+            color: #fff;
+            cursor: pointer;
+        }
+
+            #myBtn:hover {
+                background: #ddd;
+                color: black;
+            }
+    </style>
+</head>
+<body>
+
+    <!-- <video autoplay muted id="myVideo" width="320" height="240"> -->
+        <!-- <!--<source src="https://www.w3schools.com/howto/rain.mp4" type="video/mp4">--> -->
+        <!-- <source src="rain.mp4" type="video/mp4"> -->
+
+        <!-- Your browser does not support HTML5 video. -->
+    <!-- </video> -->
+
+    <!-- <div class="content"> -->
+        <!-- <h1>Heading</h1> -->
+        <!-- <p>Lorem ipsum dolor sit amet, an his etiam torquatos. Tollit soleat phaedrum te duo, eum cu recteque expetendis neglegentur. Cu mentitum maiestatis persequeris pro, pri ponderum tractatos ei. Id qui nemore latine molestiae, ad mutat oblique delicatissimi pro.</p> -->
+        <!-- <button id="myBtn" onclick="myFunction()">Pause</button> -->
+    <!-- </div> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- <script> -->
+	
+	
+        <!-- $(document).ready(function () { -->
+            <!-- var vid = document.getElementById("myVideo"); -->
+            <!-- var play = true; -->
+            <!-- $("#myVideo").click(function () { -->
+
+                <!-- if (play) { -->
+                    <!-- play = false; -->
+                    <!-- vid.play(); -->
+                    <!-- alert("Height is " + vid.videoHeight + " & Width is " + vid.videoWidth + " & length is " + vid.duration + " and currenttime is " + vid.currentTime ); -->
+                <!-- } -->
+                <!-- else { -->
+                    <!-- play = true; -->
+                    <!-- vid.pause(); -->
+                <!-- } -->
+            <!-- }); -->
+        <!-- }); -->
+    <!-- </script> -->
+    <div id="video_container">
+    <video poster="http://media.w3.org/2010/05/sintel/poster.png" preload="none"  id="video" tabindex="0" controls muted>
+      <source type="video/mp4" src="http://media.w3.org/2010/05/sintel/trailer.mp4" id="mp4"></source>
+      <source type="video/webm" src="http://media.w3.org/2010/05/sintel/trailer.webm" id="webm"></source>
+      <source type="video/ogg" src="http://media.w3.org/2010/05/sintel/trailer.ogv" id="ogv"></source>
+      <p>Your user agent does not support the HTML5 Video element.</p>
+    </video>
+</div>
+
+<div>Current Time : <span  id="currentTime">0</span></div>
+<div>Total time : <span id="totalTime">0</span></div>
+<script>
+       $(function(){
+$('#currentTime').html($('#video_container').find('video').get(0).load());                      $('#currentTime').html($('#video_container').find('video').get(0).play());
+})
+setInterval(function(){
+$('#currentTime').html($('#video_container').find('video').get(0).currentTime);
+$('#totalTime').html($('#video_container').find('video').get(0).duration);    
+},500)
+    </script>
+
+</body>
+</html>

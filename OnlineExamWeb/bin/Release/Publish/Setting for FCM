@@ -1,0 +1,33 @@
+one signal app id d6d2fa7e-006a-40d3-86dd-4014f5a2af88
+
+FCM token : frZNJ5_VYBo:APA91bEPfIYkpXS_u4jo9FHC6GfZlYgw7-mcsZxKD9x1Bw5wOUbvibYuhHzSAeMIT2MgjI1rlvR-63lbwR9UFFUiq591uTnFenXi_AVUaoLa1Mu4gFhaY64azQ2qYQyDoTxsPHOZN_BI
+
+{
+    "to": "frZNJ5_VYBo:APA91bEPfIYkpXS_u4jo9FHC6GfZlYgw7-mcsZxKD9x1Bw5wOUbvibYuhHzSAeMIT2MgjI1rlvR-63lbwR9UFFUiq591uTnFenXi_AVUaoLa1Mu4gFhaY64azQ2qYQyDoTxsPHOZN_BI",
+    "data": {
+        "ImageUrl": "https://uproer.com/wp-content/uploads/2017/06/pixels-to-inches-image.jpg",
+        "key2": "Hello Postman"
+    },
+    "notification": {
+        "title": "Hello Postmdsga2n",
+        "body": "Hello Post2mdgan",
+        "image": "https://media.sproutsocial.com/uploads/2017/02/10x-featured-social-media-image-size.png"
+    }
+}
+
+{
+    "to":"/topics/AMIT_SAINI",
+    "data": {
+        "ImageUrl": "https://images.pexels.com/photos/46710/pexels-photo-46710.jpeg",
+        "key2": "Hello Postman"
+    },
+    "notification": {
+        "title": "Are you free?",
+        "body": "Are you or not?",
+        "image": "https://images.pexels.com/photos/2895411/pexels-photo-2895411.jpeg"
+    }
+}
+
+AAAAYuG6jjo:APA91bEbFwf-zDSj59662czL-1ONelCYPh8p-7_RtQMmu6LWaaq3dtksk1L_sq3O7xJ9rhazpjqRDQqCcsXjzYWc1Q8_NjsxPjRnHUmu9AzhSZSB2xy4TUpmzJ0jljgF8XFEZHaRyk_X
+
+424693894714

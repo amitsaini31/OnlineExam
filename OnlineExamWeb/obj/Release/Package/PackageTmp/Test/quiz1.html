@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        /* The container */
+        .labelcontainer {
+            display: block;
+            position: relative;
+            padding: 5px 5px 5px 35px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            font-size: 22px;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            border: 2px solid #27c971;
+            word-wrap: break-word;
+        }
+        label{
+            font-weight: 200;
+        }
+            /* Hide the browser's default checkbox */
+            .labelcontainer input {
+                position: absolute;
+                opacity: 0;
+                cursor: pointer;
+                height: 0;
+                width: 0;
+            }
+
+                .labelcontainer input ~ .checkmark {
+                    background-color: #ccc;
+                    margin: 5px;
+                }
+
+        /* Create a custom checkbox */
+        .checkmark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 25px;
+            width: 25px;
+            background-color: #eee;
+            border-radius: 50%;
+        }
+
+        /* On mouse-over, add a grey background color */
+        .labelcontainer:hover input ~ .checkmark {
+            background-color: #ccc;
+            margin: 5px;
+        }
+
+        /* When the checkbox is checked, add a blue background */
+        .labelcontainer input:checked ~ .checkmark {
+            background-color: #78D25F;
+            margin: 5px;
+        }
+
+        /* Create the checkmark/indicator (hidden when not checked) */
+        .checkmark:after {
+            content: "";
+            position: absolute;
+            display: none;
+        }
+
+        /* Show the checkmark when checked */
+        .labelcontainer input:checked ~ .checkmark:after {
+            display: block;
+        }
+
+        /* Style the checkmark/indicator */
+        .labelcontainer .checkmark:after {
+            left: 9px;
+            top: 5px;
+            width: 5px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 3px 3px 0;
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <h1>Custom Radio Buttons</h1>
+            <label class="labelcontainer col-md-12">
+                <div id="lblA">One</div>
+                <input type="radio" name="radio" id="radio1">
+                <span class="checkmark"></span>
+            </label>
+            <label class="labelcontainer col-md-12">
+                <div id="lblB">Two</div>
+                <input type="radio" name="radio" id="radio2">
+                <span class="checkmark"></span>
+            </label>
+            <label class="labelcontainer col-md-12">
+                <div id="lblC">One</div>
+                <input type="radio" name="radio" id="radio3">
+                <span class="checkmark"></span>
+            </label>
+            <label class="labelcontainer col-md-12" id="radio4">
+                <div id="lblD">One</div>
+                <input type="radio" name="radio">
+                <span class="checkmark"></span>
+            </label>
+        </div>
+    </div>
+</body>
+</html>

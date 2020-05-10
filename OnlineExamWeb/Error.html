@@ -1,0 +1,204 @@
+﻿<div class="post">
+
+
+    <script>
+        function showans(id, cat) {
+            var $t = $("#answer" + id);
+            if ($t.is(':visible')) {
+                ga('send', 'event', 'Hide Answer', cat, id);
+                $t.slideUp();
+            } else {
+                ga('send', 'event', 'Show Answer', cat, id);
+                $t.slideDown();
+
+            }
+
+        }
+        function showreporterror(id, cat) {
+            var $t = $("#reporterror" + id);
+            if ($t.is(':visible')) {
+                ga('send', 'event', 'Hide Report', cat, id);
+                $t.slideUp();
+
+            } else {
+                ga('send', 'event', 'Show Report', cat, id);
+                $t.slideDown();
+
+            }
+
+        }
+        function showcw(char, id) {
+            var $t = $("#cw" + char + id);
+            if ($t.is(':visible')) {
+                ga('send', 'event', 'Uncheck Answer', char, id);
+                $t.slideUp();
+
+            } else {
+                ga('send', 'event', 'Check Answer', char, id);
+                $t.slideDown();
+
+            }
+
+        }
+        function SendReport(id) {
+            var txt = 'Kindly mention the details of the error here... [Your Name] [Your Email]';
+            var val = $('#txtReport_' + id).val();
+            var sval = val.replace(/\s+/g, ' ');
+            if (txt == sval)
+                alert('Enter your report and then click send report');
+            else {
+                $('#reportloader' + id).html('loading..');
+                $('#reportloader' + id).load('/ajax.php?method=reporterror&PID=' + id + '&error=' + encodeURIComponent(val));
+            }
+        }
+    </script>
+
+
+
+
+    <div class="featListOdd">
+        <div class="featTeaserText_customized span7 page-content">
+            <div class="qa_marker_div">
+                <span class="qa-marker">Q:</span>
+            </div>
+            <div class="question_and_options_space5">
+                <p class="override_p">
+                </p><p>In the following question, the sentence given with blank to be filled in with an appropriate word. Select the correct alternative out of the four and&nbsp;indicate it by selecting the appropriate option.</p>
+                <p>&nbsp;</p>
+                <p>The theoretical framework is finished by identifying indicators to be used in the ______ of the success of such policies.</p>
+                <p>&nbsp;</p>
+                <p></p>
+            </div>
+            <div class="desktopMul">
+                <table class="multiple_ch_que_layout">
+                    <tbody>
+                        <tr>
+                            <td class="padding_right_15" "=" " width="50%">
+                                <input type="checkbox" class="cwcheck" onchange="showcw('a','34863')">A) evaluation
+                                <span class="cwico" id="cwa34863"><i class="icon-check-sign"></i></span>
+                            </td>
+                            <td>
+                                <input type="checkbox" class="cwcheck" onchange="showcw('b','34863')">B) completion
+                                <span class="cwico" id="cwb34863"><i class="icon-remove-sign"></i></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="padding_right_15" width="50%">
+                                <input type="checkbox" class="cwcheck" onchange="showcw('c','34863')">C) formation
+                                <span class="cwico" id="cwc34863"><i class="icon-remove-sign"></i></span>
+                            </td>
+                            <td>
+                                <input type="checkbox" class="cwcheck" onchange="showcw('d','34863')">D) rotation
+                                <span class="cwico" id="cwd34863"><i class="icon-remove-sign"></i></span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="mobileMul" style="display:none;">
+                <table width="80%" border="0">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <input type="checkbox" class="cwcheck" onchange="showcw('a','34863')">A) evaluation
+                                <span class="cwico" id="cwa34863"><i class="icon-check-sign"></i></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" class="cwcheck" onchange="showcw('b','34863')">B) completion
+                                <span class="cwico" id="cwb34863"><i class="icon-remove-sign"></i></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" class="cwcheck" onchange="showcw('c','34863')">C) formation
+                                <span class="cwico" id="cwc34863"><i class="icon-remove-sign"></i></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" class="cwcheck" onchange="showcw('d','34863')">D) rotation
+                                <span class="cwico" id="cwd34863"><i class="icon-remove-sign"></i></span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="test34863" class="ansDivBox">
+                &nbsp;
+            </div>
+            <div id="answer34863" class="ansDivBox" style="display: block;">
+                <a class="box-head" href="javascript:showans('34863','General Knowledge')"><i class="icon-minus"></i> Answer &amp; Explanation</a>
+                <span class="highlight">Answer:</span> A) evaluation         <br><br>
+                <span class="highlight">Explanation:</span><br>
+            </div>
+            <!-- <div id="workspace34863" class="ansDivBox">
+               <a class="box-head" href="javascript:showworkspace('34863','General Knowledge')"><i class="icon-minus"></i> Workspace</a>
+               <p><input type="text" class="calc-box" value="calc">
+               </p>
+               <textarea rows="5" style="width:98%"></textarea>
+            </div> -->
+            <div id="reporterror34863" class="ansDivBox">
+                <a class="box-head" href="javascript:showreporterror('34863','General Knowledge')"><i class="icon-minus"></i> Report Error</a>
+                <textarea id="txtReport_34863" rows="8" cols="65" class="report_error_sugg">Kindly mention the details of the error here...
+
+[Your Name]
+[Your Email]</textarea>
+                <p id="reportloader34863"></p>
+                <input onclick="SendReport(34863)" type="button" value="Send Report" class="report_error">
+            </div>
+            <p class="userCredit workspace_options">
+                <a class="ansNowCont" href="javascript:showans('34863','General Knowledge')"><i class="icon-eye-open"></i> View Answer</a>
+                <a class="ansNowCont" href="javascript:showreporterror('34863','General Knowledge')"><i class="icon-exclamation"></i> Report Error</a>
+                <a class="ansNowCont" href="https://www.sawaal.com/english-questions-and-answers/in-the-following-question-the-sentence-given-with-blank-to-be-filled-in-with-an-appropriate-word-sel_34863"><i class="icon-comments-alt"></i> Discuss</a>
+            </p><div class="clearAll"></div>
+
+
+
+
+            <div class="question_and_options_space5">
+                <span>Filed Under:</span>
+                <a class="suggestion_link" href="https://www.sawaal.com/general-knowledge/english-questions-and-answers.html">English</a>
+
+                <br>
+                <span>Exam Prep:</span>
+                <a class="path" href="https://www.sawaal.com/exam-preparation/bank-exams-questions-and-answers.htm">Bank Exams</a>
+
+                <p></p>
+                <div class="clearAll"></div>
+                <div>
+                    <div class="unused_div"></div>
+                </div>
+            </div>
+
+        </div>
+        <div class="flRtR">
+
+            <script language="javascript" type="text/javascript">
+                function VDM(id, nb, cat) {
+                    ga('send', 'event', 'Likes', cat, id);
+                    $('#Dvote' + id).fadeOut();
+                    $.post("https://www.sawaal.com/vote_yes.php", { "id": id, "nb": nb }, function (html) {
+                        $('#D2vote' + id).html('' + html + '').fadeIn();
+                        $('#D2vote' + id).css('display', '');
+                    });
+                }
+                function VDM_BF(id, nb) {
+                    $('#Dvoteb' + id).fadeOut();
+                    $.post("https://www.sawaal.com/vote_no.php", { "id": id, "nb": nb }, function (html) {
+                        $('#D2voteb' + id).html('' + html + '').fadeIn();
+                        $('#D2voteb' + id).css('display', '');
+                    });
+                }
+            </script>
+
+            <span id="Dvote34863"><a class="thumbsRatingUp" href="javascript:;" onclick="VDM('34863','0','General Knowledge');"><span id="vote34863">0</span></a></span>
+            <span class="viewcount">0 <span class="icon-eye-open"> </span></span>      <a class="thumbsRatingUp" id="D2vote34863" style="display:none"></a>
+
+        </div>
+        <div class="clearAll spacer10"></div>
+        <div class="clearAll"></div>
+    </div>
+    <div class="clearAll spacer10"></div>
+</div>

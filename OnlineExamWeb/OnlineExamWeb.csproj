@@ -1,0 +1,2378 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E726807B-3CB7-4F92-B2E2-F8B3CA242B21}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OnlineExamWeb</RootNamespace>
+    <AssemblyName>OnlineExamWeb</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AspNet.SignalR.Core, Version=2.4.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.2.4.1\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.SystemWeb, Version=2.4.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.SystemWeb.2.4.1\lib\net45\Microsoft.AspNet.SignalR.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.4.1.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Cors, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Cors.4.1.0\lib\net45\Microsoft.Owin.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.2.1.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.2.1.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Cors, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Cors.5.2.7\lib\net45\System.Web.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.Cors, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Cors.5.2.7\lib\net45\System.Web.Http.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Http.WebHost">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.4\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="js\app1.css" />
+    <Content Include="js\game1.css" />
+    <Content Include="SendNotification.aspx" />
+    <Content Include="AdminHome.aspx" />
+    <Content Include="assets\css\styles.min.css" />
+    <Content Include="assets\extra-libs\c3\c3.min.css" />
+    <Content Include="assets\extra-libs\c3\c3.min.js" />
+    <Content Include="assets\extra-libs\c3\d3.min.js" />
+    <Content Include="assets\extra-libs\datatables.net-bs4\css\dataTables.bootstrap4.css" />
+    <Content Include="assets\extra-libs\datatables.net-bs4\css\dataTables.bootstrap4.min.css" />
+    <Content Include="assets\extra-libs\datatables.net-bs4\js\dataTables.bootstrap4.js" />
+    <Content Include="assets\extra-libs\datatables.net-bs4\js\dataTables.bootstrap4.min.js" />
+    <Content Include="assets\extra-libs\datatables.net\js\jquery.dataTables.js" />
+    <Content Include="assets\extra-libs\datatables.net\js\jquery.dataTables.min.js" />
+    <Content Include="assets\extra-libs\datatables.net\License.txt" />
+    <Content Include="assets\extra-libs\jvector\gdp-data.js" />
+    <Content Include="assets\extra-libs\jvector\jquery-jvectormap-2.0.2.css" />
+    <Content Include="assets\extra-libs\jvector\jquery-jvectormap-2.0.2.min.js" />
+    <Content Include="assets\extra-libs\jvector\jquery-jvectormap-asia-mill.js" />
+    <Content Include="assets\extra-libs\jvector\jquery-jvectormap-au-mill.js" />
+    <Content Include="assets\extra-libs\jvector\jquery-jvectormap-ca-lcc.js" />
+    <Content Include="assets\extra-libs\jvector\jquery-jvectormap-de-mill.js" />
+    <Content Include="assets\extra-libs\jvector\jquery-jvectormap-europe-mill-en.js" />
+    <Content Include="assets\extra-libs\jvector\jquery-jvectormap-in-mill.js" />
+    <Content Include="assets\extra-libs\jvector\jquery-jvectormap-uk-mill-en.js" />
+    <Content Include="assets\extra-libs\jvector\jquery-jvectormap-us-aea-en.js" />
+    <Content Include="assets\extra-libs\jvector\jquery-jvectormap-us-il-chicago-mill-en.js" />
+    <Content Include="assets\extra-libs\jvector\jquery-jvectormap-world-mill-en.js" />
+    <Content Include="assets\extra-libs\jvector\jvectormap.custom.js" />
+    <Content Include="assets\extra-libs\knob\jquery.knob.js" />
+    <Content Include="assets\extra-libs\knob\jquery.knob.min.js" />
+    <Content Include="assets\extra-libs\prism\prism-old.js" />
+    <Content Include="assets\extra-libs\prism\prism.css" />
+    <Content Include="assets\extra-libs\prism\prism.js" />
+    <Content Include="assets\extra-libs\sparkline\sparkline.js" />
+    <Content Include="assets\extra-libs\taskboard\css\demo.css" />
+    <Content Include="assets\extra-libs\taskboard\css\jquery-ui.min.css" />
+    <Content Include="assets\extra-libs\taskboard\css\lobilist.css" />
+    <Content Include="assets\extra-libs\taskboard\css\lobilist.min.css" />
+    <Content Include="assets\extra-libs\taskboard\example1\delete.php" />
+    <Content Include="assets\extra-libs\taskboard\example1\insert.php" />
+    <Content Include="assets\extra-libs\taskboard\example1\update.php" />
+    <Content Include="assets\extra-libs\taskboard\js\demo.js" />
+    <Content Include="assets\extra-libs\taskboard\js\jquery-ui.min.js" />
+    <Content Include="assets\extra-libs\taskboard\js\jquery.ui.touch-punch-improved.js" />
+    <Content Include="assets\extra-libs\taskboard\js\lobibox.min.js" />
+    <Content Include="assets\extra-libs\taskboard\js\lobilist.js" />
+    <Content Include="assets\extra-libs\taskboard\js\lobilist.min.js" />
+    <Content Include="assets\extra-libs\taskboard\js\task-init.js" />
+    <Content Include="assets\images\alert\alert.png" />
+    <Content Include="assets\images\alert\alert2.png" />
+    <Content Include="assets\images\alert\alert3.png" />
+    <Content Include="assets\images\alert\alert4.png" />
+    <Content Include="assets\images\alert\alert5.png" />
+    <Content Include="assets\images\alert\alert6.png" />
+    <Content Include="assets\images\alert\alert7.png" />
+    <Content Include="assets\images\alert\model.png" />
+    <Content Include="assets\images\alert\model2.png" />
+    <Content Include="assets\images\alert\model3.png" />
+    <Content Include="assets\images\angular-templates.png" />
+    <Content Include="assets\images\background\active-bg.jpg" />
+    <Content Include="assets\images\background\active-bg.png" />
+    <Content Include="assets\images\background\beauty.jpg" />
+    <Content Include="assets\images\background\error-bg.jpg" />
+    <Content Include="assets\images\background\img5.jpg" />
+    <Content Include="assets\images\background\img5.png" />
+    <Content Include="assets\images\background\login-register.jpg" />
+    <Content Include="assets\images\background\megamenubg.jpg" />
+    <Content Include="assets\images\background\nyan-cat.gif" />
+    <Content Include="assets\images\background\profile-bg.jpg" />
+    <Content Include="assets\images\background\sidebarbg.png" />
+    <Content Include="assets\images\background\socialbg.jpg" />
+    <Content Include="assets\images\background\user-bg.jpg" />
+    <Content Include="assets\images\background\user-info.jpg" />
+    <Content Include="assets\images\background\weatherbg.jpg" />
+    <Content Include="assets\images\big\1.jpg" />
+    <Content Include="assets\images\big\3.jpg" />
+    <Content Include="assets\images\big\5.jpg" />
+    <Content Include="assets\images\big\auth-bg.jpg" />
+    <Content Include="assets\images\big\auth-bg2.jpg" />
+    <Content Include="assets\images\big\d2.jpg" />
+    <Content Include="assets\images\big\icon.png" />
+    <Content Include="assets\images\big\img1.jpg" />
+    <Content Include="assets\images\big\img2.jpg" />
+    <Content Include="assets\images\big\img3.jpg" />
+    <Content Include="assets\images\big\img4.jpg" />
+    <Content Include="assets\images\big\img5.jpg" />
+    <Content Include="assets\images\big\img6.jpg" />
+    <Content Include="assets\images\bootstrap-templates.png" />
+    <Content Include="assets\images\browser\chrome-logo.png" />
+    <Content Include="assets\images\browser\edge-logo.png" />
+    <Content Include="assets\images\browser\firefox-logo.png" />
+    <Content Include="assets\images\browser\internet-logo.png" />
+    <Content Include="assets\images\browser\netscape-logo.png" />
+    <Content Include="assets\images\browser\opera-logo.png" />
+    <Content Include="assets\images\browser\photoshop.jpg" />
+    <Content Include="assets\images\browser\safari-logo.png" />
+    <Content Include="assets\images\browser\sketch.jpg" />
+    <Content Include="assets\images\custom-select.png" />
+    <Content Include="assets\images\docs\gulp.jpg" />
+    <Content Include="assets\images\favicon.png" />
+    <Content Include="assets\images\gallery\chair.jpg" />
+    <Content Include="assets\images\gallery\chair2.jpg" />
+    <Content Include="assets\images\gallery\chair3.jpg" />
+    <Content Include="assets\images\gallery\chair4.jpg" />
+    <Content Include="assets\images\img1.jpg" />
+    <Content Include="assets\images\img2.jpg" />
+    <Content Include="assets\images\img3.jpg" />
+    <Content Include="assets\images\landingpage\banne-img.png" />
+    <Content Include="assets\images\landingpage\banner-bg.png" />
+    <Content Include="assets\images\landingpage\brand-logos.png" />
+    <Content Include="assets\images\landingpage\db.png" />
+    <Content Include="assets\images\landingpage\f1.png" />
+    <Content Include="assets\images\landingpage\f2.png" />
+    <Content Include="assets\images\landingpage\f3.png" />
+    <Content Include="assets\images\landingpage\favicon.png" />
+    <Content Include="assets\images\landingpage\icon-sprite.jpg" />
+    <Content Include="assets\images\landingpage\img2.jpg" />
+    <Content Include="assets\images\landingpage\img3.jpg" />
+    <Content Include="assets\images\landingpage\logo.png" />
+    <Content Include="assets\images\landingpage\logos.png" />
+    <Content Include="assets\images\landingpage\right-img.png" />
+    <Content Include="assets\images\landingpage\section-bg.png" />
+    <Content Include="assets\images\landingpage\section-img.png" />
+    <Content Include="assets\images\logo-icon.png" />
+    <Content Include="assets\images\logo-light-text.png" />
+    <Content Include="assets\images\logo-text.png" />
+    <Content Include="assets\images\product\chair.png" />
+    <Content Include="assets\images\product\chair2.png" />
+    <Content Include="assets\images\product\chair3.png" />
+    <Content Include="assets\images\product\chair4.png" />
+    <Content Include="assets\images\product\ipad.png" />
+    <Content Include="assets\images\product\iphone.png" />
+    <Content Include="assets\images\product\iwatch.png" />
+    <Content Include="assets\images\product\p1.jpg" />
+    <Content Include="assets\images\product\p2.jpg" />
+    <Content Include="assets\images\product\p3.jpg" />
+    <Content Include="assets\images\product\p4.jpg" />
+    <Content Include="assets\images\rating\cancel-off.png" />
+    <Content Include="assets\images\rating\cancel-on.png" />
+    <Content Include="assets\images\rating\heart.png" />
+    <Content Include="assets\images\rating\like.png" />
+    <Content Include="assets\images\rating\star-half-mono.png" />
+    <Content Include="assets\images\rating\star-half.png" />
+    <Content Include="assets\images\rating\star-off.png" />
+    <Content Include="assets\images\rating\star-on.png" />
+    <Content Include="assets\images\react-templates.png" />
+    <Content Include="assets\images\tooltip\Euclid.png" />
+    <Content Include="assets\images\tooltip\shape1.svg" />
+    <Content Include="assets\images\tooltip\shape2.svg" />
+    <Content Include="assets\images\tooltip\shape3.svg" />
+    <Content Include="assets\images\tooltip\tooltip1.svg" />
+    <Content Include="assets\images\tooltip\tooltip2.svg" />
+    <Content Include="assets\images\tooltip\tooltip3.svg" />
+    <Content Include="assets\images\users\1-old.jpg" />
+    <Content Include="assets\images\users\1.jpg" />
+    <Content Include="assets\images\users\1.png" />
+    <Content Include="assets\images\users\2.jpg" />
+    <Content Include="assets\images\users\2.png" />
+    <Content Include="assets\images\users\3.jpg" />
+    <Content Include="assets\images\users\3.png" />
+    <Content Include="assets\images\users\4.jpg" />
+    <Content Include="assets\images\users\5.jpg" />
+    <Content Include="assets\images\users\6.jpg" />
+    <Content Include="assets\images\users\7.jpg" />
+    <Content Include="assets\images\users\8.jpg" />
+    <Content Include="assets\images\users\agent.jpg" />
+    <Content Include="assets\images\users\agent2.jpg" />
+    <Content Include="assets\images\users\d1.jpg" />
+    <Content Include="assets\images\users\d2.jpg" />
+    <Content Include="assets\images\users\d3.jpg" />
+    <Content Include="assets\images\users\d4.jpg" />
+    <Content Include="assets\images\users\d5.jpg" />
+    <Content Include="assets\images\users\profile-pic-2.jpg" />
+    <Content Include="assets\images\users\profile-pic.jpg" />
+    <Content Include="assets\images\users\profile.png" />
+    <Content Include="assets\images\users\widget-table-pic1.jpg" />
+    <Content Include="assets\images\users\widget-table-pic2.jpg" />
+    <Content Include="assets\images\users\widget-table-pic3.jpg" />
+    <Content Include="assets\images\users\widget-table-pic4.jpg" />
+    <Content Include="assets\images\widgets\1.jpg" />
+    <Content Include="assets\images\widgets\2.jpg" />
+    <Content Include="assets\images\widgets\3.jpg" />
+    <Content Include="assets\images\widgets\widget-carousel-2.jpg" />
+    <Content Include="assets\images\widgets\widget-carousel.jpg" />
+    <Content Include="assets\img\1.jpg" />
+    <Content Include="assets\img\2.jpg" />
+    <Content Include="assets\img\3.jpg" />
+    <Content Include="assets\img\beach.jpg" />
+    <Content Include="assets\img\building.jpg" />
+    <Content Include="assets\img\desk.jpg" />
+    <Content Include="assets\img\iphone.svg" />
+    <Content Include="assets\img\loft.jpg" />
+    <Content Include="assets\img\meeting.jpg" />
+    <Content Include="assets\img\minibus.jpeg" />
+    <Content Include="assets\img\mountain_bg.jpg" />
+    <Content Include="assets\img\screen-content-iphone-6.jpg" />
+    <Content Include="assets\libs\bootstrap\dist\css\bootstrap-grid.css" />
+    <Content Include="assets\libs\bootstrap\dist\css\bootstrap-grid.min.css" />
+    <Content Include="assets\libs\bootstrap\dist\css\bootstrap-reboot.css" />
+    <Content Include="assets\libs\bootstrap\dist\css\bootstrap-reboot.min.css" />
+    <Content Include="assets\libs\bootstrap\dist\css\bootstrap.css" />
+    <Content Include="assets\libs\bootstrap\dist\css\bootstrap.min.css" />
+    <Content Include="assets\libs\bootstrap\dist\js\bootstrap.bundle.js" />
+    <Content Include="assets\libs\bootstrap\dist\js\bootstrap.bundle.min.js" />
+    <Content Include="assets\libs\bootstrap\dist\js\bootstrap.js" />
+    <Content Include="assets\libs\bootstrap\dist\js\bootstrap.min.js" />
+    <Content Include="assets\libs\chart.js\dist\Chart.bundle.min.js" />
+    <Content Include="assets\libs\chart.js\dist\Chart.min.css" />
+    <Content Include="assets\libs\chart.js\dist\Chart.min.js" />
+    <Content Include="assets\libs\chartist-plugin-tooltips\dist\chartist-plugin-tooltip.css" />
+    <Content Include="assets\libs\chartist-plugin-tooltips\dist\chartist-plugin-tooltip.min.js" />
+    <Content Include="assets\libs\chartist\dist\chartist.min.css" />
+    <Content Include="assets\libs\chartist\dist\chartist.min.js" />
+    <Content Include="assets\libs\datatables.net-bs4\css\dataTables.bootstrap4.min.css" />
+    <Content Include="assets\libs\datatables.net-bs4\js\dataTables.bootstrap4.min.js" />
+    <Content Include="assets\libs\fullcalendar\dist\fullcalendar.min.css" />
+    <Content Include="assets\libs\fullcalendar\dist\fullcalendar.min.js" />
+    <Content Include="assets\libs\fullcalendar\dist\fullcalendar.print.min.css" />
+    <Content Include="assets\libs\fullcalendar\dist\gcal.min.js" />
+    <Content Include="assets\libs\fullcalendar\dist\locale-all.js" />
+    <Content Include="assets\libs\fullcalendar\dist\locale\af.js" />
+    <Content Include="assets\libs\fullcalendar\dist\locale\ar-dz.js" />
+    <Content Include="assets\libs\fullcalendar\dist\locale\ar-kw.js" />
+    <Content Include="assets\libs\fullcalendar\dist\locale\ar-ly.js" />
+    <Content Include="assets\libs\fullcalendar\dist\locale\ar-ma.js" />
+    <Content Include="assets\libs\fullcalendar\dist\locale\ar-sa.js" />
+    <Content Include="assets\libs\fullcalendar\dist\locale\ar-tn.js" />
+    <Content Include="assets\libs\fullcalendar\dist\locale\ar.js" />
+    <Content Include="assets\libs\fullcalendar\dist\locale\be.js" />
+    <Content Include="assets\libs\fullcalendar\dist\locale\bg.js" />
+    <Content Include="assets\libs\fullcalendar\dist\locale\bs.js" />
+    <Content Include="assets\libs\fullcalendar\dist\locale\ca.js" />
+    <Content Include="assets\libs\fullcalendar\dist\locale\cs.js" />
+    <Content Include="assets\libs\fullcalendar\dist\locale\da.js" />
+    <Content Include="assets\libs\fullcalendar\dist\locale\de-at.js" />
+    <Content Include="assets\libs\fullcalendar\dist\locale\de-ch.js" />
+    <Content Include="assets\libs\fullcalendar\dist\locale\de.js" />
+    <Content Include="assets\libs\fullcalendar\dist\locale\el.js" />
+    <Content Include="assets\libs\fullcalendar\dist\locale\en-au.js" />
+    <Content Include="assets\libs\fullcalendar\dist\locale\en-ca.js" />
+    <Content Include="assets\libs\fullcalendar\dist\locale\en-gb.js" />
+    <Content Include="assets\libs\fullcalendar\dist\locale\en-ie.js" />
+    <Content Include="assets\libs\fullcalendar\dist\locale\en-nz.js" />
+    <Content Include="assets\libs\fullcalendar\dist\locale\es-do.js" />
+    <Content Include="assets\libs\fullcalendar\dist\locale\es-us.js" />
+    <Content Include="assets\libs\fullcalendar\dist\locale\es.js" />
+    <Content Include="assets\libs\fullcalendar\dist\locale\et.js" />
+    <Content Include="assets\libs\fullcalendar\dist\locale\eu.js" />
+    <Content Include="assets\libs\fullcalendar\dist\locale\fa.js" />
+    <Content Include="assets\libs\fullcalendar\dist\locale\fi.js" />
+    <Content Include="assets\libs\fullcalendar\dist\locale\fr-ca.js" />
+    <Content Include="assets\libs\fullcalendar\dist\locale\fr-ch.js" />
+    <Content Include="assets\libs\fullcalendar\dist\locale\fr.js" />
+    <Content Include="assets\libs\fullcalendar\dist\locale\gl.js" />
+    <Content Include="assets\libs\fullcalendar\dist\locale\he.js" />
+    <Content Include="assets\libs\fullcalendar\dist\locale\hi.js" />
+    <Content Include="assets\libs\fullcalendar\dist\locale\hr.js" />
+    <Content Include="assets\libs\fullcalendar\dist\locale\hu.js" />
+    <Content Include="assets\libs\fullcalendar\dist\locale\id.js" />
+    <Content Include="assets\libs\fullcalendar\dist\locale\is.js" />
+    <Content Include="assets\libs\fullcalendar\dist\locale\it.js" />
+    <Content Include="assets\libs\fullcalendar\dist\locale\ja.js" />
+    <Content Include="assets\libs\fullcalendar\dist\locale\ka.js" />
+    <Content Include="assets\libs\fullcalendar\dist\locale\kk.js" />
+    <Content Include="assets\libs\fullcalendar\dist\locale\ko.js" />
+    <Content Include="assets\libs\fullcalendar\dist\locale\lb.js" />
+    <Content Include="assets\libs\fullcalendar\dist\locale\lt.js" />
+    <Content Include="assets\libs\fullcalendar\dist\locale\lv.js" />
+    <Content Include="assets\libs\fullcalendar\dist\locale\mk.js" />
+    <Content Include="assets\libs\fullcalendar\dist\locale\ms-my.js" />
+    <Content Include="assets\libs\fullcalendar\dist\locale\ms.js" />
+    <Content Include="assets\libs\fullcalendar\dist\locale\nb.js" />
+    <Content Include="assets\libs\fullcalendar\dist\locale\nl-be.js" />
+    <Content Include="assets\libs\fullcalendar\dist\locale\nl.js" />
+    <Content Include="assets\libs\fullcalendar\dist\locale\nn.js" />
+    <Content Include="assets\libs\fullcalendar\dist\locale\pl.js" />
+    <Content Include="assets\libs\fullcalendar\dist\locale\pt-br.js" />
+    <Content Include="assets\libs\fullcalendar\dist\locale\pt.js" />
+    <Content Include="assets\libs\fullcalendar\dist\locale\ro.js" />
+    <Content Include="assets\libs\fullcalendar\dist\locale\ru.js" />
+    <Content Include="assets\libs\fullcalendar\dist\locale\sk.js" />
+    <Content Include="assets\libs\fullcalendar\dist\locale\sl.js" />
+    <Content Include="assets\libs\fullcalendar\dist\locale\sq.js" />
+    <Content Include="assets\libs\fullcalendar\dist\locale\sr-cyrl.js" />
+    <Content Include="assets\libs\fullcalendar\dist\locale\sr.js" />
+    <Content Include="assets\libs\fullcalendar\dist\locale\sv.js" />
+    <Content Include="assets\libs\fullcalendar\dist\locale\th.js" />
+    <Content Include="assets\libs\fullcalendar\dist\locale\tr.js" />
+    <Content Include="assets\libs\fullcalendar\dist\locale\uk.js" />
+    <Content Include="assets\libs\fullcalendar\dist\locale\vi.js" />
+    <Content Include="assets\libs\fullcalendar\dist\locale\zh-cn.js" />
+    <Content Include="assets\libs\fullcalendar\dist\locale\zh-hk.js" />
+    <Content Include="assets\libs\fullcalendar\dist\locale\zh-tw.js" />
+    <Content Include="assets\libs\jquery\dist\core.js" />
+    <Content Include="assets\libs\jquery\dist\jquery.min.js" />
+    <Content Include="assets\libs\jquery\dist\jquery.slim.min.js" />
+    <Content Include="assets\libs\moment\ender.js" />
+    <Content Include="assets\libs\moment\locale\af.js" />
+    <Content Include="assets\libs\moment\locale\ar-dz.js" />
+    <Content Include="assets\libs\moment\locale\ar-kw.js" />
+    <Content Include="assets\libs\moment\locale\ar-ly.js" />
+    <Content Include="assets\libs\moment\locale\ar-ma.js" />
+    <Content Include="assets\libs\moment\locale\ar-sa.js" />
+    <Content Include="assets\libs\moment\locale\ar-tn.js" />
+    <Content Include="assets\libs\moment\locale\ar.js" />
+    <Content Include="assets\libs\moment\locale\az.js" />
+    <Content Include="assets\libs\moment\locale\be.js" />
+    <Content Include="assets\libs\moment\locale\bg.js" />
+    <Content Include="assets\libs\moment\locale\bm.js" />
+    <Content Include="assets\libs\moment\locale\bn.js" />
+    <Content Include="assets\libs\moment\locale\bo.js" />
+    <Content Include="assets\libs\moment\locale\br.js" />
+    <Content Include="assets\libs\moment\locale\bs.js" />
+    <Content Include="assets\libs\moment\locale\ca.js" />
+    <Content Include="assets\libs\moment\locale\cs.js" />
+    <Content Include="assets\libs\moment\locale\cv.js" />
+    <Content Include="assets\libs\moment\locale\cy.js" />
+    <Content Include="assets\libs\moment\locale\da.js" />
+    <Content Include="assets\libs\moment\locale\de-at.js" />
+    <Content Include="assets\libs\moment\locale\de-ch.js" />
+    <Content Include="assets\libs\moment\locale\de.js" />
+    <Content Include="assets\libs\moment\locale\dv.js" />
+    <Content Include="assets\libs\moment\locale\el.js" />
+    <Content Include="assets\libs\moment\locale\en-au.js" />
+    <Content Include="assets\libs\moment\locale\en-ca.js" />
+    <Content Include="assets\libs\moment\locale\en-gb.js" />
+    <Content Include="assets\libs\moment\locale\en-ie.js" />
+    <Content Include="assets\libs\moment\locale\en-il.js" />
+    <Content Include="assets\libs\moment\locale\en-nz.js" />
+    <Content Include="assets\libs\moment\locale\en-SG.js" />
+    <Content Include="assets\libs\moment\locale\eo.js" />
+    <Content Include="assets\libs\moment\locale\es-do.js" />
+    <Content Include="assets\libs\moment\locale\es-us.js" />
+    <Content Include="assets\libs\moment\locale\es.js" />
+    <Content Include="assets\libs\moment\locale\et.js" />
+    <Content Include="assets\libs\moment\locale\eu.js" />
+    <Content Include="assets\libs\moment\locale\fa.js" />
+    <Content Include="assets\libs\moment\locale\fi.js" />
+    <Content Include="assets\libs\moment\locale\fo.js" />
+    <Content Include="assets\libs\moment\locale\fr-ca.js" />
+    <Content Include="assets\libs\moment\locale\fr-ch.js" />
+    <Content Include="assets\libs\moment\locale\fr.js" />
+    <Content Include="assets\libs\moment\locale\fy.js" />
+    <Content Include="assets\libs\moment\locale\ga.js" />
+    <Content Include="assets\libs\moment\locale\gd.js" />
+    <Content Include="assets\libs\moment\locale\gl.js" />
+    <Content Include="assets\libs\moment\locale\gom-latn.js" />
+    <Content Include="assets\libs\moment\locale\gu.js" />
+    <Content Include="assets\libs\moment\locale\he.js" />
+    <Content Include="assets\libs\moment\locale\hi.js" />
+    <Content Include="assets\libs\moment\locale\hr.js" />
+    <Content Include="assets\libs\moment\locale\hu.js" />
+    <Content Include="assets\libs\moment\locale\hy-am.js" />
+    <Content Include="assets\libs\moment\locale\id.js" />
+    <Content Include="assets\libs\moment\locale\is.js" />
+    <Content Include="assets\libs\moment\locale\it-ch.js" />
+    <Content Include="assets\libs\moment\locale\it.js" />
+    <Content Include="assets\libs\moment\locale\ja.js" />
+    <Content Include="assets\libs\moment\locale\jv.js" />
+    <Content Include="assets\libs\moment\locale\ka.js" />
+    <Content Include="assets\libs\moment\locale\kk.js" />
+    <Content Include="assets\libs\moment\locale\km.js" />
+    <Content Include="assets\libs\moment\locale\kn.js" />
+    <Content Include="assets\libs\moment\locale\ko.js" />
+    <Content Include="assets\libs\moment\locale\ku.js" />
+    <Content Include="assets\libs\moment\locale\ky.js" />
+    <Content Include="assets\libs\moment\locale\lb.js" />
+    <Content Include="assets\libs\moment\locale\lo.js" />
+    <Content Include="assets\libs\moment\locale\lt.js" />
+    <Content Include="assets\libs\moment\locale\lv.js" />
+    <Content Include="assets\libs\moment\locale\me.js" />
+    <Content Include="assets\libs\moment\locale\mi.js" />
+    <Content Include="assets\libs\moment\locale\mk.js" />
+    <Content Include="assets\libs\moment\locale\ml.js" />
+    <Content Include="assets\libs\moment\locale\mn.js" />
+    <Content Include="assets\libs\moment\locale\mr.js" />
+    <Content Include="assets\libs\moment\locale\ms-my.js" />
+    <Content Include="assets\libs\moment\locale\ms.js" />
+    <Content Include="assets\libs\moment\locale\mt.js" />
+    <Content Include="assets\libs\moment\locale\my.js" />
+    <Content Include="assets\libs\moment\locale\nb.js" />
+    <Content Include="assets\libs\moment\locale\ne.js" />
+    <Content Include="assets\libs\moment\locale\nl-be.js" />
+    <Content Include="assets\libs\moment\locale\nl.js" />
+    <Content Include="assets\libs\moment\locale\nn.js" />
+    <Content Include="assets\libs\moment\locale\pa-in.js" />
+    <Content Include="assets\libs\moment\locale\pl.js" />
+    <Content Include="assets\libs\moment\locale\pt-br.js" />
+    <Content Include="assets\libs\moment\locale\pt.js" />
+    <Content Include="assets\libs\moment\locale\ro.js" />
+    <Content Include="assets\libs\moment\locale\ru.js" />
+    <Content Include="assets\libs\moment\locale\sd.js" />
+    <Content Include="assets\libs\moment\locale\se.js" />
+    <Content Include="assets\libs\moment\locale\si.js" />
+    <Content Include="assets\libs\moment\locale\sk.js" />
+    <Content Include="assets\libs\moment\locale\sl.js" />
+    <Content Include="assets\libs\moment\locale\sq.js" />
+    <Content Include="assets\libs\moment\locale\sr-cyrl.js" />
+    <Content Include="assets\libs\moment\locale\sr.js" />
+    <Content Include="assets\libs\moment\locale\ss.js" />
+    <Content Include="assets\libs\moment\locale\sv.js" />
+    <Content Include="assets\libs\moment\locale\sw.js" />
+    <Content Include="assets\libs\moment\locale\ta.js" />
+    <Content Include="assets\libs\moment\locale\te.js" />
+    <Content Include="assets\libs\moment\locale\tet.js" />
+    <Content Include="assets\libs\moment\locale\tg.js" />
+    <Content Include="assets\libs\moment\locale\th.js" />
+    <Content Include="assets\libs\moment\locale\tl-ph.js" />
+    <Content Include="assets\libs\moment\locale\tlh.js" />
+    <Content Include="assets\libs\moment\locale\tr.js" />
+    <Content Include="assets\libs\moment\locale\tzl.js" />
+    <Content Include="assets\libs\moment\locale\tzm-latn.js" />
+    <Content Include="assets\libs\moment\locale\tzm.js" />
+    <Content Include="assets\libs\moment\locale\ug-cn.js" />
+    <Content Include="assets\libs\moment\locale\uk.js" />
+    <Content Include="assets\libs\moment\locale\ur.js" />
+    <Content Include="assets\libs\moment\locale\uz-latn.js" />
+    <Content Include="assets\libs\moment\locale\uz.js" />
+    <Content Include="assets\libs\moment\locale\vi.js" />
+    <Content Include="assets\libs\moment\locale\x-pseudo.js" />
+    <Content Include="assets\libs\moment\locale\yo.js" />
+    <Content Include="assets\libs\moment\locale\zh-cn.js" />
+    <Content Include="assets\libs\moment\locale\zh-hk.js" />
+    <Content Include="assets\libs\moment\locale\zh-tw.js" />
+    <Content Include="assets\libs\moment\min\locales.min.js" />
+    <Content Include="assets\libs\moment\min\moment-with-locales.min.js" />
+    <Content Include="assets\libs\moment\min\moment.min.js" />
+    <Content Include="assets\libs\moment\moment.js" />
+    <Content Include="assets\libs\moment\package.js" />
+    <Content Include="assets\libs\morris.js\morris.css" />
+    <Content Include="assets\libs\morris.js\morris.min.js" />
+    <Content Include="assets\libs\perfect-scrollbar\dist\css\perfect-scrollbar.min.css" />
+    <Content Include="assets\libs\perfect-scrollbar\dist\js\perfect-scrollbar.jquery.min.js" />
+    <Content Include="assets\libs\perfect-scrollbar\dist\js\perfect-scrollbar.min.js" />
+    <Content Include="assets\libs\perfect-scrollbar\dist\perfect-scrollbar.common.js" />
+    <Content Include="assets\libs\perfect-scrollbar\dist\perfect-scrollbar.esm.js" />
+    <Content Include="assets\libs\perfect-scrollbar\dist\perfect-scrollbar.jquery.min.js" />
+    <Content Include="assets\libs\perfect-scrollbar\dist\perfect-scrollbar.min.js" />
+    <Content Include="assets\libs\popper.js\dist\esm\popper-utils.min.js" />
+    <Content Include="assets\libs\popper.js\dist\esm\popper.min.js" />
+    <Content Include="assets\libs\popper.js\dist\popper-utils.min.js" />
+    <Content Include="assets\libs\popper.js\dist\popper.min.js" />
+    <Content Include="assets\libs\popper.js\dist\umd\popper-utils.min.js" />
+    <Content Include="assets\libs\popper.js\dist\umd\popper.min.js" />
+    <Content Include="assets\libs\raphael\dev\banner.txt" />
+    <Content Include="assets\libs\raphael\dev\raphael.amd.js" />
+    <Content Include="assets\libs\raphael\dev\raphael.core.js" />
+    <Content Include="assets\libs\raphael\dev\raphael.svg.js" />
+    <Content Include="assets\libs\raphael\dev\raphael.vml.js" />
+    <Content Include="assets\libs\raphael\dev\raphaelTest.html" />
+    <Content Include="assets\libs\raphael\license.txt" />
+    <Content Include="assets\libs\raphael\raphael.min.js" />
+    <Content Include="assets\libs\raphael\raphael.no-deps.min.js" />
+    <Content Include="Authorize.aspx" />
+    <Content Include="Connection.aspx" />
+    <Content Include="Dashboard.aspx" />
+    <Content Include="dist\css\fonts\Gilmer-Bold.svg" />
+    <Content Include="dist\css\fonts\Gilmer-Heavy.svg" />
+    <Content Include="dist\css\fonts\Gilmer-Medium.svg" />
+    <Content Include="dist\css\fonts\Gilmer-Regular.svg" />
+    <Content Include="dist\css\fonts\TofinoPersonal-Book.svg" />
+    <Content Include="dist\css\fonts\TofinoPersonal-Medium.svg" />
+    <Content Include="dist\css\fonts\TofinoPersonal-Regular.svg" />
+    <Content Include="dist\css\icons\font-awesome\css\fa-brands.css" />
+    <Content Include="dist\css\icons\font-awesome\css\fa-brands.min.css" />
+    <Content Include="dist\css\icons\font-awesome\css\fa-regular.css" />
+    <Content Include="dist\css\icons\font-awesome\css\fa-regular.min.css" />
+    <Content Include="dist\css\icons\font-awesome\css\fa-solid.css" />
+    <Content Include="dist\css\icons\font-awesome\css\fa-solid.min.css" />
+    <Content Include="dist\css\icons\font-awesome\css\fontawesome-all.css" />
+    <Content Include="dist\css\icons\font-awesome\css\fontawesome-all.min.css" />
+    <Content Include="dist\css\icons\font-awesome\css\fontawesome.css" />
+    <Content Include="dist\css\icons\font-awesome\css\fontawesome.min.css" />
+    <Content Include="dist\css\icons\font-awesome\webfonts\fa-brands-400.svg" />
+    <Content Include="dist\css\icons\font-awesome\webfonts\fa-regular-400.svg" />
+    <Content Include="dist\css\icons\font-awesome\webfonts\fa-solid-900.svg" />
+    <Content Include="dist\css\icons\simple-line-icons\css\simple-line-icons.css" />
+    <Content Include="dist\css\icons\simple-line-icons\fonts\Simple-Line-Icons.svg" />
+    <Content Include="dist\css\icons\themify-icons\fonts\themify.svg" />
+    <Content Include="dist\css\icons\themify-icons\ie7\ie7.css" />
+    <Content Include="dist\css\icons\themify-icons\ie7\ie7.js" />
+    <Content Include="dist\css\icons\themify-icons\themify-icons.css" />
+    <Content Include="dist\css\pandalocker.min.css" />
+    <Content Include="dist\css\style.css" />
+    <Content Include="dist\css\style.min.css" />
+    <Content Include="dist\img\button-loader-f2f2f2.gif" />
+    <Content Include="dist\img\lock-icon.png" />
+    <Content Include="dist\img\social-icons.png" />
+    <Content Include="dist\js\app-style-switcher.js" />
+    <Content Include="dist\js\app-style-switcher.min.js" />
+    <Content Include="dist\js\custom.js" />
+    <Content Include="dist\js\custom.min.js" />
+    <Content Include="dist\js\feather.min.js" />
+    <Content Include="dist\js\jquery.ui.highlight.min.js" />
+    <Content Include="dist\js\pages\calendar\cal-init.js" />
+    <Content Include="dist\js\pages\calendar\cal-init.min.js" />
+    <Content Include="dist\js\pages\chartist\chartist-init.css" />
+    <Content Include="dist\js\pages\chartist\chartist-init.js" />
+    <Content Include="dist\js\pages\chartist\chartist-init.min.js" />
+    <Content Include="dist\js\pages\chartist\chartist-plugin-tooltip.js" />
+    <Content Include="dist\js\pages\chartist\chartist-plugin-tooltip.min.js" />
+    <Content Include="dist\js\pages\chartjs\chartjs.init.js" />
+    <Content Include="dist\js\pages\chartjs\chartjs.init.min.js" />
+    <Content Include="dist\js\pages\dashboards\dashboard1.js" />
+    <Content Include="dist\js\pages\dashboards\dashboard1.min.js" />
+    <Content Include="dist\js\pages\datatable\datatable-basic.init.js" />
+    <Content Include="dist\js\pages\datatable\datatable-basic.init.min.js" />
+    <Content Include="dist\js\pages\morris\morris-data.js" />
+    <Content Include="dist\js\pages\morris\morris-data.min.js" />
+    <Content Include="dist\js\pandalocker.js" />
+    <Content Include="dist\js\sidebarmenu.js" />
+    <Content Include="dist\js\sidebarmenu.min.js" />
+    <Content Include="Emails.aspx" />
+    <Content Include="Error.html" />
+    <Content Include="Global.asax" />
+    <Content Include="GuestLogin.aspx" />
+    <Content Include="HtmlPage1.html" />
+    <Content Include="html\app-calendar.html" />
+    <Content Include="html\app-chat.html" />
+    <Content Include="html\authentication-login1.html" />
+    <Content Include="html\authentication-register1.html" />
+    <Content Include="html\chart-chart-js.html" />
+    <Content Include="html\chart-knob.html" />
+    <Content Include="html\chart-morris.html" />
+    <Content Include="html\form-checkbox-radio.html" />
+    <Content Include="html\form-input-grid.html" />
+    <Content Include="html\form-inputs.html" />
+    <Content Include="html\icon-fontawesome.html" />
+    <Content Include="html\icon-simple-lineicon.html" />
+    <Content Include="html\index.html" />
+    <Content Include="html\table-basic.html" />
+    <Content Include="html\table-dark-basic.html" />
+    <Content Include="html\table-datatable-basic.html" />
+    <Content Include="html\table-layout-coloured.html" />
+    <Content Include="html\table-sizing.html" />
+    <Content Include="html\ticket-list.html" />
+    <Content Include="html\ui-bootstrap.html" />
+    <Content Include="html\ui-breadcrumb.html" />
+    <Content Include="html\ui-buttons.html" />
+    <Content Include="html\ui-cards.html" />
+    <Content Include="html\ui-carousel.html" />
+    <Content Include="html\ui-grid.html" />
+    <Content Include="html\ui-list-media.html" />
+    <Content Include="html\ui-modals.html" />
+    <Content Include="html\ui-notification.html" />
+    <Content Include="html\ui-popover.html" />
+    <Content Include="html\ui-progressbar.html" />
+    <Content Include="html\ui-scrollspy.html" />
+    <Content Include="html\ui-spinner.html" />
+    <Content Include="html\ui-tab.html" />
+    <Content Include="html\ui-toasts.html" />
+    <Content Include="html\ui-tooltip-popover.html" />
+    <Content Include="html\ui-typography.html" />
+    <Content Include="index.html" />
+    <Content Include="InstitutionHome.aspx" />
+    <Content Include="js\app.css" />
+    <Content Include="js\game.css" />
+    <Content Include="ListUsers.aspx" />
+    <Content Include="Loginback.aspx" />
+    <Content Include="Login.aspx" />
+    <Content Include="Logout.aspx" />
+    <Content Include="MyProfile.aspx" />
+    <Content Include="Notifications.aspx" />
+    <Content Include="Practice.aspx" />
+    <Content Include="Q.aspx" />
+    <Content Include="QP.aspx" />
+    <Content Include="RandomQuiz.aspx" />
+    <Content Include="Register.aspx" />
+    <Content Include="SearchTest.aspx" />
+    <Content Include="StockMarket.html" />
+    <Content Include="Test\admin panel\ajaxemail.php" />
+    <Content Include="Test\admin panel\counter.txt" />
+    <Content Include="Test\admin panel\docs\docs-custom-chart-chartjs.html" />
+    <Content Include="Test\admin panel\docs\docs-custom-datatables.html" />
+    <Content Include="Test\admin panel\docs\docs-custom-widgets.html" />
+    <Content Include="Test\admin panel\docs\docs-start.html" />
+    <Content Include="Test\admin panel\docs\docs-ui-bootstrapui.html" />
+    <Content Include="Test\admin panel\docs\docs-ui-breadcrumb.html" />
+    <Content Include="Test\admin panel\docs\docs-ui-buttons.html" />
+    <Content Include="Test\admin panel\docs\docs-ui-carousel.html" />
+    <Content Include="Test\admin panel\docs\docs-ui-grid.html" />
+    <Content Include="Test\admin panel\docs\docs-ui-listmedia.html" />
+    <Content Include="Test\admin panel\docs\docs-ui-modals.html" />
+    <Content Include="Test\admin panel\docs\docs-ui-notification.html" />
+    <Content Include="Test\admin panel\docs\docs-ui-progressbar.html" />
+    <Content Include="Test\admin panel\docs\docs-ui-scrollspy.html" />
+    <Content Include="Test\admin panel\docs\docs-ui-spinner.html" />
+    <Content Include="Test\admin panel\docs\docs-ui-tabs.html" />
+    <Content Include="Test\admin panel\docs\docs-ui-toasts.html" />
+    <Content Include="Test\admin panel\docs\docs-ui-tooltip-popover.html" />
+    <Content Include="Test\admin panel\docs\docs-ui-typography.html" />
+    <Content Include="Test\admin panel\docs\docs.html" />
+    <Content Include="Test\admin panel\docs\highlights\highlight.min.css" />
+    <Content Include="Test\admin panel\docs\highlights\highlight.min.js" />
+    <Content Include="Test\admin panel\index-old-with-email.php" />
+    <Content Include="Test\admin panel\index.php" />
+    <Content Include="Test\admin panel\src\assets\extra-libs\c3\c3.min.css" />
+    <Content Include="Test\admin panel\src\assets\extra-libs\c3\c3.min.js" />
+    <Content Include="Test\admin panel\src\assets\extra-libs\c3\d3.min.js" />
+    <Content Include="Test\admin panel\src\assets\extra-libs\datatables.net-bs4\css\dataTables.bootstrap4.css" />
+    <Content Include="Test\admin panel\src\assets\extra-libs\datatables.net-bs4\css\dataTables.bootstrap4.min.css" />
+    <Content Include="Test\admin panel\src\assets\extra-libs\datatables.net-bs4\js\dataTables.bootstrap4.js" />
+    <Content Include="Test\admin panel\src\assets\extra-libs\datatables.net-bs4\js\dataTables.bootstrap4.min.js" />
+    <Content Include="Test\admin panel\src\assets\extra-libs\datatables.net\js\jquery.dataTables.js" />
+    <Content Include="Test\admin panel\src\assets\extra-libs\datatables.net\js\jquery.dataTables.min.js" />
+    <Content Include="Test\admin panel\src\assets\extra-libs\datatables.net\License.txt" />
+    <Content Include="Test\admin panel\src\assets\extra-libs\jvector\gdp-data.js" />
+    <Content Include="Test\admin panel\src\assets\extra-libs\jvector\jquery-jvectormap-2.0.2.css" />
+    <Content Include="Test\admin panel\src\assets\extra-libs\jvector\jquery-jvectormap-2.0.2.min.js" />
+    <Content Include="Test\admin panel\src\assets\extra-libs\jvector\jquery-jvectormap-asia-mill.js" />
+    <Content Include="Test\admin panel\src\assets\extra-libs\jvector\jquery-jvectormap-au-mill.js" />
+    <Content Include="Test\admin panel\src\assets\extra-libs\jvector\jquery-jvectormap-ca-lcc.js" />
+    <Content Include="Test\admin panel\src\assets\extra-libs\jvector\jquery-jvectormap-de-mill.js" />
+    <Content Include="Test\admin panel\src\assets\extra-libs\jvector\jquery-jvectormap-europe-mill-en.js" />
+    <Content Include="Test\admin panel\src\assets\extra-libs\jvector\jquery-jvectormap-in-mill.js" />
+    <Content Include="Test\admin panel\src\assets\extra-libs\jvector\jquery-jvectormap-uk-mill-en.js" />
+    <Content Include="Test\admin panel\src\assets\extra-libs\jvector\jquery-jvectormap-us-aea-en.js" />
+    <Content Include="Test\admin panel\src\assets\extra-libs\jvector\jquery-jvectormap-us-il-chicago-mill-en.js" />
+    <Content Include="Test\admin panel\src\assets\extra-libs\jvector\jquery-jvectormap-world-mill-en.js" />
+    <Content Include="Test\admin panel\src\assets\extra-libs\jvector\jvectormap.custom.js" />
+    <Content Include="Test\admin panel\src\assets\extra-libs\knob\jquery.knob.js" />
+    <Content Include="Test\admin panel\src\assets\extra-libs\knob\jquery.knob.min.js" />
+    <Content Include="Test\admin panel\src\assets\extra-libs\prism\prism-old.js" />
+    <Content Include="Test\admin panel\src\assets\extra-libs\prism\prism.css" />
+    <Content Include="Test\admin panel\src\assets\extra-libs\prism\prism.js" />
+    <Content Include="Test\admin panel\src\assets\extra-libs\sparkline\sparkline.js" />
+    <Content Include="Test\admin panel\src\assets\extra-libs\taskboard\css\demo.css" />
+    <Content Include="Test\admin panel\src\assets\extra-libs\taskboard\css\jquery-ui.min.css" />
+    <Content Include="Test\admin panel\src\assets\extra-libs\taskboard\css\lobilist.css" />
+    <Content Include="Test\admin panel\src\assets\extra-libs\taskboard\css\lobilist.min.css" />
+    <Content Include="Test\admin panel\src\assets\extra-libs\taskboard\example1\delete.php" />
+    <Content Include="Test\admin panel\src\assets\extra-libs\taskboard\example1\insert.php" />
+    <Content Include="Test\admin panel\src\assets\extra-libs\taskboard\example1\update.php" />
+    <Content Include="Test\admin panel\src\assets\extra-libs\taskboard\js\demo.js" />
+    <Content Include="Test\admin panel\src\assets\extra-libs\taskboard\js\jquery-ui.min.js" />
+    <Content Include="Test\admin panel\src\assets\extra-libs\taskboard\js\jquery.ui.touch-punch-improved.js" />
+    <Content Include="Test\admin panel\src\assets\extra-libs\taskboard\js\lobibox.min.js" />
+    <Content Include="Test\admin panel\src\assets\extra-libs\taskboard\js\lobilist.js" />
+    <Content Include="Test\admin panel\src\assets\extra-libs\taskboard\js\lobilist.min.js" />
+    <Content Include="Test\admin panel\src\assets\extra-libs\taskboard\js\task-init.js" />
+    <Content Include="Test\admin panel\src\assets\images\alert\alert.png" />
+    <Content Include="Test\admin panel\src\assets\images\alert\alert2.png" />
+    <Content Include="Test\admin panel\src\assets\images\alert\alert3.png" />
+    <Content Include="Test\admin panel\src\assets\images\alert\alert4.png" />
+    <Content Include="Test\admin panel\src\assets\images\alert\alert5.png" />
+    <Content Include="Test\admin panel\src\assets\images\alert\alert6.png" />
+    <Content Include="Test\admin panel\src\assets\images\alert\alert7.png" />
+    <Content Include="Test\admin panel\src\assets\images\alert\model.png" />
+    <Content Include="Test\admin panel\src\assets\images\alert\model2.png" />
+    <Content Include="Test\admin panel\src\assets\images\alert\model3.png" />
+    <Content Include="Test\admin panel\src\assets\images\angular-templates.png" />
+    <Content Include="Test\admin panel\src\assets\images\background\active-bg.jpg" />
+    <Content Include="Test\admin panel\src\assets\images\background\active-bg.png" />
+    <Content Include="Test\admin panel\src\assets\images\background\beauty.jpg" />
+    <Content Include="Test\admin panel\src\assets\images\background\error-bg.jpg" />
+    <Content Include="Test\admin panel\src\assets\images\background\img5.jpg" />
+    <Content Include="Test\admin panel\src\assets\images\background\img5.png" />
+    <Content Include="Test\admin panel\src\assets\images\background\login-register.jpg" />
+    <Content Include="Test\admin panel\src\assets\images\background\megamenubg.jpg" />
+    <Content Include="Test\admin panel\src\assets\images\background\nyan-cat.gif" />
+    <Content Include="Test\admin panel\src\assets\images\background\profile-bg.jpg" />
+    <Content Include="Test\admin panel\src\assets\images\background\sidebarbg.png" />
+    <Content Include="Test\admin panel\src\assets\images\background\socialbg.jpg" />
+    <Content Include="Test\admin panel\src\assets\images\background\user-bg.jpg" />
+    <Content Include="Test\admin panel\src\assets\images\background\user-info.jpg" />
+    <Content Include="Test\admin panel\src\assets\images\background\weatherbg.jpg" />
+    <Content Include="Test\admin panel\src\assets\images\big\1.jpg" />
+    <Content Include="Test\admin panel\src\assets\images\big\3.jpg" />
+    <Content Include="Test\admin panel\src\assets\images\big\5.jpg" />
+    <Content Include="Test\admin panel\src\assets\images\big\auth-bg.jpg" />
+    <Content Include="Test\admin panel\src\assets\images\big\auth-bg2.jpg" />
+    <Content Include="Test\admin panel\src\assets\images\big\d2.jpg" />
+    <Content Include="Test\admin panel\src\assets\images\big\icon.png" />
+    <Content Include="Test\admin panel\src\assets\images\big\img1.jpg" />
+    <Content Include="Test\admin panel\src\assets\images\big\img2.jpg" />
+    <Content Include="Test\admin panel\src\assets\images\big\img3.jpg" />
+    <Content Include="Test\admin panel\src\assets\images\big\img4.jpg" />
+    <Content Include="Test\admin panel\src\assets\images\big\img5.jpg" />
+    <Content Include="Test\admin panel\src\assets\images\big\img6.jpg" />
+    <Content Include="Test\admin panel\src\assets\images\bootstrap-templates.png" />
+    <Content Include="Test\admin panel\src\assets\images\browser\chrome-logo.png" />
+    <Content Include="Test\admin panel\src\assets\images\browser\edge-logo.png" />
+    <Content Include="Test\admin panel\src\assets\images\browser\firefox-logo.png" />
+    <Content Include="Test\admin panel\src\assets\images\browser\internet-logo.png" />
+    <Content Include="Test\admin panel\src\assets\images\browser\netscape-logo.png" />
+    <Content Include="Test\admin panel\src\assets\images\browser\opera-logo.png" />
+    <Content Include="Test\admin panel\src\assets\images\browser\photoshop.jpg" />
+    <Content Include="Test\admin panel\src\assets\images\browser\safari-logo.png" />
+    <Content Include="Test\admin panel\src\assets\images\browser\sketch.jpg" />
+    <Content Include="Test\admin panel\src\assets\images\custom-select.png" />
+    <Content Include="Test\admin panel\src\assets\images\docs\gulp.jpg" />
+    <Content Include="Test\admin panel\src\assets\images\favicon.png" />
+    <Content Include="Test\admin panel\src\assets\images\gallery\chair.jpg" />
+    <Content Include="Test\admin panel\src\assets\images\gallery\chair2.jpg" />
+    <Content Include="Test\admin panel\src\assets\images\gallery\chair3.jpg" />
+    <Content Include="Test\admin panel\src\assets\images\gallery\chair4.jpg" />
+    <Content Include="Test\admin panel\src\assets\images\img1.jpg" />
+    <Content Include="Test\admin panel\src\assets\images\img2.jpg" />
+    <Content Include="Test\admin panel\src\assets\images\img3.jpg" />
+    <Content Include="Test\admin panel\src\assets\images\landingpage\banne-img.png" />
+    <Content Include="Test\admin panel\src\assets\images\landingpage\banner-bg.png" />
+    <Content Include="Test\admin panel\src\assets\images\landingpage\brand-logos.png" />
+    <Content Include="Test\admin panel\src\assets\images\landingpage\db.png" />
+    <Content Include="Test\admin panel\src\assets\images\landingpage\f1.png" />
+    <Content Include="Test\admin panel\src\assets\images\landingpage\f2.png" />
+    <Content Include="Test\admin panel\src\assets\images\landingpage\f3.png" />
+    <Content Include="Test\admin panel\src\assets\images\landingpage\favicon.png" />
+    <Content Include="Test\admin panel\src\assets\images\landingpage\icon-sprite.jpg" />
+    <Content Include="Test\admin panel\src\assets\images\landingpage\img2.jpg" />
+    <Content Include="Test\admin panel\src\assets\images\landingpage\img3.jpg" />
+    <Content Include="Test\admin panel\src\assets\images\landingpage\logo.png" />
+    <Content Include="Test\admin panel\src\assets\images\landingpage\logos.png" />
+    <Content Include="Test\admin panel\src\assets\images\landingpage\right-img.png" />
+    <Content Include="Test\admin panel\src\assets\images\landingpage\section-bg.png" />
+    <Content Include="Test\admin panel\src\assets\images\landingpage\section-img.png" />
+    <Content Include="Test\admin panel\src\assets\images\logo-icon.png" />
+    <Content Include="Test\admin panel\src\assets\images\logo-light-text.png" />
+    <Content Include="Test\admin panel\src\assets\images\logo-text.png" />
+    <Content Include="Test\admin panel\src\assets\images\product\chair.png" />
+    <Content Include="Test\admin panel\src\assets\images\product\chair2.png" />
+    <Content Include="Test\admin panel\src\assets\images\product\chair3.png" />
+    <Content Include="Test\admin panel\src\assets\images\product\chair4.png" />
+    <Content Include="Test\admin panel\src\assets\images\product\ipad.png" />
+    <Content Include="Test\admin panel\src\assets\images\product\iphone.png" />
+    <Content Include="Test\admin panel\src\assets\images\product\iwatch.png" />
+    <Content Include="Test\admin panel\src\assets\images\product\p1.jpg" />
+    <Content Include="Test\admin panel\src\assets\images\product\p2.jpg" />
+    <Content Include="Test\admin panel\src\assets\images\product\p3.jpg" />
+    <Content Include="Test\admin panel\src\assets\images\product\p4.jpg" />
+    <Content Include="Test\admin panel\src\assets\images\rating\cancel-off.png" />
+    <Content Include="Test\admin panel\src\assets\images\rating\cancel-on.png" />
+    <Content Include="Test\admin panel\src\assets\images\rating\heart.png" />
+    <Content Include="Test\admin panel\src\assets\images\rating\like.png" />
+    <Content Include="Test\admin panel\src\assets\images\rating\star-half-mono.png" />
+    <Content Include="Test\admin panel\src\assets\images\rating\star-half.png" />
+    <Content Include="Test\admin panel\src\assets\images\rating\star-off.png" />
+    <Content Include="Test\admin panel\src\assets\images\rating\star-on.png" />
+    <Content Include="Test\admin panel\src\assets\images\react-templates.png" />
+    <Content Include="Test\admin panel\src\assets\images\tooltip\Euclid.png" />
+    <Content Include="Test\admin panel\src\assets\images\tooltip\shape1.svg" />
+    <Content Include="Test\admin panel\src\assets\images\tooltip\shape2.svg" />
+    <Content Include="Test\admin panel\src\assets\images\tooltip\shape3.svg" />
+    <Content Include="Test\admin panel\src\assets\images\tooltip\tooltip1.svg" />
+    <Content Include="Test\admin panel\src\assets\images\tooltip\tooltip2.svg" />
+    <Content Include="Test\admin panel\src\assets\images\tooltip\tooltip3.svg" />
+    <Content Include="Test\admin panel\src\assets\images\users\1-old.jpg" />
+    <Content Include="Test\admin panel\src\assets\images\users\1.jpg" />
+    <Content Include="Test\admin panel\src\assets\images\users\1.png" />
+    <Content Include="Test\admin panel\src\assets\images\users\2.jpg" />
+    <Content Include="Test\admin panel\src\assets\images\users\2.png" />
+    <Content Include="Test\admin panel\src\assets\images\users\3.jpg" />
+    <Content Include="Test\admin panel\src\assets\images\users\3.png" />
+    <Content Include="Test\admin panel\src\assets\images\users\4.jpg" />
+    <Content Include="Test\admin panel\src\assets\images\users\5.jpg" />
+    <Content Include="Test\admin panel\src\assets\images\users\6.jpg" />
+    <Content Include="Test\admin panel\src\assets\images\users\7.jpg" />
+    <Content Include="Test\admin panel\src\assets\images\users\8.jpg" />
+    <Content Include="Test\admin panel\src\assets\images\users\agent.jpg" />
+    <Content Include="Test\admin panel\src\assets\images\users\agent2.jpg" />
+    <Content Include="Test\admin panel\src\assets\images\users\d1.jpg" />
+    <Content Include="Test\admin panel\src\assets\images\users\d2.jpg" />
+    <Content Include="Test\admin panel\src\assets\images\users\d3.jpg" />
+    <Content Include="Test\admin panel\src\assets\images\users\d4.jpg" />
+    <Content Include="Test\admin panel\src\assets\images\users\d5.jpg" />
+    <Content Include="Test\admin panel\src\assets\images\users\profile-pic-2.jpg" />
+    <Content Include="Test\admin panel\src\assets\images\users\profile-pic.jpg" />
+    <Content Include="Test\admin panel\src\assets\images\users\profile.png" />
+    <Content Include="Test\admin panel\src\assets\images\users\widget-table-pic1.jpg" />
+    <Content Include="Test\admin panel\src\assets\images\users\widget-table-pic2.jpg" />
+    <Content Include="Test\admin panel\src\assets\images\users\widget-table-pic3.jpg" />
+    <Content Include="Test\admin panel\src\assets\images\users\widget-table-pic4.jpg" />
+    <Content Include="Test\admin panel\src\assets\images\widgets\1.jpg" />
+    <Content Include="Test\admin panel\src\assets\images\widgets\2.jpg" />
+    <Content Include="Test\admin panel\src\assets\images\widgets\3.jpg" />
+    <Content Include="Test\admin panel\src\assets\images\widgets\widget-carousel-2.jpg" />
+    <Content Include="Test\admin panel\src\assets\images\widgets\widget-carousel.jpg" />
+    <Content Include="Test\admin panel\src\assets\libs\bootstrap\dist\css\bootstrap-grid.css" />
+    <Content Include="Test\admin panel\src\assets\libs\bootstrap\dist\css\bootstrap-grid.min.css" />
+    <Content Include="Test\admin panel\src\assets\libs\bootstrap\dist\css\bootstrap-reboot.css" />
+    <Content Include="Test\admin panel\src\assets\libs\bootstrap\dist\css\bootstrap-reboot.min.css" />
+    <Content Include="Test\admin panel\src\assets\libs\bootstrap\dist\css\bootstrap.css" />
+    <Content Include="Test\admin panel\src\assets\libs\bootstrap\dist\css\bootstrap.min.css" />
+    <Content Include="Test\admin panel\src\assets\libs\bootstrap\dist\js\bootstrap.bundle.js" />
+    <Content Include="Test\admin panel\src\assets\libs\bootstrap\dist\js\bootstrap.bundle.min.js" />
+    <Content Include="Test\admin panel\src\assets\libs\bootstrap\dist\js\bootstrap.js" />
+    <Content Include="Test\admin panel\src\assets\libs\bootstrap\dist\js\bootstrap.min.js" />
+    <Content Include="Test\admin panel\src\assets\libs\chart.js\dist\Chart.bundle.min.js" />
+    <Content Include="Test\admin panel\src\assets\libs\chart.js\dist\Chart.min.css" />
+    <Content Include="Test\admin panel\src\assets\libs\chart.js\dist\Chart.min.js" />
+    <Content Include="Test\admin panel\src\assets\libs\chartist-plugin-tooltips\dist\chartist-plugin-tooltip.css" />
+    <Content Include="Test\admin panel\src\assets\libs\chartist-plugin-tooltips\dist\chartist-plugin-tooltip.min.js" />
+    <Content Include="Test\admin panel\src\assets\libs\chartist\dist\chartist.min.css" />
+    <Content Include="Test\admin panel\src\assets\libs\chartist\dist\chartist.min.js" />
+    <Content Include="Test\admin panel\src\assets\libs\datatables.net-bs4\css\dataTables.bootstrap4.min.css" />
+    <Content Include="Test\admin panel\src\assets\libs\datatables.net-bs4\js\dataTables.bootstrap4.min.js" />
+    <Content Include="Test\admin panel\src\assets\libs\fullcalendar\dist\fullcalendar.min.css" />
+    <Content Include="Test\admin panel\src\assets\libs\fullcalendar\dist\fullcalendar.min.js" />
+    <Content Include="Test\admin panel\src\assets\libs\fullcalendar\dist\fullcalendar.print.min.css" />
+    <Content Include="Test\admin panel\src\assets\libs\fullcalendar\dist\gcal.min.js" />
+    <Content Include="Test\admin panel\src\assets\libs\fullcalendar\dist\locale-all.js" />
+    <Content Include="Test\admin panel\src\assets\libs\fullcalendar\dist\locale\af.js" />
+    <Content Include="Test\admin panel\src\assets\libs\fullcalendar\dist\locale\ar-dz.js" />
+    <Content Include="Test\admin panel\src\assets\libs\fullcalendar\dist\locale\ar-kw.js" />
+    <Content Include="Test\admin panel\src\assets\libs\fullcalendar\dist\locale\ar-ly.js" />
+    <Content Include="Test\admin panel\src\assets\libs\fullcalendar\dist\locale\ar-ma.js" />
+    <Content Include="Test\admin panel\src\assets\libs\fullcalendar\dist\locale\ar-sa.js" />
+    <Content Include="Test\admin panel\src\assets\libs\fullcalendar\dist\locale\ar-tn.js" />
+    <Content Include="Test\admin panel\src\assets\libs\fullcalendar\dist\locale\ar.js" />
+    <Content Include="Test\admin panel\src\assets\libs\fullcalendar\dist\locale\be.js" />
+    <Content Include="Test\admin panel\src\assets\libs\fullcalendar\dist\locale\bg.js" />
+    <Content Include="Test\admin panel\src\assets\libs\fullcalendar\dist\locale\bs.js" />
+    <Content Include="Test\admin panel\src\assets\libs\fullcalendar\dist\locale\ca.js" />
+    <Content Include="Test\admin panel\src\assets\libs\fullcalendar\dist\locale\cs.js" />
+    <Content Include="Test\admin panel\src\assets\libs\fullcalendar\dist\locale\da.js" />
+    <Content Include="Test\admin panel\src\assets\libs\fullcalendar\dist\locale\de-at.js" />
+    <Content Include="Test\admin panel\src\assets\libs\fullcalendar\dist\locale\de-ch.js" />
+    <Content Include="Test\admin panel\src\assets\libs\fullcalendar\dist\locale\de.js" />
+    <Content Include="Test\admin panel\src\assets\libs\fullcalendar\dist\locale\el.js" />
+    <Content Include="Test\admin panel\src\assets\libs\fullcalendar\dist\locale\en-au.js" />
+    <Content Include="Test\admin panel\src\assets\libs\fullcalendar\dist\locale\en-ca.js" />
+    <Content Include="Test\admin panel\src\assets\libs\fullcalendar\dist\locale\en-gb.js" />
+    <Content Include="Test\admin panel\src\assets\libs\fullcalendar\dist\locale\en-ie.js" />
+    <Content Include="Test\admin panel\src\assets\libs\fullcalendar\dist\locale\en-nz.js" />
+    <Content Include="Test\admin panel\src\assets\libs\fullcalendar\dist\locale\es-do.js" />
+    <Content Include="Test\admin panel\src\assets\libs\fullcalendar\dist\locale\es-us.js" />
+    <Content Include="Test\admin panel\src\assets\libs\fullcalendar\dist\locale\es.js" />
+    <Content Include="Test\admin panel\src\assets\libs\fullcalendar\dist\locale\et.js" />
+    <Content Include="Test\admin panel\src\assets\libs\fullcalendar\dist\locale\eu.js" />
+    <Content Include="Test\admin panel\src\assets\libs\fullcalendar\dist\locale\fa.js" />
+    <Content Include="Test\admin panel\src\assets\libs\fullcalendar\dist\locale\fi.js" />
+    <Content Include="Test\admin panel\src\assets\libs\fullcalendar\dist\locale\fr-ca.js" />
+    <Content Include="Test\admin panel\src\assets\libs\fullcalendar\dist\locale\fr-ch.js" />
+    <Content Include="Test\admin panel\src\assets\libs\fullcalendar\dist\locale\fr.js" />
+    <Content Include="Test\admin panel\src\assets\libs\fullcalendar\dist\locale\gl.js" />
+    <Content Include="Test\admin panel\src\assets\libs\fullcalendar\dist\locale\he.js" />
+    <Content Include="Test\admin panel\src\assets\libs\fullcalendar\dist\locale\hi.js" />
+    <Content Include="Test\admin panel\src\assets\libs\fullcalendar\dist\locale\hr.js" />
+    <Content Include="Test\admin panel\src\assets\libs\fullcalendar\dist\locale\hu.js" />
+    <Content Include="Test\admin panel\src\assets\libs\fullcalendar\dist\locale\id.js" />
+    <Content Include="Test\admin panel\src\assets\libs\fullcalendar\dist\locale\is.js" />
+    <Content Include="Test\admin panel\src\assets\libs\fullcalendar\dist\locale\it.js" />
+    <Content Include="Test\admin panel\src\assets\libs\fullcalendar\dist\locale\ja.js" />
+    <Content Include="Test\admin panel\src\assets\libs\fullcalendar\dist\locale\ka.js" />
+    <Content Include="Test\admin panel\src\assets\libs\fullcalendar\dist\locale\kk.js" />
+    <Content Include="Test\admin panel\src\assets\libs\fullcalendar\dist\locale\ko.js" />
+    <Content Include="Test\admin panel\src\assets\libs\fullcalendar\dist\locale\lb.js" />
+    <Content Include="Test\admin panel\src\assets\libs\fullcalendar\dist\locale\lt.js" />
+    <Content Include="Test\admin panel\src\assets\libs\fullcalendar\dist\locale\lv.js" />
+    <Content Include="Test\admin panel\src\assets\libs\fullcalendar\dist\locale\mk.js" />
+    <Content Include="Test\admin panel\src\assets\libs\fullcalendar\dist\locale\ms-my.js" />
+    <Content Include="Test\admin panel\src\assets\libs\fullcalendar\dist\locale\ms.js" />
+    <Content Include="Test\admin panel\src\assets\libs\fullcalendar\dist\locale\nb.js" />
+    <Content Include="Test\admin panel\src\assets\libs\fullcalendar\dist\locale\nl-be.js" />
+    <Content Include="Test\admin panel\src\assets\libs\fullcalendar\dist\locale\nl.js" />
+    <Content Include="Test\admin panel\src\assets\libs\fullcalendar\dist\locale\nn.js" />
+    <Content Include="Test\admin panel\src\assets\libs\fullcalendar\dist\locale\pl.js" />
+    <Content Include="Test\admin panel\src\assets\libs\fullcalendar\dist\locale\pt-br.js" />
+    <Content Include="Test\admin panel\src\assets\libs\fullcalendar\dist\locale\pt.js" />
+    <Content Include="Test\admin panel\src\assets\libs\fullcalendar\dist\locale\ro.js" />
+    <Content Include="Test\admin panel\src\assets\libs\fullcalendar\dist\locale\ru.js" />
+    <Content Include="Test\admin panel\src\assets\libs\fullcalendar\dist\locale\sk.js" />
+    <Content Include="Test\admin panel\src\assets\libs\fullcalendar\dist\locale\sl.js" />
+    <Content Include="Test\admin panel\src\assets\libs\fullcalendar\dist\locale\sq.js" />
+    <Content Include="Test\admin panel\src\assets\libs\fullcalendar\dist\locale\sr-cyrl.js" />
+    <Content Include="Test\admin panel\src\assets\libs\fullcalendar\dist\locale\sr.js" />
+    <Content Include="Test\admin panel\src\assets\libs\fullcalendar\dist\locale\sv.js" />
+    <Content Include="Test\admin panel\src\assets\libs\fullcalendar\dist\locale\th.js" />
+    <Content Include="Test\admin panel\src\assets\libs\fullcalendar\dist\locale\tr.js" />
+    <Content Include="Test\admin panel\src\assets\libs\fullcalendar\dist\locale\uk.js" />
+    <Content Include="Test\admin panel\src\assets\libs\fullcalendar\dist\locale\vi.js" />
+    <Content Include="Test\admin panel\src\assets\libs\fullcalendar\dist\locale\zh-cn.js" />
+    <Content Include="Test\admin panel\src\assets\libs\fullcalendar\dist\locale\zh-hk.js" />
+    <Content Include="Test\admin panel\src\assets\libs\fullcalendar\dist\locale\zh-tw.js" />
+    <Content Include="Test\admin panel\src\assets\libs\jquery\dist\core.js" />
+    <Content Include="Test\admin panel\src\assets\libs\jquery\dist\jquery.min.js" />
+    <Content Include="Test\admin panel\src\assets\libs\jquery\dist\jquery.slim.min.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\ender.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\af.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\ar-dz.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\ar-kw.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\ar-ly.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\ar-ma.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\ar-sa.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\ar-tn.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\ar.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\az.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\be.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\bg.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\bm.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\bn.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\bo.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\br.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\bs.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\ca.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\cs.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\cv.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\cy.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\da.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\de-at.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\de-ch.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\de.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\dv.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\el.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\en-au.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\en-ca.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\en-gb.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\en-ie.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\en-il.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\en-nz.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\en-SG.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\eo.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\es-do.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\es-us.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\es.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\et.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\eu.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\fa.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\fi.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\fo.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\fr-ca.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\fr-ch.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\fr.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\fy.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\ga.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\gd.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\gl.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\gom-latn.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\gu.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\he.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\hi.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\hr.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\hu.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\hy-am.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\id.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\is.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\it-ch.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\it.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\ja.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\jv.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\ka.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\kk.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\km.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\kn.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\ko.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\ku.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\ky.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\lb.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\lo.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\lt.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\lv.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\me.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\mi.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\mk.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\ml.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\mn.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\mr.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\ms-my.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\ms.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\mt.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\my.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\nb.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\ne.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\nl-be.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\nl.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\nn.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\pa-in.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\pl.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\pt-br.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\pt.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\ro.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\ru.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\sd.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\se.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\si.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\sk.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\sl.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\sq.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\sr-cyrl.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\sr.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\ss.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\sv.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\sw.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\ta.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\te.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\tet.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\tg.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\th.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\tl-ph.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\tlh.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\tr.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\tzl.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\tzm-latn.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\tzm.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\ug-cn.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\uk.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\ur.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\uz-latn.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\uz.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\vi.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\x-pseudo.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\yo.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\zh-cn.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\zh-hk.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\locale\zh-tw.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\min\locales.min.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\min\moment-with-locales.min.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\min\moment.min.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\moment.js" />
+    <Content Include="Test\admin panel\src\assets\libs\moment\package.js" />
+    <Content Include="Test\admin panel\src\assets\libs\morris.js\morris.css" />
+    <Content Include="Test\admin panel\src\assets\libs\morris.js\morris.min.js" />
+    <Content Include="Test\admin panel\src\assets\libs\perfect-scrollbar\dist\css\perfect-scrollbar.min.css" />
+    <Content Include="Test\admin panel\src\assets\libs\perfect-scrollbar\dist\js\perfect-scrollbar.jquery.min.js" />
+    <Content Include="Test\admin panel\src\assets\libs\perfect-scrollbar\dist\js\perfect-scrollbar.min.js" />
+    <Content Include="Test\admin panel\src\assets\libs\perfect-scrollbar\dist\perfect-scrollbar.common.js" />
+    <Content Include="Test\admin panel\src\assets\libs\perfect-scrollbar\dist\perfect-scrollbar.esm.js" />
+    <Content Include="Test\admin panel\src\assets\libs\perfect-scrollbar\dist\perfect-scrollbar.jquery.min.js" />
+    <Content Include="Test\admin panel\src\assets\libs\perfect-scrollbar\dist\perfect-scrollbar.min.js" />
+    <Content Include="Test\admin panel\src\assets\libs\popper.js\dist\esm\popper-utils.min.js" />
+    <Content Include="Test\admin panel\src\assets\libs\popper.js\dist\esm\popper.min.js" />
+    <Content Include="Test\admin panel\src\assets\libs\popper.js\dist\popper-utils.min.js" />
+    <Content Include="Test\admin panel\src\assets\libs\popper.js\dist\popper.min.js" />
+    <Content Include="Test\admin panel\src\assets\libs\popper.js\dist\umd\popper-utils.min.js" />
+    <Content Include="Test\admin panel\src\assets\libs\popper.js\dist\umd\popper.min.js" />
+    <Content Include="Test\admin panel\src\assets\libs\raphael\dev\banner.txt" />
+    <Content Include="Test\admin panel\src\assets\libs\raphael\dev\raphael.amd.js" />
+    <Content Include="Test\admin panel\src\assets\libs\raphael\dev\raphael.core.js" />
+    <Content Include="Test\admin panel\src\assets\libs\raphael\dev\raphael.svg.js" />
+    <Content Include="Test\admin panel\src\assets\libs\raphael\dev\raphael.vml.js" />
+    <Content Include="Test\admin panel\src\assets\libs\raphael\dev\raphaelTest.html" />
+    <Content Include="Test\admin panel\src\assets\libs\raphael\license.txt" />
+    <Content Include="Test\admin panel\src\assets\libs\raphael\raphael.min.js" />
+    <Content Include="Test\admin panel\src\assets\libs\raphael\raphael.no-deps.min.js" />
+    <Content Include="Test\admin panel\src\dist\css\fonts\Gilmer-Bold.svg" />
+    <Content Include="Test\admin panel\src\dist\css\fonts\Gilmer-Heavy.svg" />
+    <Content Include="Test\admin panel\src\dist\css\fonts\Gilmer-Medium.svg" />
+    <Content Include="Test\admin panel\src\dist\css\fonts\Gilmer-Regular.svg" />
+    <Content Include="Test\admin panel\src\dist\css\fonts\TofinoPersonal-Book.svg" />
+    <Content Include="Test\admin panel\src\dist\css\fonts\TofinoPersonal-Medium.svg" />
+    <Content Include="Test\admin panel\src\dist\css\fonts\TofinoPersonal-Regular.svg" />
+    <Content Include="Test\admin panel\src\dist\css\icons\font-awesome\css\fa-brands.css" />
+    <Content Include="Test\admin panel\src\dist\css\icons\font-awesome\css\fa-brands.min.css" />
+    <Content Include="Test\admin panel\src\dist\css\icons\font-awesome\css\fa-regular.css" />
+    <Content Include="Test\admin panel\src\dist\css\icons\font-awesome\css\fa-regular.min.css" />
+    <Content Include="Test\admin panel\src\dist\css\icons\font-awesome\css\fa-solid.css" />
+    <Content Include="Test\admin panel\src\dist\css\icons\font-awesome\css\fa-solid.min.css" />
+    <Content Include="Test\admin panel\src\dist\css\icons\font-awesome\css\fontawesome-all.css" />
+    <Content Include="Test\admin panel\src\dist\css\icons\font-awesome\css\fontawesome-all.min.css" />
+    <Content Include="Test\admin panel\src\dist\css\icons\font-awesome\css\fontawesome.css" />
+    <Content Include="Test\admin panel\src\dist\css\icons\font-awesome\css\fontawesome.min.css" />
+    <Content Include="Test\admin panel\src\dist\css\icons\font-awesome\webfonts\fa-brands-400.svg" />
+    <Content Include="Test\admin panel\src\dist\css\icons\font-awesome\webfonts\fa-regular-400.svg" />
+    <Content Include="Test\admin panel\src\dist\css\icons\font-awesome\webfonts\fa-solid-900.svg" />
+    <Content Include="Test\admin panel\src\dist\css\icons\simple-line-icons\css\simple-line-icons.css" />
+    <Content Include="Test\admin panel\src\dist\css\icons\simple-line-icons\fonts\Simple-Line-Icons.svg" />
+    <Content Include="Test\admin panel\src\dist\css\icons\themify-icons\fonts\themify.svg" />
+    <Content Include="Test\admin panel\src\dist\css\icons\themify-icons\ie7\ie7.css" />
+    <Content Include="Test\admin panel\src\dist\css\icons\themify-icons\ie7\ie7.js" />
+    <Content Include="Test\admin panel\src\dist\css\icons\themify-icons\themify-icons.css" />
+    <Content Include="Test\admin panel\src\dist\css\pandalocker.min.css" />
+    <Content Include="Test\admin panel\src\dist\css\style.css" />
+    <Content Include="Test\admin panel\src\dist\css\style.min.css" />
+    <Content Include="Test\admin panel\src\dist\img\button-loader-f2f2f2.gif" />
+    <Content Include="Test\admin panel\src\dist\img\lock-icon.png" />
+    <Content Include="Test\admin panel\src\dist\img\social-icons.png" />
+    <Content Include="Test\admin panel\src\dist\js\app-style-switcher.js" />
+    <Content Include="Test\admin panel\src\dist\js\app-style-switcher.min.js" />
+    <Content Include="Test\admin panel\src\dist\js\custom.js" />
+    <Content Include="Test\admin panel\src\dist\js\custom.min.js" />
+    <Content Include="Test\admin panel\src\dist\js\feather.min.js" />
+    <Content Include="Test\admin panel\src\dist\js\jquery.ui.highlight.min.js" />
+    <Content Include="Test\admin panel\src\dist\js\pages\calendar\cal-init.js" />
+    <Content Include="Test\admin panel\src\dist\js\pages\calendar\cal-init.min.js" />
+    <Content Include="Test\admin panel\src\dist\js\pages\chartist\chartist-init.css" />
+    <Content Include="Test\admin panel\src\dist\js\pages\chartist\chartist-init.js" />
+    <Content Include="Test\admin panel\src\dist\js\pages\chartist\chartist-init.min.js" />
+    <Content Include="Test\admin panel\src\dist\js\pages\chartist\chartist-plugin-tooltip.js" />
+    <Content Include="Test\admin panel\src\dist\js\pages\chartist\chartist-plugin-tooltip.min.js" />
+    <Content Include="Test\admin panel\src\dist\js\pages\chartjs\chartjs.init.js" />
+    <Content Include="Test\admin panel\src\dist\js\pages\chartjs\chartjs.init.min.js" />
+    <Content Include="Test\admin panel\src\dist\js\pages\dashboards\dashboard1.js" />
+    <Content Include="Test\admin panel\src\dist\js\pages\dashboards\dashboard1.min.js" />
+    <Content Include="Test\admin panel\src\dist\js\pages\datatable\datatable-basic.init.js" />
+    <Content Include="Test\admin panel\src\dist\js\pages\datatable\datatable-basic.init.min.js" />
+    <Content Include="Test\admin panel\src\dist\js\pages\morris\morris-data.js" />
+    <Content Include="Test\admin panel\src\dist\js\pages\morris\morris-data.min.js" />
+    <Content Include="Test\admin panel\src\dist\js\pandalocker.js" />
+    <Content Include="Test\admin panel\src\dist\js\sidebarmenu.js" />
+    <Content Include="Test\admin panel\src\dist\js\sidebarmenu.min.js" />
+    <Content Include="Test\admin panel\src\gulpfile.js" />
+    <Content Include="Test\admin panel\src\html\app-calendar.html" />
+    <Content Include="Test\admin panel\src\html\app-chat.html" />
+    <Content Include="Test\admin panel\src\html\authentication-login1.html" />
+    <Content Include="Test\admin panel\src\html\authentication-register1.html" />
+    <Content Include="Test\admin panel\src\html\chart-chart-js.html" />
+    <Content Include="Test\admin panel\src\html\chart-knob.html" />
+    <Content Include="Test\admin panel\src\html\chart-morris.html" />
+    <Content Include="Test\admin panel\src\html\form-checkbox-radio.html" />
+    <Content Include="Test\admin panel\src\html\form-input-grid.html" />
+    <Content Include="Test\admin panel\src\html\form-inputs.html" />
+    <Content Include="Test\admin panel\src\html\icon-fontawesome.html" />
+    <Content Include="Test\admin panel\src\html\icon-simple-lineicon.html" />
+    <Content Include="Test\admin panel\src\html\index.html" />
+    <Content Include="Test\admin panel\src\html\table-basic.html" />
+    <Content Include="Test\admin panel\src\html\table-dark-basic.html" />
+    <Content Include="Test\admin panel\src\html\table-datatable-basic.html" />
+    <Content Include="Test\admin panel\src\html\table-layout-coloured.html" />
+    <Content Include="Test\admin panel\src\html\table-sizing.html" />
+    <Content Include="Test\admin panel\src\html\ticket-list.html" />
+    <Content Include="Test\admin panel\src\html\ui-bootstrap.html" />
+    <Content Include="Test\admin panel\src\html\ui-breadcrumb.html" />
+    <Content Include="Test\admin panel\src\html\ui-buttons.html" />
+    <Content Include="Test\admin panel\src\html\ui-cards.html" />
+    <Content Include="Test\admin panel\src\html\ui-carousel.html" />
+    <Content Include="Test\admin panel\src\html\ui-grid.html" />
+    <Content Include="Test\admin panel\src\html\ui-list-media.html" />
+    <Content Include="Test\admin panel\src\html\ui-modals.html" />
+    <Content Include="Test\admin panel\src\html\ui-notification.html" />
+    <Content Include="Test\admin panel\src\html\ui-popover.html" />
+    <Content Include="Test\admin panel\src\html\ui-progressbar.html" />
+    <Content Include="Test\admin panel\src\html\ui-scrollspy.html" />
+    <Content Include="Test\admin panel\src\html\ui-spinner.html" />
+    <Content Include="Test\admin panel\src\html\ui-tab.html" />
+    <Content Include="Test\admin panel\src\html\ui-toasts.html" />
+    <Content Include="Test\admin panel\src\html\ui-tooltip-popover.html" />
+    <Content Include="Test\admin panel\src\html\ui-typography.html" />
+    <Content Include="Test\autocomplete.html" />
+    <Content Include="Test\Notification.html" />
+    <Content Include="Test\NotifyJs\css\notify.css" />
+    <Content Include="Test\NotifyJs\css\prettify.css" />
+    <Content Include="Test\NotifyJs\index.html" />
+    <Content Include="Test\NotifyJs\js\notify.js" />
+    <Content Include="Test\NotifyJs\js\prettify.js" />
+    <Content Include="PracticeQuestions.aspx" />
+    <Content Include="Profile.aspx" />
+    <Content Include="Question.aspx" />
+    <Content Include="QuestionPaper.aspx" />
+    <Content Include="Test\Quiz App Master\app.css" />
+    <Content Include="Test\Quiz App Master\end.html" />
+    <Content Include="Test\Quiz App Master\end.js" />
+    <Content Include="Test\Quiz App Master\game.css" />
+    <Content Include="Test\Quiz App Master\game.html" />
+    <Content Include="Test\Quiz App Master\game.js" />
+    <Content Include="Test\Quiz App Master\highscores.css" />
+    <Content Include="Test\Quiz App Master\highscores.html" />
+    <Content Include="Test\Quiz App Master\highscores.js" />
+    <Content Include="Test\Quiz App Master\index.html" />
+    <Content Include="Test\Quiz website\404.html" />
+    <Content Include="Test\Quiz website\500.html" />
+    <Content Include="Test\Quiz website\accordion.html" />
+    <Content Include="Test\Quiz website\add-course.html" />
+    <Content Include="Test\Quiz website\add-department.html" />
+    <Content Include="Test\Quiz website\add-library-assets.html" />
+    <Content Include="Test\Quiz website\add-professor.html" />
+    <Content Include="Test\Quiz website\add-student.html" />
+    <Content Include="Test\Quiz website\advance-form-element.html" />
+    <Content Include="Test\Quiz website\alerts.html" />
+    <Content Include="Test\Quiz website\all-courses.html" />
+    <Content Include="Test\Quiz website\all-professors.html" />
+    <Content Include="Test\Quiz website\all-students.html" />
+    <Content Include="Test\Quiz website\analytics.html" />
+    <Content Include="Test\Quiz website\area-charts.html" />
+    <Content Include="Test\Quiz website\bar-charts.html" />
+    <Content Include="Test\Quiz website\basic-form-element.html" />
+    <Content Include="Test\Quiz website\buttons.html" />
+    <Content Include="Test\Quiz website\c3.html" />
+    <Content Include="Test\Quiz website\code-editor.html" />
+    <Content Include="Test\Quiz website\course-info.html" />
+    <Content Include="Test\Quiz website\course-payment.html" />
+    <Content Include="Test\Quiz website\css\accordions.css" />
+    <Content Include="Test\Quiz website\css\alerts.css" />
+    <Content Include="Test\Quiz website\css\animate.css" />
+    <Content Include="Test\Quiz website\css\bootstrap.min.css" />
+    <Content Include="Test\Quiz website\css\buttons.css" />
+    <Content Include="Test\Quiz website\css\c3\c3.min.css" />
+    <Content Include="Test\Quiz website\css\calendar\fullcalendar.min.css" />
+    <Content Include="Test\Quiz website\css\calendar\fullcalendar.print.min.css" />
+    <Content Include="Test\Quiz website\css\chosen\bootstrap-chosen.css" />
+    <Content Include="Test\Quiz website\css\chosen\chosen-sprite.png" />
+    <Content Include="Test\Quiz website\css\code-editor\ambiance.css" />
+    <Content Include="Test\Quiz website\css\code-editor\codemirror.css" />
+    <Content Include="Test\Quiz website\css\colorpicker\colorpicker.css" />
+    <Content Include="Test\Quiz website\css\cropper\cropper.min.css" />
+    <Content Include="Test\Quiz website\css\data-table\bootstrap-editable.css" />
+    <Content Include="Test\Quiz website\css\data-table\bootstrap-table.css" />
+    <Content Include="Test\Quiz website\css\datapicker\colorpicker.css" />
+    <Content Include="Test\Quiz website\css\datapicker\datepicker3.css" />
+    <Content Include="Test\Quiz website\css\dropzone\dropzone.css" />
+    <Content Include="Test\Quiz website\css\duallistbox\bootstrap-duallistbox.min.css" />
+    <Content Include="Test\Quiz website\css\editor\bootstrap-editable.css" />
+    <Content Include="Test\Quiz website\css\editor\datetimepicker.css" />
+    <Content Include="Test\Quiz website\css\editor\select2.css" />
+    <Content Include="Test\Quiz website\css\editor\x-editor-style.css" />
+    <Content Include="Test\Quiz website\css\educate-custon-icon.css" />
+    <Content Include="Test\Quiz website\css\font-awesome.min.css" />
+    <Content Include="Test\Quiz website\css\form.css" />
+    <Content Include="Test\Quiz website\css\form\all-type-forms.css" />
+    <Content Include="Test\Quiz website\css\form\themesaller-forms.css" />
+    <Content Include="Test\Quiz website\css\ionRangeSlider\ion.rangeSlider.css" />
+    <Content Include="Test\Quiz website\css\ionRangeSlider\ion.rangeSlider.skinFlat.css" />
+    <Content Include="Test\Quiz website\css\ionRangeSlider\sprite-skin-flat.png" />
+    <Content Include="Test\Quiz website\css\main.css" />
+    <Content Include="Test\Quiz website\css\meanmenu.min.css" />
+    <Content Include="Test\Quiz website\css\metisMenu\metisMenu-vertical.css" />
+    <Content Include="Test\Quiz website\css\metisMenu\metisMenu.min.css" />
+    <Content Include="Test\Quiz website\css\modals.css" />
+    <Content Include="Test\Quiz website\css\morrisjs\morris.css" />
+    <Content Include="Test\Quiz website\css\normalize.css" />
+    <Content Include="Test\Quiz website\css\notifications\Lobibox.min.css" />
+    <Content Include="Test\Quiz website\css\notifications\notifications.css" />
+    <Content Include="Test\Quiz website\css\owl.carousel.css" />
+    <Content Include="Test\Quiz website\css\owl.theme.css" />
+    <Content Include="Test\Quiz website\css\owl.transitions.css" />
+    <Content Include="Test\Quiz website\css\preloader\preloader-style.css" />
+    <Content Include="Test\Quiz website\css\responsive.css" />
+    <Content Include="Test\Quiz website\css\scrollbar\jquery.mCustomScrollbar.min.css" />
+    <Content Include="Test\Quiz website\css\select2\select2.min.css" />
+    <Content Include="Test\Quiz website\css\summernote\summernote.css" />
+    <Content Include="Test\Quiz website\css\tabs.css" />
+    <Content Include="Test\Quiz website\css\touchspin\jquery.bootstrap-touchspin.min.css" />
+    <Content Include="Test\Quiz website\css\tree-viewer\32px.png" />
+    <Content Include="Test\Quiz website\css\tree-viewer\throbber.gif" />
+    <Content Include="Test\Quiz website\css\tree-viewer\tree-viewer.css" />
+    <Content Include="Test\Quiz website\data-maps.html" />
+    <Content Include="Test\Quiz website\data-table.html" />
+    <Content Include="Test\Quiz website\departments.html" />
+    <Content Include="Test\Quiz website\dual-list-box.html" />
+    <Content Include="Test\Quiz website\edit-course.html" />
+    <Content Include="Test\Quiz website\edit-department.html" />
+    <Content Include="Test\Quiz website\edit-library-assets.html" />
+    <Content Include="Test\Quiz website\edit-professor.html" />
+    <Content Include="Test\Quiz website\edit-student.html" />
+    <Content Include="Test\Quiz website\events.html" />
+    <Content Include="Test\Quiz website\fonts\educate-icon.svg" />
+    <Content Include="Test\Quiz website\fonts\fontawesome-webfont.svg" />
+    <Content Include="Test\Quiz website\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Test\Quiz website\google-map.html" />
+    <Content Include="Test\Quiz website\images-cropper.html" />
+    <Content Include="Test\Quiz website\img\blog-details\1.jpg" />
+    <Content Include="Test\Quiz website\img\clear.png" />
+    <Content Include="Test\Quiz website\img\contact\1.jpg" />
+    <Content Include="Test\Quiz website\img\contact\2.jpg" />
+    <Content Include="Test\Quiz website\img\contact\3.jpg" />
+    <Content Include="Test\Quiz website\img\contact\4.jpg" />
+    <Content Include="Test\Quiz website\img\courses\1.jpg" />
+    <Content Include="Test\Quiz website\img\courses\2.jpg" />
+    <Content Include="Test\Quiz website\img\courses\3.jpg" />
+    <Content Include="Test\Quiz website\img\cropper\1.jpg" />
+    <Content Include="Test\Quiz website\img\favicon.ico" />
+    <Content Include="Test\Quiz website\img\green1.png" />
+    <Content Include="Test\Quiz website\img\loading.gif" />
+    <Content Include="Test\Quiz website\img\logo\logo.png" />
+    <Content Include="Test\Quiz website\img\logo\logosn.png" />
+    <Content Include="Test\Quiz website\img\notification\1.jpg" />
+    <Content Include="Test\Quiz website\img\notification\2.jpg" />
+    <Content Include="Test\Quiz website\img\notification\3.jpg" />
+    <Content Include="Test\Quiz website\img\notification\4.jpg" />
+    <Content Include="Test\Quiz website\img\notification\5.jpg" />
+    <Content Include="Test\Quiz website\img\notification\6.jpg" />
+    <Content Include="Test\Quiz website\img\product\book-1.jpg" />
+    <Content Include="Test\Quiz website\img\product\book-2.jpg" />
+    <Content Include="Test\Quiz website\img\product\book-3.jpg" />
+    <Content Include="Test\Quiz website\img\product\book-4.jpg" />
+    <Content Include="Test\Quiz website\img\product\pro4.jpg" />
+    <Content Include="Test\Quiz website\img\product\profile-bg.jpg" />
+    <Content Include="Test\Quiz website\img\profile\1.jpg" />
+    <Content Include="Test\Quiz website\img\student\1.jpg" />
+    <Content Include="Test\Quiz website\img\student\2.jpg" />
+    <Content Include="Test\Quiz website\img\student\3.jpg" />
+    <Content Include="Test\Quiz website\img\student\4.jpg" />
+    <Content Include="Test\Quiz website\index-1.html" />
+    <Content Include="Test\Quiz website\index-2.html" />
+    <Content Include="Test\Quiz website\index.html" />
+    <Content Include="Test\Quiz website\js\bootstrap.min.js" />
+    <Content Include="Test\Quiz website\js\c3-charts\c3-active.js" />
+    <Content Include="Test\Quiz website\js\c3-charts\c3.min.js" />
+    <Content Include="Test\Quiz website\js\c3-charts\d3.min.js" />
+    <Content Include="Test\Quiz website\js\calendar\fullcalendar-active.js" />
+    <Content Include="Test\Quiz website\js\calendar\fullcalendar.min.js" />
+    <Content Include="Test\Quiz website\js\calendar\moment.min.js" />
+    <Content Include="Test\Quiz website\js\card.js" />
+    <Content Include="Test\Quiz website\js\charts\area-chart.js" />
+    <Content Include="Test\Quiz website\js\charts\bar-chart.js" />
+    <Content Include="Test\Quiz website\js\charts\Chart.js" />
+    <Content Include="Test\Quiz website\js\charts\line-chart.js" />
+    <Content Include="Test\Quiz website\js\charts\rounded-chart.js" />
+    <Content Include="Test\Quiz website\js\chart\jquery.peity.min.js" />
+    <Content Include="Test\Quiz website\js\chart\peity-active.js" />
+    <Content Include="Test\Quiz website\js\chosen\chosen-active.js" />
+    <Content Include="Test\Quiz website\js\chosen\chosen.jquery.js" />
+    <Content Include="Test\Quiz website\js\chosen\chosen.jquery.min.js" />
+    <Content Include="Test\Quiz website\js\code-editor\code-editor-active.js" />
+    <Content Include="Test\Quiz website\js\code-editor\code-editor.js" />
+    <Content Include="Test\Quiz website\js\code-editor\codemirror.js" />
+    <Content Include="Test\Quiz website\js\colorpicker\color-picker-active.js" />
+    <Content Include="Test\Quiz website\js\colorpicker\jquery.spectrum.min.js" />
+    <Content Include="Test\Quiz website\js\counterup\counterup-active.js" />
+    <Content Include="Test\Quiz website\js\counterup\jquery.counterup.min.js" />
+    <Content Include="Test\Quiz website\js\counterup\waypoints.min.js" />
+    <Content Include="Test\Quiz website\js\cropper\cropper-actice.js" />
+    <Content Include="Test\Quiz website\js\cropper\cropper.min.js" />
+    <Content Include="Test\Quiz website\js\data-map\d3.min.js" />
+    <Content Include="Test\Quiz website\js\data-map\data-maps-active.js" />
+    <Content Include="Test\Quiz website\js\data-map\datamaps.all.min.js" />
+    <Content Include="Test\Quiz website\js\data-map\topojson.js" />
+    <Content Include="Test\Quiz website\js\data-table\bootstrap-editable.js" />
+    <Content Include="Test\Quiz website\js\data-table\bootstrap-table-editable.js" />
+    <Content Include="Test\Quiz website\js\data-table\bootstrap-table-export.js" />
+    <Content Include="Test\Quiz website\js\data-table\bootstrap-table-resizable.js" />
+    <Content Include="Test\Quiz website\js\data-table\bootstrap-table.js" />
+    <Content Include="Test\Quiz website\js\data-table\colResizable-1.5.source.js" />
+    <Content Include="Test\Quiz website\js\data-table\data-table-active.js" />
+    <Content Include="Test\Quiz website\js\data-table\tableExport.js" />
+    <Content Include="Test\Quiz website\js\datapicker\bootstrap-datepicker.js" />
+    <Content Include="Test\Quiz website\js\datapicker\bootstrap-datepicker.min.js" />
+    <Content Include="Test\Quiz website\js\datapicker\datepicker-active.js" />
+    <Content Include="Test\Quiz website\js\datepicker\datepicker-active.js" />
+    <Content Include="Test\Quiz website\js\datepicker\jquery-ui.min.js" />
+    <Content Include="Test\Quiz website\js\dropzone\dropzone.js" />
+    <Content Include="Test\Quiz website\js\duallistbox\duallistbox.active.js" />
+    <Content Include="Test\Quiz website\js\duallistbox\jquery.bootstrap-duallistbox.js" />
+    <Content Include="Test\Quiz website\js\e-payment.js" />
+    <Content Include="Test\Quiz website\js\editable\bootstrap-datetimepicker.js" />
+    <Content Include="Test\Quiz website\js\editable\bootstrap-editable.js" />
+    <Content Include="Test\Quiz website\js\editable\jquery.mockjax.js" />
+    <Content Include="Test\Quiz website\js\editable\mock-active.js" />
+    <Content Include="Test\Quiz website\js\editable\moment.min.js" />
+    <Content Include="Test\Quiz website\js\editable\select2.js" />
+    <Content Include="Test\Quiz website\js\editable\xediable-active.js" />
+    <Content Include="Test\Quiz website\js\form-validation\form-active.js" />
+    <Content Include="Test\Quiz website\js\form-validation\jquery.form.min.js" />
+    <Content Include="Test\Quiz website\js\form-validation\jquery.validate.min.js" />
+    <Content Include="Test\Quiz website\js\google.maps\google.maps-active.js" />
+    <Content Include="Test\Quiz website\js\icheck\icheck-active.js" />
+    <Content Include="Test\Quiz website\js\icheck\icheck.min.js" />
+    <Content Include="Test\Quiz website\js\input-mask\jasny-bootstrap.min.js" />
+    <Content Include="Test\Quiz website\js\ionRangeSlider\ion.rangeSlider.active.js" />
+    <Content Include="Test\Quiz website\js\ionRangeSlider\ion.rangeSlider.min.js" />
+    <Content Include="Test\Quiz website\js\jquery-price-slider.js" />
+    <Content Include="Test\Quiz website\js\jquery.maskedinput.min.js" />
+    <Content Include="Test\Quiz website\js\jquery.meanmenu.js" />
+    <Content Include="Test\Quiz website\js\jquery.payform.min.js" />
+    <Content Include="Test\Quiz website\js\jquery.scrollUp.min.js" />
+    <Content Include="Test\Quiz website\js\jquery.sticky.js" />
+    <Content Include="Test\Quiz website\js\knob\jquery.knob.js" />
+    <Content Include="Test\Quiz website\js\knob\knob-active.js" />
+    <Content Include="Test\Quiz website\js\main.js" />
+    <Content Include="Test\Quiz website\js\masking-active.js" />
+    <Content Include="Test\Quiz website\js\metisMenu\metisMenu-active.js" />
+    <Content Include="Test\Quiz website\js\metisMenu\metisMenu.min.js" />
+    <Content Include="Test\Quiz website\js\morrisjs\home3-active.js" />
+    <Content Include="Test\Quiz website\js\morrisjs\morris-active-pro.js" />
+    <Content Include="Test\Quiz website\js\morrisjs\morris-active.js" />
+    <Content Include="Test\Quiz website\js\morrisjs\morris.js" />
+    <Content Include="Test\Quiz website\js\morrisjs\raphael-min.js" />
+    <Content Include="Test\Quiz website\js\multiple-email\multiple-email-active.js" />
+    <Content Include="Test\Quiz website\js\notifications\Lobibox.js" />
+    <Content Include="Test\Quiz website\js\notifications\notification-active.js" />
+    <Content Include="Test\Quiz website\js\owl.carousel.min.js" />
+    <Content Include="Test\Quiz website\js\password-meter\password-meter-active.js" />
+    <Content Include="Test\Quiz website\js\password-meter\pwstrength-bootstrap.min.js" />
+    <Content Include="Test\Quiz website\js\password-meter\zxcvbn.js" />
+    <Content Include="Test\Quiz website\js\pdf\jquery.media.js" />
+    <Content Include="Test\Quiz website\js\pdf\pdf-active.js" />
+    <Content Include="Test\Quiz website\js\peity\jquery.peity.min.js" />
+    <Content Include="Test\Quiz website\js\peity\peity-active.js" />
+    <Content Include="Test\Quiz website\js\plugins.js" />
+    <Content Include="Test\Quiz website\js\rangle-slider\jquery-ui-1.10.4.custom.min.js" />
+    <Content Include="Test\Quiz website\js\rangle-slider\jquery-ui-touch-punch.min.js" />
+    <Content Include="Test\Quiz website\js\rangle-slider\rangle-active.js" />
+    <Content Include="Test\Quiz website\js\scrollbar\jquery.mCustomScrollbar.concat.min.js" />
+    <Content Include="Test\Quiz website\js\scrollbar\mCustomScrollbar-active.js" />
+    <Content Include="Test\Quiz website\js\select2\select2-active.js" />
+    <Content Include="Test\Quiz website\js\select2\select2.full.min.js" />
+    <Content Include="Test\Quiz website\js\sparkline\jquery.charts-sparkline.js" />
+    <Content Include="Test\Quiz website\js\sparkline\jquery.sparkline.min.js" />
+    <Content Include="Test\Quiz website\js\sparkline\sparkline-active.js" />
+    <Content Include="Test\Quiz website\js\summernote\summernote-active.js" />
+    <Content Include="Test\Quiz website\js\summernote\summernote.min.js" />
+    <Content Include="Test\Quiz website\js\tab.js" />
+    <Content Include="Test\Quiz website\js\tawk-chat.js" />
+    <Content Include="Test\Quiz website\js\touchspin\jquery.bootstrap-touchspin.min.js" />
+    <Content Include="Test\Quiz website\js\touchspin\touchspin-active.js" />
+    <Content Include="Test\Quiz website\js\tree-line\jstree.active.js" />
+    <Content Include="Test\Quiz website\js\tree-line\jstree.min.js" />
+    <Content Include="Test\Quiz website\js\vendor\jquery-1.12.4.min.js" />
+    <Content Include="Test\Quiz website\js\vendor\modernizr-2.8.3.min.js" />
+    <Content Include="Test\Quiz website\js\vendor\modernizr-custom.js" />
+    <Content Include="Test\Quiz website\js\wizard\jquery.steps.js" />
+    <Content Include="Test\Quiz website\js\wizard\steps-active.js" />
+    <Content Include="Test\Quiz website\js\wow.min.js" />
+    <Content Include="Test\Quiz website\library-assets.html" />
+    <Content Include="Test\Quiz website\line-charts.html" />
+    <Content Include="Test\Quiz website\lock.html" />
+    <Content Include="Test\Quiz website\login.html" />
+    <Content Include="Test\Quiz website\mailbox-compose.html" />
+    <Content Include="Test\Quiz website\mailbox-view.html" />
+    <Content Include="Test\Quiz website\mailbox.html" />
+    <Content Include="Test\Quiz website\modals.html" />
+    <Content Include="Test\Quiz website\multi-upload.html" />
+    <Content Include="Test\Quiz website\notifications.html" />
+    <Content Include="Test\Quiz website\password-meter.html" />
+    <Content Include="Test\Quiz website\password-recovery.html" />
+    <Content Include="Test\Quiz website\pdf-viewer.html" />
+    <Content Include="Test\Quiz website\peity.html" />
+    <Content Include="Test\Quiz website\preloader.html" />
+    <Content Include="Test\Quiz website\professor-profile.html" />
+    <Content Include="Test\Quiz website\register.html" />
+    <Content Include="Test\Quiz website\rounded-chart.html" />
+    <Content Include="Test\Quiz website\sparkline.html" />
+    <Content Include="Test\Quiz website\static-table.html" />
+    <Content Include="Test\Quiz website\student-profile.html" />
+    <Content Include="Test\Quiz website\style.css" />
+    <Content Include="Test\Quiz website\tabs.html" />
+    <Content Include="Test\Quiz website\tinymc.html" />
+    <Content Include="Test\Quiz website\tree-view.html" />
+    <Content Include="Test\Quiz website\widgets.html" />
+    <Content Include="Test\Quiz website\x-editable.html" />
+    <Content Include="Test\quiz.html" />
+    <Content Include="quiz_files\andi-min.png" />
+    <Content Include="quiz_files\android_icon.png" />
+    <Content Include="quiz_files\animate.css" />
+    <Content Include="quiz_files\apple%25202-min.png" />
+    <Content Include="quiz_files\bootstrap-select.css" />
+    <Content Include="quiz_files\bootstrap-select.js" />
+    <Content Include="quiz_files\bootstrap.css" />
+    <Content Include="quiz_files\bootstrap.js" />
+    <Content Include="quiz_files\bootstrapValidator.js" />
+    <Content Include="quiz_files\cmq.css" />
+    <Content Include="quiz_files\component.css" />
+    <Content Include="quiz_files\css.css" />
+    <Content Include="quiz_files\css1.css" />
+    <Content Include="quiz_files\css2.css" />
+    <Content Include="quiz_files\css3.css" />
+    <Content Include="quiz_files\css4.css" />
+    <Content Include="quiz_files\css5.css" />
+    <Content Include="quiz_files\css_002.css" />
+    <Content Include="quiz_files\fontawesome-all.css" />
+    <Content Include="quiz_files\googleplay-min.png" />
+    <Content Include="quiz_files\html2.png" />
+    <Content Include="quiz_files\java%25201SE-min.png" />
+    <Content Include="quiz_files\jquery-3.js" />
+    <Content Include="quiz_files\lightbox.css" />
+    <Content Include="quiz_files\logo.png" />
+    <Content Include="quiz_files\mediaquiery_min.css" />
+    <Content Include="quiz_files\message.png" />
+    <Content Include="quiz_files\mobile_p.png" />
+    <Content Include="quiz_files\owl.css" />
+    <Content Include="quiz_files\owl.js" />
+    <Content Include="quiz_files\particles.js" />
+    <Content Include="quiz_files\phpnew.png" />
+    <Content Include="quiz_files\ques.png" />
+    <Content Include="quiz_files\responsive0.css" />
+    <Content Include="quiz_files\responsive1.css" />
+    <Content Include="quiz_files\responsive2.css" />
+    <Content Include="quiz_files\responsive3.css" />
+    <Content Include="quiz_files\scripts.js" />
+    <Content Include="quiz_files\seo%25201jav.png" />
+    <Content Include="quiz_files\seo_icon.png" />
+    <Content Include="quiz_files\viewbox.css" />
+    <Content Include="quiz_files\watch.png" />
+    <Content Include="quiz_files\wd.png" />
+    <Content Include="quiz_files\web_dev.png" />
+    <Content Include="quiz_files\wow.js" />
+    <Content Include="quiz_files\ws_logo2.png" />
+    <Content Include="Results.aspx" />
+    <Content Include="Test\NotifyJs\LICENSE" />
+    <Content Include="Test\NotifyJs\README.md" />
+    <Content Include="assets\extra-libs\datatables.net\package.json" />
+    <Content Include="assets\extra-libs\datatables.net\Readme.md" />
+    <Content Include="assets\extra-libs\datatables.net-bs4\package.json" />
+    <Content Include="assets\extra-libs\datatables.net-bs4\Readme.md" />
+    <Content Include="assets\extra-libs\taskboard\example1\load.json" />
+    <Content Include="assets\extra-libs\taskboard\less\lobilist.less" />
+    <Content Include="assets\extra-libs\taskboard\less\mixins.less" />
+    <Content Include="assets\extra-libs\taskboard\less\variables.less" />
+    <Content Include="assets\images\background\Thumbs.db" />
+    <Content Include="assets\images\big\Thumbs.db" />
+    <Content Include="assets\libs\bootstrap\dist\css\bootstrap-grid.css.map" />
+    <Content Include="assets\libs\bootstrap\dist\css\bootstrap-grid.min.css.map" />
+    <Content Include="assets\libs\bootstrap\dist\css\bootstrap-reboot.css.map" />
+    <Content Include="assets\libs\bootstrap\dist\css\bootstrap-reboot.min.css.map" />
+    <Content Include="assets\libs\bootstrap\dist\css\bootstrap.css.map" />
+    <Content Include="assets\libs\bootstrap\dist\css\bootstrap.min.css.map" />
+    <Content Include="assets\libs\bootstrap\dist\js\bootstrap.bundle.js.map" />
+    <Content Include="assets\libs\bootstrap\dist\js\bootstrap.bundle.min.js.map" />
+    <Content Include="assets\libs\bootstrap\dist\js\bootstrap.js.map" />
+    <Content Include="assets\libs\bootstrap\dist\js\bootstrap.min.js.map" />
+    <Content Include="assets\libs\morris.js\bower.travis.json" />
+    <Content Include="assets\libs\popper.js\dist\umd\poppper.js.flow" />
+    <Content Include="dist\css\fonts\Gilmer-Bold.eot" />
+    <Content Include="dist\css\fonts\Gilmer-Bold.otf" />
+    <Content Include="dist\css\fonts\Gilmer-Bold.ttf" />
+    <Content Include="dist\css\fonts\Gilmer-Bold.woff" />
+    <Content Include="dist\css\fonts\Gilmer-Heavy.eot" />
+    <Content Include="dist\css\fonts\Gilmer-Heavy.otf" />
+    <Content Include="dist\css\fonts\Gilmer-Heavy.ttf" />
+    <Content Include="dist\css\fonts\Gilmer-Heavy.woff" />
+    <Content Include="dist\css\fonts\Gilmer-Medium.eot" />
+    <Content Include="dist\css\fonts\Gilmer-Medium.otf" />
+    <Content Include="dist\css\fonts\Gilmer-Medium.ttf" />
+    <Content Include="dist\css\fonts\Gilmer-Medium.woff" />
+    <Content Include="dist\css\fonts\Gilmer-Regular.eot" />
+    <Content Include="dist\css\fonts\Gilmer-Regular.otf" />
+    <Content Include="dist\css\fonts\Gilmer-Regular.ttf" />
+    <Content Include="dist\css\fonts\Gilmer-Regular.woff" />
+    <Content Include="dist\css\fonts\TofinoPersonal-Book.eot" />
+    <Content Include="dist\css\fonts\TofinoPersonal-Book.otf" />
+    <Content Include="dist\css\fonts\TofinoPersonal-Book.ttf" />
+    <Content Include="dist\css\fonts\TofinoPersonal-Book.woff" />
+    <Content Include="dist\css\fonts\TofinoPersonal-Medium.eot" />
+    <Content Include="dist\css\fonts\TofinoPersonal-Medium.otf" />
+    <Content Include="dist\css\fonts\TofinoPersonal-Medium.ttf" />
+    <Content Include="dist\css\fonts\TofinoPersonal-Medium.woff" />
+    <Content Include="dist\css\fonts\TofinoPersonal-Regular.eot" />
+    <Content Include="dist\css\fonts\TofinoPersonal-Regular.otf" />
+    <Content Include="dist\css\fonts\TofinoPersonal-Regular.ttf" />
+    <Content Include="dist\css\fonts\TofinoPersonal-Regular.woff" />
+    <Content Include="dist\css\icons\font-awesome\less\_animated.less" />
+    <Content Include="dist\css\icons\font-awesome\less\_bordered-pulled.less" />
+    <Content Include="dist\css\icons\font-awesome\less\_core.less" />
+    <Content Include="dist\css\icons\font-awesome\less\_fixed-width.less" />
+    <Content Include="dist\css\icons\font-awesome\less\_icons.less" />
+    <Content Include="dist\css\icons\font-awesome\less\_larger.less" />
+    <Content Include="dist\css\icons\font-awesome\less\_list.less" />
+    <Content Include="dist\css\icons\font-awesome\less\_mixins.less" />
+    <Content Include="dist\css\icons\font-awesome\less\_rotated-flipped.less" />
+    <Content Include="dist\css\icons\font-awesome\less\_screen-reader.less" />
+    <Content Include="dist\css\icons\font-awesome\less\_stacked.less" />
+    <Content Include="dist\css\icons\font-awesome\less\_variables.less" />
+    <Content Include="dist\css\icons\font-awesome\less\fa-brands.less" />
+    <Content Include="dist\css\icons\font-awesome\less\fa-regular.less" />
+    <Content Include="dist\css\icons\font-awesome\less\fa-solid.less" />
+    <Content Include="dist\css\icons\font-awesome\less\fontawesome.less" />
+    <Content Include="dist\css\icons\font-awesome\scss\_animated.scss" />
+    <Content Include="dist\css\icons\font-awesome\scss\_bordered-pulled.scss" />
+    <Content Include="dist\css\icons\font-awesome\scss\_core.scss" />
+    <Content Include="dist\css\icons\font-awesome\scss\_fixed-width.scss" />
+    <Content Include="dist\css\icons\font-awesome\scss\_icons.scss" />
+    <Content Include="dist\css\icons\font-awesome\scss\_larger.scss" />
+    <Content Include="dist\css\icons\font-awesome\scss\_list.scss" />
+    <Content Include="dist\css\icons\font-awesome\scss\_mixins.scss" />
+    <Content Include="dist\css\icons\font-awesome\scss\_rotated-flipped.scss" />
+    <Content Include="dist\css\icons\font-awesome\scss\_screen-reader.scss" />
+    <Content Include="dist\css\icons\font-awesome\scss\_stacked.scss" />
+    <Content Include="dist\css\icons\font-awesome\scss\_variables.scss" />
+    <Content Include="dist\css\icons\font-awesome\scss\fa-brands.scss" />
+    <Content Include="dist\css\icons\font-awesome\scss\fa-regular.scss" />
+    <Content Include="dist\css\icons\font-awesome\scss\fa-solid.scss" />
+    <Content Include="dist\css\icons\font-awesome\scss\fontawesome.scss" />
+    <Content Include="dist\css\icons\font-awesome\webfonts\fa-brands-400.eot" />
+    <Content Include="dist\css\icons\font-awesome\webfonts\fa-brands-400.ttf" />
+    <Content Include="dist\css\icons\font-awesome\webfonts\fa-brands-400.woff" />
+    <Content Include="dist\css\icons\font-awesome\webfonts\fa-brands-400.woff2" />
+    <Content Include="dist\css\icons\font-awesome\webfonts\fa-regular-400.eot" />
+    <Content Include="dist\css\icons\font-awesome\webfonts\fa-regular-400.ttf" />
+    <Content Include="dist\css\icons\font-awesome\webfonts\fa-regular-400.woff" />
+    <Content Include="dist\css\icons\font-awesome\webfonts\fa-regular-400.woff2" />
+    <Content Include="dist\css\icons\font-awesome\webfonts\fa-solid-900.eot" />
+    <Content Include="dist\css\icons\font-awesome\webfonts\fa-solid-900.ttf" />
+    <Content Include="dist\css\icons\font-awesome\webfonts\fa-solid-900.woff" />
+    <Content Include="dist\css\icons\font-awesome\webfonts\fa-solid-900.woff2" />
+    <Content Include="dist\css\icons\simple-line-icons\fonts\Simple-Line-Icons.eot" />
+    <Content Include="dist\css\icons\simple-line-icons\fonts\Simple-Line-Icons.ttf" />
+    <Content Include="dist\css\icons\simple-line-icons\fonts\Simple-Line-Icons.woff" />
+    <Content Include="dist\css\icons\simple-line-icons\fonts\Simple-Line-Icons.woff2" />
+    <Content Include="dist\css\icons\simple-line-icons\less\simple-line-icons.less" />
+    <Content Include="dist\css\icons\simple-line-icons\scss\simple-line-icons.scss" />
+    <Content Include="dist\css\icons\themify-icons\fonts\themify.eot" />
+    <Content Include="dist\css\icons\themify-icons\fonts\themify.ttf" />
+    <Content Include="dist\css\icons\themify-icons\fonts\themify.woff" />
+    <Content Include="dist\css\icons\themify-icons\themify-icons.less" />
+    <Content Include="dist\js\pages\datatable\data.json" />
+    <Content Include="Documents\EDW_CR_Planning_2020.xlsx" />
+    <None Include="Scripts\jquery-1.6.4-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.6.4.js" />
+    <Content Include="Scripts\jquery-1.6.4.min.js" />
+    <Content Include="Scripts\jquery.signalR-2.4.1.js" />
+    <Content Include="Scripts\jquery.signalR-2.4.1.min.js" />
+    <Content Include="SendEmail.aspx" />
+    <Content Include="Teams.aspx" />
+    <Content Include="Test.aspx" />
+    <Content Include="TestComplete.aspx" />
+    <Content Include="Test\MenubarwithNotification.html" />
+    <Content Include="Test\quiz1.html" />
+    <Content Include="Test\SignalRClient.html" />
+    <Content Include="Test\StockMarket.html" />
+    <Content Include="Test\touchswipe.html" />
+    <Content Include="Test\videoplayer.html" />
+    <Content Include="Test\rain.mp4" />
+    <Content Include="UserBatch.aspx" />
+    <Content Include="UserBatchMap.aspx" />
+    <Content Include="UserQuestion.aspx" />
+    <Content Include="Visitor.aspx" />
+    <Content Include="VisitorHome.aspx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\SampleController.cs" />
+    <Compile Include="SendNotification.aspx.cs">
+      <DependentUpon>SendNotification.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SendNotification.aspx.designer.cs">
+      <DependentUpon>SendNotification.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminHome.aspx.cs">
+      <DependentUpon>AdminHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminHome.aspx.designer.cs">
+      <DependentUpon>AdminHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Authorize.aspx.cs">
+      <DependentUpon>Authorize.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Authorize.aspx.designer.cs">
+      <DependentUpon>Authorize.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessLogics\Methods.cs" />
+    <Compile Include="Connection.aspx.cs">
+      <DependentUpon>Connection.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Connection.aspx.designer.cs">
+      <DependentUpon>Connection.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\questionController.cs" />
+    <Compile Include="Dashboard.aspx.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard.aspx.designer.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Emails.aspx.cs">
+      <DependentUpon>Emails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Emails.aspx.designer.cs">
+      <DependentUpon>Emails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="GuestLogin.aspx.cs">
+      <DependentUpon>GuestLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GuestLogin.aspx.designer.cs">
+      <DependentUpon>GuestLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Hubs\ChatHub.cs" />
+    <Compile Include="InstitutionHome.aspx.cs">
+      <DependentUpon>InstitutionHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InstitutionHome.aspx.designer.cs">
+      <DependentUpon>InstitutionHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListUsers.aspx.cs">
+      <DependentUpon>ListUsers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListUsers.aspx.designer.cs">
+      <DependentUpon>ListUsers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Loginback.aspx.cs">
+      <DependentUpon>Loginback.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Loginback.aspx.designer.cs">
+      <DependentUpon>Loginback.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Logout.aspx.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Logout.aspx.designer.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\clsQuestion.cs" />
+    <Compile Include="MyProfile.aspx.cs">
+      <DependentUpon>MyProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MyProfile.aspx.designer.cs">
+      <DependentUpon>MyProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Notifications.aspx.cs">
+      <DependentUpon>Notifications.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Notifications.aspx.designer.cs">
+      <DependentUpon>Notifications.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Practice.aspx.cs">
+      <DependentUpon>Practice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Practice.aspx.designer.cs">
+      <DependentUpon>Practice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PracticeQuestions.aspx.cs">
+      <DependentUpon>PracticeQuestions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PracticeQuestions.aspx.designer.cs">
+      <DependentUpon>PracticeQuestions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Profile.aspx.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Profile.aspx.designer.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Q.aspx.cs">
+      <DependentUpon>Q.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Q.aspx.designer.cs">
+      <DependentUpon>Q.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QP.aspx.cs">
+      <DependentUpon>QP.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QP.aspx.designer.cs">
+      <DependentUpon>QP.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Question.aspx.cs">
+      <DependentUpon>Question.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Question.aspx.designer.cs">
+      <DependentUpon>Question.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QuestionPaper.aspx.cs">
+      <DependentUpon>QuestionPaper.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QuestionPaper.aspx.designer.cs">
+      <DependentUpon>QuestionPaper.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RandomQuiz.aspx.cs">
+      <DependentUpon>RandomQuiz.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RandomQuiz.aspx.designer.cs">
+      <DependentUpon>RandomQuiz.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Results.aspx.cs">
+      <DependentUpon>Results.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Results.aspx.designer.cs">
+      <DependentUpon>Results.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SearchTest.aspx.cs">
+      <DependentUpon>SearchTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SearchTest.aspx.designer.cs">
+      <DependentUpon>SearchTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SendEmail.aspx.cs">
+      <DependentUpon>SendEmail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SendEmail.aspx.designer.cs">
+      <DependentUpon>SendEmail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Startup.cs" />
+    <Compile Include="Teams.aspx.cs">
+      <DependentUpon>Teams.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Teams.aspx.designer.cs">
+      <DependentUpon>Teams.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Test.aspx.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Test.aspx.designer.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TestComplete.aspx.cs">
+      <DependentUpon>TestComplete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TestComplete.aspx.designer.cs">
+      <DependentUpon>TestComplete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserBatch.aspx.cs">
+      <DependentUpon>UserBatch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserBatch.aspx.designer.cs">
+      <DependentUpon>UserBatch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserBatchMap.aspx.cs">
+      <DependentUpon>UserBatchMap.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserBatchMap.aspx.designer.cs">
+      <DependentUpon>UserBatchMap.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserQuestion.aspx.cs">
+      <DependentUpon>UserQuestion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserQuestion.aspx.designer.cs">
+      <DependentUpon>UserQuestion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Visitor.aspx.cs">
+      <DependentUpon>Visitor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Visitor.aspx.designer.cs">
+      <DependentUpon>Visitor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VisitorHome.aspx.cs">
+      <DependentUpon>VisitorHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VisitorHome.aspx.designer.cs">
+      <DependentUpon>VisitorHome.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="OnlineExam.xlsx" />
+    <None Include="packages.config" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <Content Include="Test\admin panel\.ftpquota" />
+    <Content Include="Test\admin panel\package.zip" />
+    <Content Include="Test\admin panel\README.md" />
+    <Content Include="Test\admin panel\src\.gitignore" />
+    <Content Include="Test\admin panel\src\assets\extra-libs\datatables.net-bs4\package.json" />
+    <Content Include="Test\admin panel\src\assets\extra-libs\datatables.net-bs4\Readme.md" />
+    <Content Include="Test\admin panel\src\assets\extra-libs\datatables.net\package.json" />
+    <Content Include="Test\admin panel\src\assets\extra-libs\datatables.net\Readme.md" />
+    <Content Include="Test\admin panel\src\assets\extra-libs\taskboard\example1\load.json" />
+    <Content Include="Test\admin panel\src\assets\extra-libs\taskboard\less\lobilist.less" />
+    <Content Include="Test\admin panel\src\assets\extra-libs\taskboard\less\mixins.less" />
+    <Content Include="Test\admin panel\src\assets\extra-libs\taskboard\less\variables.less" />
+    <Content Include="Test\admin panel\src\assets\images\background\Thumbs.db" />
+    <Content Include="Test\admin panel\src\assets\images\big\Thumbs.db" />
+    <Content Include="Test\admin panel\src\assets\libs\bootstrap\dist\css\bootstrap-grid.css.map" />
+    <Content Include="Test\admin panel\src\assets\libs\bootstrap\dist\css\bootstrap-grid.min.css.map" />
+    <Content Include="Test\admin panel\src\assets\libs\bootstrap\dist\css\bootstrap-reboot.css.map" />
+    <Content Include="Test\admin panel\src\assets\libs\bootstrap\dist\css\bootstrap-reboot.min.css.map" />
+    <Content Include="Test\admin panel\src\assets\libs\bootstrap\dist\css\bootstrap.css.map" />
+    <Content Include="Test\admin panel\src\assets\libs\bootstrap\dist\css\bootstrap.min.css.map" />
+    <Content Include="Test\admin panel\src\assets\libs\bootstrap\dist\js\bootstrap.bundle.js.map" />
+    <Content Include="Test\admin panel\src\assets\libs\bootstrap\dist\js\bootstrap.bundle.min.js.map" />
+    <Content Include="Test\admin panel\src\assets\libs\bootstrap\dist\js\bootstrap.js.map" />
+    <Content Include="Test\admin panel\src\assets\libs\bootstrap\dist\js\bootstrap.min.js.map" />
+    <Content Include="Test\admin panel\src\assets\libs\morris.js\bower.travis.json" />
+    <Content Include="Test\admin panel\src\assets\libs\popper.js\dist\umd\poppper.js.flow" />
+    <Content Include="Test\admin panel\src\dist\css\fonts\Gilmer-Bold.eot" />
+    <Content Include="Test\admin panel\src\dist\css\fonts\Gilmer-Bold.otf" />
+    <Content Include="Test\admin panel\src\dist\css\fonts\Gilmer-Bold.ttf" />
+    <Content Include="Test\admin panel\src\dist\css\fonts\Gilmer-Bold.woff" />
+    <Content Include="Test\admin panel\src\dist\css\fonts\Gilmer-Heavy.eot" />
+    <Content Include="Test\admin panel\src\dist\css\fonts\Gilmer-Heavy.otf" />
+    <Content Include="Test\admin panel\src\dist\css\fonts\Gilmer-Heavy.ttf" />
+    <Content Include="Test\admin panel\src\dist\css\fonts\Gilmer-Heavy.woff" />
+    <Content Include="Test\admin panel\src\dist\css\fonts\Gilmer-Medium.eot" />
+    <Content Include="Test\admin panel\src\dist\css\fonts\Gilmer-Medium.otf" />
+    <Content Include="Test\admin panel\src\dist\css\fonts\Gilmer-Medium.ttf" />
+    <Content Include="Test\admin panel\src\dist\css\fonts\Gilmer-Medium.woff" />
+    <Content Include="Test\admin panel\src\dist\css\fonts\Gilmer-Regular.eot" />
+    <Content Include="Test\admin panel\src\dist\css\fonts\Gilmer-Regular.otf" />
+    <Content Include="Test\admin panel\src\dist\css\fonts\Gilmer-Regular.ttf" />
+    <Content Include="Test\admin panel\src\dist\css\fonts\Gilmer-Regular.woff" />
+    <Content Include="Test\admin panel\src\dist\css\fonts\TofinoPersonal-Book.eot" />
+    <Content Include="Test\admin panel\src\dist\css\fonts\TofinoPersonal-Book.otf" />
+    <Content Include="Test\admin panel\src\dist\css\fonts\TofinoPersonal-Book.ttf" />
+    <Content Include="Test\admin panel\src\dist\css\fonts\TofinoPersonal-Book.woff" />
+    <Content Include="Test\admin panel\src\dist\css\fonts\TofinoPersonal-Medium.eot" />
+    <Content Include="Test\admin panel\src\dist\css\fonts\TofinoPersonal-Medium.otf" />
+    <Content Include="Test\admin panel\src\dist\css\fonts\TofinoPersonal-Medium.ttf" />
+    <Content Include="Test\admin panel\src\dist\css\fonts\TofinoPersonal-Medium.woff" />
+    <Content Include="Test\admin panel\src\dist\css\fonts\TofinoPersonal-Regular.eot" />
+    <Content Include="Test\admin panel\src\dist\css\fonts\TofinoPersonal-Regular.otf" />
+    <Content Include="Test\admin panel\src\dist\css\fonts\TofinoPersonal-Regular.ttf" />
+    <Content Include="Test\admin panel\src\dist\css\fonts\TofinoPersonal-Regular.woff" />
+    <Content Include="Test\admin panel\src\dist\css\icons\font-awesome\less\fa-brands.less" />
+    <Content Include="Test\admin panel\src\dist\css\icons\font-awesome\less\fa-regular.less" />
+    <Content Include="Test\admin panel\src\dist\css\icons\font-awesome\less\fa-solid.less" />
+    <Content Include="Test\admin panel\src\dist\css\icons\font-awesome\less\fontawesome.less" />
+    <Content Include="Test\admin panel\src\dist\css\icons\font-awesome\less\_animated.less" />
+    <Content Include="Test\admin panel\src\dist\css\icons\font-awesome\less\_bordered-pulled.less" />
+    <Content Include="Test\admin panel\src\dist\css\icons\font-awesome\less\_core.less" />
+    <Content Include="Test\admin panel\src\dist\css\icons\font-awesome\less\_fixed-width.less" />
+    <Content Include="Test\admin panel\src\dist\css\icons\font-awesome\less\_icons.less" />
+    <Content Include="Test\admin panel\src\dist\css\icons\font-awesome\less\_larger.less" />
+    <Content Include="Test\admin panel\src\dist\css\icons\font-awesome\less\_list.less" />
+    <Content Include="Test\admin panel\src\dist\css\icons\font-awesome\less\_mixins.less" />
+    <Content Include="Test\admin panel\src\dist\css\icons\font-awesome\less\_rotated-flipped.less" />
+    <Content Include="Test\admin panel\src\dist\css\icons\font-awesome\less\_screen-reader.less" />
+    <Content Include="Test\admin panel\src\dist\css\icons\font-awesome\less\_stacked.less" />
+    <Content Include="Test\admin panel\src\dist\css\icons\font-awesome\less\_variables.less" />
+    <Content Include="Test\admin panel\src\dist\css\icons\font-awesome\scss\fa-brands.scss" />
+    <Content Include="Test\admin panel\src\dist\css\icons\font-awesome\scss\fa-regular.scss" />
+    <Content Include="Test\admin panel\src\dist\css\icons\font-awesome\scss\fa-solid.scss" />
+    <Content Include="Test\admin panel\src\dist\css\icons\font-awesome\scss\fontawesome.scss" />
+    <Content Include="Test\admin panel\src\dist\css\icons\font-awesome\scss\_animated.scss" />
+    <Content Include="Test\admin panel\src\dist\css\icons\font-awesome\scss\_bordered-pulled.scss" />
+    <Content Include="Test\admin panel\src\dist\css\icons\font-awesome\scss\_core.scss" />
+    <Content Include="Test\admin panel\src\dist\css\icons\font-awesome\scss\_fixed-width.scss" />
+    <Content Include="Test\admin panel\src\dist\css\icons\font-awesome\scss\_icons.scss" />
+    <Content Include="Test\admin panel\src\dist\css\icons\font-awesome\scss\_larger.scss" />
+    <Content Include="Test\admin panel\src\dist\css\icons\font-awesome\scss\_list.scss" />
+    <Content Include="Test\admin panel\src\dist\css\icons\font-awesome\scss\_mixins.scss" />
+    <Content Include="Test\admin panel\src\dist\css\icons\font-awesome\scss\_rotated-flipped.scss" />
+    <Content Include="Test\admin panel\src\dist\css\icons\font-awesome\scss\_screen-reader.scss" />
+    <Content Include="Test\admin panel\src\dist\css\icons\font-awesome\scss\_stacked.scss" />
+    <Content Include="Test\admin panel\src\dist\css\icons\font-awesome\scss\_variables.scss" />
+    <Content Include="Test\admin panel\src\dist\css\icons\font-awesome\webfonts\fa-brands-400.eot" />
+    <Content Include="Test\admin panel\src\dist\css\icons\font-awesome\webfonts\fa-brands-400.ttf" />
+    <Content Include="Test\admin panel\src\dist\css\icons\font-awesome\webfonts\fa-brands-400.woff" />
+    <Content Include="Test\admin panel\src\dist\css\icons\font-awesome\webfonts\fa-brands-400.woff2" />
+    <Content Include="Test\admin panel\src\dist\css\icons\font-awesome\webfonts\fa-regular-400.eot" />
+    <Content Include="Test\admin panel\src\dist\css\icons\font-awesome\webfonts\fa-regular-400.ttf" />
+    <Content Include="Test\admin panel\src\dist\css\icons\font-awesome\webfonts\fa-regular-400.woff" />
+    <Content Include="Test\admin panel\src\dist\css\icons\font-awesome\webfonts\fa-regular-400.woff2" />
+    <Content Include="Test\admin panel\src\dist\css\icons\font-awesome\webfonts\fa-solid-900.eot" />
+    <Content Include="Test\admin panel\src\dist\css\icons\font-awesome\webfonts\fa-solid-900.ttf" />
+    <Content Include="Test\admin panel\src\dist\css\icons\font-awesome\webfonts\fa-solid-900.woff" />
+    <Content Include="Test\admin panel\src\dist\css\icons\font-awesome\webfonts\fa-solid-900.woff2" />
+    <Content Include="Test\admin panel\src\dist\css\icons\simple-line-icons\fonts\Simple-Line-Icons.eot" />
+    <Content Include="Test\admin panel\src\dist\css\icons\simple-line-icons\fonts\Simple-Line-Icons.ttf" />
+    <Content Include="Test\admin panel\src\dist\css\icons\simple-line-icons\fonts\Simple-Line-Icons.woff" />
+    <Content Include="Test\admin panel\src\dist\css\icons\simple-line-icons\fonts\Simple-Line-Icons.woff2" />
+    <Content Include="Test\admin panel\src\dist\css\icons\simple-line-icons\less\simple-line-icons.less" />
+    <Content Include="Test\admin panel\src\dist\css\icons\simple-line-icons\scss\simple-line-icons.scss" />
+    <Content Include="Test\admin panel\src\dist\css\icons\themify-icons\fonts\themify.eot" />
+    <Content Include="Test\admin panel\src\dist\css\icons\themify-icons\fonts\themify.ttf" />
+    <Content Include="Test\admin panel\src\dist\css\icons\themify-icons\fonts\themify.woff" />
+    <Content Include="Test\admin panel\src\dist\css\icons\themify-icons\themify-icons.less" />
+    <Content Include="Test\admin panel\src\dist\js\pages\datatable\data.json" />
+    <Content Include="Test\admin panel\src\package-lock.json" />
+    <Content Include="Test\admin panel\src\package.json" />
+    <Content Include="Test\admin panel\src\scss\bootstrap\bootstrap-grid.scss" />
+    <Content Include="Test\admin panel\src\scss\bootstrap\bootstrap-reboot.scss" />
+    <Content Include="Test\admin panel\src\scss\bootstrap\bootstrap.scss" />
+    <Content Include="Test\admin panel\src\scss\bootstrap\mixins\_alert.scss" />
+    <Content Include="Test\admin panel\src\scss\bootstrap\mixins\_background-variant.scss" />
+    <Content Include="Test\admin panel\src\scss\bootstrap\mixins\_badge.scss" />
+    <Content Include="Test\admin panel\src\scss\bootstrap\mixins\_border-radius.scss" />
+    <Content Include="Test\admin panel\src\scss\bootstrap\mixins\_box-shadow.scss" />
+    <Content Include="Test\admin panel\src\scss\bootstrap\mixins\_breakpoints.scss" />
+    <Content Include="Test\admin panel\src\scss\bootstrap\mixins\_buttons.scss" />
+    <Content Include="Test\admin panel\src\scss\bootstrap\mixins\_caret.scss" />
+    <Content Include="Test\admin panel\src\scss\bootstrap\mixins\_clearfix.scss" />
+    <Content Include="Test\admin panel\src\scss\bootstrap\mixins\_deprecate.scss" />
+    <Content Include="Test\admin panel\src\scss\bootstrap\mixins\_float.scss" />
+    <Content Include="Test\admin panel\src\scss\bootstrap\mixins\_forms.scss" />
+    <Content Include="Test\admin panel\src\scss\bootstrap\mixins\_gradients.scss" />
+    <Content Include="Test\admin panel\src\scss\bootstrap\mixins\_grid-framework.scss" />
+    <Content Include="Test\admin panel\src\scss\bootstrap\mixins\_grid.scss" />
+    <Content Include="Test\admin panel\src\scss\bootstrap\mixins\_hover.scss" />
+    <Content Include="Test\admin panel\src\scss\bootstrap\mixins\_image.scss" />
+    <Content Include="Test\admin panel\src\scss\bootstrap\mixins\_list-group.scss" />
+    <Content Include="Test\admin panel\src\scss\bootstrap\mixins\_lists.scss" />
+    <Content Include="Test\admin panel\src\scss\bootstrap\mixins\_nav-divider.scss" />
+    <Content Include="Test\admin panel\src\scss\bootstrap\mixins\_pagination.scss" />
+    <Content Include="Test\admin panel\src\scss\bootstrap\mixins\_reset-text.scss" />
+    <Content Include="Test\admin panel\src\scss\bootstrap\mixins\_resize.scss" />
+    <Content Include="Test\admin panel\src\scss\bootstrap\mixins\_screen-reader.scss" />
+    <Content Include="Test\admin panel\src\scss\bootstrap\mixins\_size.scss" />
+    <Content Include="Test\admin panel\src\scss\bootstrap\mixins\_table-row.scss" />
+    <Content Include="Test\admin panel\src\scss\bootstrap\mixins\_text-emphasis.scss" />
+    <Content Include="Test\admin panel\src\scss\bootstrap\mixins\_text-hide.scss" />
+    <Content Include="Test\admin panel\src\scss\bootstrap\mixins\_text-truncate.scss" />
+    <Content Include="Test\admin panel\src\scss\bootstrap\mixins\_transition.scss" />
+    <Content Include="Test\admin panel\src\scss\bootstrap\mixins\_visibility.scss" />
+    <Content Include="Test\admin panel\src\scss\bootstrap\utilities\_align.scss" />
+    <Content Include="Test\admin panel\src\scss\bootstrap\utilities\_background.scss" />
+    <Content Include="Test\admin panel\src\scss\bootstrap\utilities\_borders.scss" />
+    <Content Include="Test\admin panel\src\scss\bootstrap\utilities\_clearfix.scss" />
+    <Content Include="Test\admin panel\src\scss\bootstrap\utilities\_display.scss" />
+    <Content Include="Test\admin panel\src\scss\bootstrap\utilities\_embed.scss" />
+    <Content Include="Test\admin panel\src\scss\bootstrap\utilities\_flex.scss" />
+    <Content Include="Test\admin panel\src\scss\bootstrap\utilities\_float.scss" />
+    <Content Include="Test\admin panel\src\scss\bootstrap\utilities\_overflow.scss" />
+    <Content Include="Test\admin panel\src\scss\bootstrap\utilities\_position.scss" />
+    <Content Include="Test\admin panel\src\scss\bootstrap\utilities\_screenreaders.scss" />
+    <Content Include="Test\admin panel\src\scss\bootstrap\utilities\_shadows.scss" />
+    <Content Include="Test\admin panel\src\scss\bootstrap\utilities\_sizing.scss" />
+    <Content Include="Test\admin panel\src\scss\bootstrap\utilities\_spacing.scss" />
+    <Content Include="Test\admin panel\src\scss\bootstrap\utilities\_stretched-link.scss" />
+    <Content Include="Test\admin panel\src\scss\bootstrap\utilities\_text.scss" />
+    <Content Include="Test\admin panel\src\scss\bootstrap\utilities\_visibility.scss" />
+    <Content Include="Test\admin panel\src\scss\bootstrap\vendor\_rfs.scss" />
+    <Content Include="Test\admin panel\src\scss\bootstrap\_alert.scss" />
+    <Content Include="Test\admin panel\src\scss\bootstrap\_badge.scss" />
+    <Content Include="Test\admin panel\src\scss\bootstrap\_breadcrumb.scss" />
+    <Content Include="Test\admin panel\src\scss\bootstrap\_button-group.scss" />
+    <Content Include="Test\admin panel\src\scss\bootstrap\_buttons.scss" />
+    <Content Include="Test\admin panel\src\scss\bootstrap\_card.scss" />
+    <Content Include="Test\admin panel\src\scss\bootstrap\_carousel.scss" />
+    <Content Include="Test\admin panel\src\scss\bootstrap\_close.scss" />
+    <Content Include="Test\admin panel\src\scss\bootstrap\_code.scss" />
+    <Content Include="Test\admin panel\src\scss\bootstrap\_custom-forms.scss" />
+    <Content Include="Test\admin panel\src\scss\bootstrap\_dropdown.scss" />
+    <Content Include="Test\admin panel\src\scss\bootstrap\_forms.scss" />
+    <Content Include="Test\admin panel\src\scss\bootstrap\_functions.scss" />
+    <Content Include="Test\admin panel\src\scss\bootstrap\_grid.scss" />
+    <Content Include="Test\admin panel\src\scss\bootstrap\_images.scss" />
+    <Content Include="Test\admin panel\src\scss\bootstrap\_input-group.scss" />
+    <Content Include="Test\admin panel\src\scss\bootstrap\_jumbotron.scss" />
+    <Content Include="Test\admin panel\src\scss\bootstrap\_list-group.scss" />
+    <Content Include="Test\admin panel\src\scss\bootstrap\_media.scss" />
+    <Content Include="Test\admin panel\src\scss\bootstrap\_mixins.scss" />
+    <Content Include="Test\admin panel\src\scss\bootstrap\_modal.scss" />
+    <Content Include="Test\admin panel\src\scss\bootstrap\_nav.scss" />
+    <Content Include="Test\admin panel\src\scss\bootstrap\_navbar.scss" />
+    <Content Include="Test\admin panel\src\scss\bootstrap\_pagination.scss" />
+    <Content Include="Test\admin panel\src\scss\bootstrap\_popover.scss" />
+    <Content Include="Test\admin panel\src\scss\bootstrap\_print.scss" />
+    <Content Include="Test\admin panel\src\scss\bootstrap\_progress.scss" />
+    <Content Include="Test\admin panel\src\scss\bootstrap\_reboot.scss" />
+    <Content Include="Test\admin panel\src\scss\bootstrap\_root.scss" />
+    <Content Include="Test\admin panel\src\scss\bootstrap\_spinners.scss" />
+    <Content Include="Test\admin panel\src\scss\bootstrap\_tables.scss" />
+    <Content Include="Test\admin panel\src\scss\bootstrap\_toasts.scss" />
+    <Content Include="Test\admin panel\src\scss\bootstrap\_tooltip.scss" />
+    <Content Include="Test\admin panel\src\scss\bootstrap\_transitions.scss" />
+    <Content Include="Test\admin panel\src\scss\bootstrap\_type.scss" />
+    <Content Include="Test\admin panel\src\scss\bootstrap\_utilities.scss" />
+    <Content Include="Test\admin panel\src\scss\bootstrap\_variables.scss" />
+    <Content Include="Test\admin panel\src\scss\config\default\_custom-variables.scss" />
+    <Content Include="Test\admin panel\src\scss\config\default\_variables.scss" />
+    <Content Include="Test\admin panel\src\scss\custom\components\_breadcrumb.scss" />
+    <Content Include="Test\admin panel\src\scss\custom\components\_buttons.scss" />
+    <Content Include="Test\admin panel\src\scss\custom\components\_card.scss" />
+    <Content Include="Test\admin panel\src\scss\custom\components\_dropdown.scss" />
+    <Content Include="Test\admin panel\src\scss\custom\components\_forms.scss" />
+    <Content Include="Test\admin panel\src\scss\custom\components\_modal.scss" />
+    <Content Include="Test\admin panel\src\scss\custom\components\_progress.scss" />
+    <Content Include="Test\admin panel\src\scss\custom\components\_reboot.scss" />
+    <Content Include="Test\admin panel\src\scss\custom\components\_tables.scss" />
+    <Content Include="Test\admin panel\src\scss\custom\components\_tabs.scss" />
+    <Content Include="Test\admin panel\src\scss\custom\pages\_authentication.scss" />
+    <Content Include="Test\admin panel\src\scss\custom\pages\_chat-app.scss" />
+    <Content Include="Test\admin panel\src\scss\custom\pages\_dashboard.scss" />
+    <Content Include="Test\admin panel\src\scss\custom\pages\_grid.scss" />
+    <Content Include="Test\admin panel\src\scss\custom\pages\_landingpage.scss" />
+    <Content Include="Test\admin panel\src\scss\custom\plugins\_calendar.scss" />
+    <Content Include="Test\admin panel\src\scss\custom\plugins\_chartist-charts.scss" />
+    <Content Include="Test\admin panel\src\scss\custom\plugins\_perfect-scrollbar.scss" />
+    <Content Include="Test\admin panel\src\scss\custom\structure\_layout.scss" />
+    <Content Include="Test\admin panel\src\scss\custom\structure\_navbar.scss" />
+    <Content Include="Test\admin panel\src\scss\custom\structure\_preloader.scss" />
+    <Content Include="Test\admin panel\src\scss\custom\structure\_sidebar.scss" />
+    <Content Include="Test\admin panel\src\scss\custom\theme-colors\_theme-colors.scss" />
+    <Content Include="Test\admin panel\src\scss\fonts\landingpage_fonts.scss" />
+    <Content Include="Test\admin panel\src\scss\icons\icons.scss" />
+    <Content Include="Test\admin panel\src\scss\style.scss" />
+    <Content Include="scss\bootstrap\_alert.scss" />
+    <Content Include="scss\bootstrap\_badge.scss" />
+    <Content Include="scss\bootstrap\_breadcrumb.scss" />
+    <Content Include="scss\bootstrap\_button-group.scss" />
+    <Content Include="scss\bootstrap\_buttons.scss" />
+    <Content Include="scss\bootstrap\_card.scss" />
+    <Content Include="scss\bootstrap\_carousel.scss" />
+    <Content Include="scss\bootstrap\_close.scss" />
+    <Content Include="scss\bootstrap\_code.scss" />
+    <Content Include="scss\bootstrap\_custom-forms.scss" />
+    <Content Include="scss\bootstrap\_dropdown.scss" />
+    <Content Include="scss\bootstrap\_forms.scss" />
+    <Content Include="scss\bootstrap\_functions.scss" />
+    <Content Include="scss\bootstrap\_grid.scss" />
+    <Content Include="scss\bootstrap\_images.scss" />
+    <Content Include="scss\bootstrap\_input-group.scss" />
+    <Content Include="scss\bootstrap\_jumbotron.scss" />
+    <Content Include="scss\bootstrap\_list-group.scss" />
+    <Content Include="scss\bootstrap\_media.scss" />
+    <Content Include="scss\bootstrap\_mixins.scss" />
+    <Content Include="scss\bootstrap\_modal.scss" />
+    <Content Include="scss\bootstrap\_nav.scss" />
+    <Content Include="scss\bootstrap\_navbar.scss" />
+    <Content Include="scss\bootstrap\_pagination.scss" />
+    <Content Include="scss\bootstrap\_popover.scss" />
+    <Content Include="scss\bootstrap\_print.scss" />
+    <Content Include="scss\bootstrap\_progress.scss" />
+    <Content Include="scss\bootstrap\_reboot.scss" />
+    <Content Include="scss\bootstrap\_root.scss" />
+    <Content Include="scss\bootstrap\_spinners.scss" />
+    <Content Include="scss\bootstrap\_tables.scss" />
+    <Content Include="scss\bootstrap\_toasts.scss" />
+    <Content Include="scss\bootstrap\_tooltip.scss" />
+    <Content Include="scss\bootstrap\_transitions.scss" />
+    <Content Include="scss\bootstrap\_type.scss" />
+    <Content Include="scss\bootstrap\_utilities.scss" />
+    <Content Include="scss\bootstrap\_variables.scss" />
+    <Content Include="scss\bootstrap\bootstrap-grid.scss" />
+    <Content Include="scss\bootstrap\bootstrap-reboot.scss" />
+    <Content Include="scss\bootstrap\bootstrap.scss" />
+    <Content Include="scss\bootstrap\mixins\_alert.scss" />
+    <Content Include="scss\bootstrap\mixins\_background-variant.scss" />
+    <Content Include="scss\bootstrap\mixins\_badge.scss" />
+    <Content Include="scss\bootstrap\mixins\_border-radius.scss" />
+    <Content Include="scss\bootstrap\mixins\_box-shadow.scss" />
+    <Content Include="scss\bootstrap\mixins\_breakpoints.scss" />
+    <Content Include="scss\bootstrap\mixins\_buttons.scss" />
+    <Content Include="scss\bootstrap\mixins\_caret.scss" />
+    <Content Include="scss\bootstrap\mixins\_clearfix.scss" />
+    <Content Include="scss\bootstrap\mixins\_deprecate.scss" />
+    <Content Include="scss\bootstrap\mixins\_float.scss" />
+    <Content Include="scss\bootstrap\mixins\_forms.scss" />
+    <Content Include="scss\bootstrap\mixins\_gradients.scss" />
+    <Content Include="scss\bootstrap\mixins\_grid-framework.scss" />
+    <Content Include="scss\bootstrap\mixins\_grid.scss" />
+    <Content Include="scss\bootstrap\mixins\_hover.scss" />
+    <Content Include="scss\bootstrap\mixins\_image.scss" />
+    <Content Include="scss\bootstrap\mixins\_list-group.scss" />
+    <Content Include="scss\bootstrap\mixins\_lists.scss" />
+    <Content Include="scss\bootstrap\mixins\_nav-divider.scss" />
+    <Content Include="scss\bootstrap\mixins\_pagination.scss" />
+    <Content Include="scss\bootstrap\mixins\_reset-text.scss" />
+    <Content Include="scss\bootstrap\mixins\_resize.scss" />
+    <Content Include="scss\bootstrap\mixins\_screen-reader.scss" />
+    <Content Include="scss\bootstrap\mixins\_size.scss" />
+    <Content Include="scss\bootstrap\mixins\_table-row.scss" />
+    <Content Include="scss\bootstrap\mixins\_text-emphasis.scss" />
+    <Content Include="scss\bootstrap\mixins\_text-hide.scss" />
+    <Content Include="scss\bootstrap\mixins\_text-truncate.scss" />
+    <Content Include="scss\bootstrap\mixins\_transition.scss" />
+    <Content Include="scss\bootstrap\mixins\_visibility.scss" />
+    <Content Include="scss\bootstrap\utilities\_align.scss" />
+    <Content Include="scss\bootstrap\utilities\_background.scss" />
+    <Content Include="scss\bootstrap\utilities\_borders.scss" />
+    <Content Include="scss\bootstrap\utilities\_clearfix.scss" />
+    <Content Include="scss\bootstrap\utilities\_display.scss" />
+    <Content Include="scss\bootstrap\utilities\_embed.scss" />
+    <Content Include="scss\bootstrap\utilities\_flex.scss" />
+    <Content Include="scss\bootstrap\utilities\_float.scss" />
+    <Content Include="scss\bootstrap\utilities\_overflow.scss" />
+    <Content Include="scss\bootstrap\utilities\_position.scss" />
+    <Content Include="scss\bootstrap\utilities\_screenreaders.scss" />
+    <Content Include="scss\bootstrap\utilities\_shadows.scss" />
+    <Content Include="scss\bootstrap\utilities\_sizing.scss" />
+    <Content Include="scss\bootstrap\utilities\_spacing.scss" />
+    <Content Include="scss\bootstrap\utilities\_stretched-link.scss" />
+    <Content Include="scss\bootstrap\utilities\_text.scss" />
+    <Content Include="scss\bootstrap\utilities\_visibility.scss" />
+    <Content Include="scss\bootstrap\vendor\_rfs.scss" />
+    <Content Include="scss\config\default\_custom-variables.scss" />
+    <Content Include="scss\config\default\_variables.scss" />
+    <Content Include="scss\custom\components\_breadcrumb.scss" />
+    <Content Include="scss\custom\components\_buttons.scss" />
+    <Content Include="scss\custom\components\_card.scss" />
+    <Content Include="scss\custom\components\_dropdown.scss" />
+    <Content Include="scss\custom\components\_forms.scss" />
+    <Content Include="scss\custom\components\_modal.scss" />
+    <Content Include="scss\custom\components\_progress.scss" />
+    <Content Include="scss\custom\components\_reboot.scss" />
+    <Content Include="scss\custom\components\_tables.scss" />
+    <Content Include="scss\custom\components\_tabs.scss" />
+    <Content Include="scss\custom\pages\_authentication.scss" />
+    <Content Include="scss\custom\pages\_chat-app.scss" />
+    <Content Include="scss\custom\pages\_dashboard.scss" />
+    <Content Include="scss\custom\pages\_grid.scss" />
+    <Content Include="scss\custom\pages\_landingpage.scss" />
+    <Content Include="scss\custom\plugins\_calendar.scss" />
+    <Content Include="scss\custom\plugins\_chartist-charts.scss" />
+    <Content Include="scss\custom\plugins\_perfect-scrollbar.scss" />
+    <Content Include="scss\custom\structure\_layout.scss" />
+    <Content Include="scss\custom\structure\_navbar.scss" />
+    <Content Include="scss\custom\structure\_preloader.scss" />
+    <Content Include="scss\custom\structure\_sidebar.scss" />
+    <Content Include="scss\custom\theme-colors\_theme-colors.scss" />
+    <Content Include="scss\fonts\landingpage_fonts.scss" />
+    <Content Include="scss\icons\icons.scss" />
+    <Content Include="scss\style.scss" />
+    <Content Include="Test\Quiz website\css\bootstrap.min.css.map" />
+    <Content Include="Test\Quiz website\css\metisMenu\metisMenu.min.css.map" />
+    <Content Include="Test\Quiz website\css\summernote\fonts\summernote.eot" />
+    <Content Include="Test\Quiz website\css\summernote\fonts\summernote.ttf" />
+    <Content Include="Test\Quiz website\css\summernote\fonts\summernote.woff" />
+    <Content Include="Test\Quiz website\fonts\educate-icon.ttf" />
+    <Content Include="Test\Quiz website\fonts\educate-icon.woff" />
+    <Content Include="Test\Quiz website\fonts\fontawesome-webfont.eot" />
+    <Content Include="Test\Quiz website\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Test\Quiz website\fonts\fontawesome-webfont.woff" />
+    <Content Include="Test\Quiz website\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Test\Quiz website\fonts\FontAwesome.otf" />
+    <Content Include="Test\Quiz website\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Test\Quiz website\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Test\Quiz website\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Test\Quiz website\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Test\Quiz website\js\metisMenu\metisMenu.min.js.map" />
+    <Content Include="Test\Quiz website\pdf\mamunur.pdf" />
+    <Content Include="Test\Quiz website\README.md" />
+    <Content Include="Test\Quiz App Master\questions.json" />
+    <Content Include="Setting for FCM" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>52218</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:52218/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

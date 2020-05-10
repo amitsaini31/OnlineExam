@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "560682070557",
+    "firebase_url": "https://knowledgebooster-114ac.firebaseio.com",
+    "project_id": "knowledgebooster-114ac",
+    "storage_bucket": "knowledgebooster-114ac.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:560682070557:android:bc8d8589a434c607674cf4",
+        "android_client_info": {
+          "package_name": "com.companyname.knowledgebooster"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "560682070557-7r3t81l7kegrapgt8i668jo8igqnf5tp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAYYwcr-PByiAT_mKf34_DK5vsFhfU2_hM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "560682070557-7r3t81l7kegrapgt8i668jo8igqnf5tp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
