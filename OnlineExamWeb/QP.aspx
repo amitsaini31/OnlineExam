@@ -508,7 +508,7 @@
                     <input type="hidden" id="hdnu" runat="server" />
                 </div>
             </form>
-            <!-- Modal -->
+            <!-- Modal Dialog-->
             <div class="modal fade" id="myModal" role="dialog">
                 <div class="modal-dialog modal-dialog-centered modal-sm">
                     <div class="modal-content">
