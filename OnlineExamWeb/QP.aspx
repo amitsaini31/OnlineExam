@@ -385,7 +385,7 @@
                                     <h4 class="card-title">Add User Batch</h4>
                                     <h6 class="card-subtitle">Add new batch of users.</h6>
 
-                                     <div class="form-actions" style="margin-bottom:10px;">
+                                    <div class="form-actions" style="margin-bottom: 10px;">
                                         <div class="text-right">
                                             <button type="submit" class="btn btn-info" runat="server" onserverclick="btnSubmit_Click">Submit</button>
                                             <button type="reset" class="btn btn-dark" runat="server" onserverclick="Page_Load">Cancel</button>
@@ -494,7 +494,6 @@
                                                 <th scope="col">Title</th>
                                                 <th scope="col">Question Count</th>
                                                 <%--<th scope="col" style="width: 20%;">Actions</th>--%>
-
                                             </tr>
                                         </thead>
                                         <tbody id="tbody">
@@ -505,8 +504,9 @@
                         </div>
                     </div>
                     <input type="hidden" id="hdnapi" runat="server" />
-                    <input type="hidden" id="hdnid" runat="server" value="0"/>
+                    <input type="hidden" id="hdnid" runat="server" value="0" />
                     <input type="hidden" id="hdnu" runat="server" />
+                </div>
             </form>
             <!-- Modal -->
             <div class="modal fade" id="myModal" role="dialog">
@@ -519,13 +519,11 @@
                         <div class="modal-body">
                             <input type="hidden" id="trid" />
                             <div class="text-center" id="mdladdquestions">
-                               
-                            </div>                            
-                            
-                            <div class="text-center" id="mdledit">
-                                
                             </div>
-                           <hr>
+
+                            <div class="text-center" id="mdledit">
+                            </div>
+                            <hr>
                             <div class="text-center" id="mdldelete">
                             </div>
                             <hr>
@@ -664,7 +662,7 @@
                     + $(this).attr('data-id') + "'>Publish</a> ");
 
                 $("#mdlpublic").html("<a class='btn btn-primary' href='QP.aspx?pubcode="
-                    + $(this).attr('data-id') + "'>Make Publich</a> ");
+                    + $(this).attr('data-id') + "'>Make Public</a> ");
 
                 //$("#txtlname").val($(this).closest('tr').children()[1].textContent);
             });

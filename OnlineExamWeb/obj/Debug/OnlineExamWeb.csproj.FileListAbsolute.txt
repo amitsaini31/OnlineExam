@@ -178,7 +178,6 @@ C:\Users\Administrator\source\repos\amitsaini31\OnlineExam\OnlineExamWeb\bin\Sys
 C:\Users\Administrator\source\repos\amitsaini31\OnlineExam\OnlineExamWeb\bin\System.Web.Http.Cors.xml
 C:\Users\Administrator\source\repos\amitsaini31\OnlineExam\OnlineExamWeb\bin\System.Web.Http.WebHost.xml
 C:\Users\Administrator\source\repos\amitsaini31\OnlineExam\OnlineExamWeb\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\Administrator\source\repos\amitsaini31\OnlineExam\OnlineExamWeb\obj\Debug\OnlineExamWeb.csprojAssemblyReference.cache
 C:\Users\Administrator\source\repos\amitsaini31\OnlineExam\OnlineExamWeb\obj\Debug\OnlineExamWeb.csproj.CopyComplete
 C:\Users\Administrator\source\repos\amitsaini31\OnlineExam\OnlineExamWeb\obj\Debug\OnlineExamWeb.dll
 C:\Users\Administrator\source\repos\amitsaini31\OnlineExam\OnlineExamWeb\obj\Debug\OnlineExamWeb.pdb
