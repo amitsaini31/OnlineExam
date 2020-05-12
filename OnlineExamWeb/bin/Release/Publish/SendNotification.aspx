@@ -293,6 +293,11 @@
                                 class="hide-menu">Send Notification
                                 </span></a>
                         </li>
+                          <li class="sidebar-item"><a class="sidebar-link sidebar-link" href="SendEmail.aspx"
+                            aria-expanded="false"><i data-feather="database" class="feather-icon"></i><span
+                                class="hide-menu">Send Email
+                                </span></a>
+                        </li>
                         <li class="list-divider"></li>
                         <li class="nav-small-cap"><span class="hide-menu">Extra</span></li>
                         <li class="sidebar-item"><a class="sidebar-link sidebar-link" href="../../docs/docs.html"

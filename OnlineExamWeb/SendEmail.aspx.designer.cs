@@ -7,38 +7,67 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace OnlineExamWeb {
-    
-    
-    public partial class SendEmail {
-        
+namespace OnlineExamWeb
+{
+
+
+    public partial class SendEmail
+    {
+
         /// <summary>
-        /// form1 control.
+        /// id control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-        
+        protected global::System.Web.UI.HtmlControls.HtmlForm id;
+
         /// <summary>
-        /// txtFrom control.
+        /// hdnid control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtFrom;
-        
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hdnid;
+
         /// <summary>
-        /// txtTo control.
+        /// hdnu control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTo;
-        
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hdnu;
+
+        /// <summary>
+        /// hdnapi control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hdnapi;
+
+        /// <summary>
+        /// txtEmail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtEmail;
+
+        /// <summary>
+        /// txtCCEmail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtCCEmail;
+
         /// <summary>
         /// txtSubject control.
         /// </summary>
@@ -47,7 +76,7 @@ namespace OnlineExamWeb {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtSubject;
-        
+
         /// <summary>
         /// txtBody control.
         /// </summary>
@@ -55,24 +84,6 @@ namespace OnlineExamWeb {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtBody;
-        
-        /// <summary>
-        /// btn_SendMessage control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_SendMessage;
-        
-        /// <summary>
-        /// Label1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea txtBody;
     }
 }

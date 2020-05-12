@@ -14,115 +14,58 @@ namespace OnlineExamWeb
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string to = "amit.s.kr31@gmail.com"; //To address    
-            string from = "edw@edigitalwiki.com"; //From address    
-            MailMessage message = new MailMessage(from, to);
-
-            string mailbody = "In this article you will learn how to send a email using Asp.Net & C#";
-            message.Subject = "Testing of Sending Email Using Asp.Net & C#";
-            message.Body = mailbody;
-            message.BodyEncoding = Encoding.UTF8;
-            message.IsBodyHtml = true;
-            SmtpClient client = new SmtpClient("relay-hosting.secureserver.net", 25); //Gmail smtp    
-            //SmtpClient client = new SmtpClient("smtpout.secureserver.net", 465); //Gmail smtp    
-            client.EnableSsl = true;
-
-            client.Credentials = new
-            NetworkCredential("edw@edigitalwiki.com", "EDW_arp@12345");
-            try
-            {
-                client.Send(message);
-            }
-
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-        protected void btn_SendMessage_Click(object sender, EventArgs e)
-        {
-            string to = "amit.s.kr31@gmail.com"; //To address    
-            string from = "edw@edigitalwiki.com"; //From address    
-            MailMessage message = new MailMessage(from, to);
-
-            string mailbody = "In this article you will learn how to send a email using Asp.Net & C#";
-            message.Subject = "Testing of Sending Email Using Asp.Net & C#";
-            message.Body = mailbody;
-            message.BodyEncoding = Encoding.UTF8;
-            message.IsBodyHtml = true;
-            SmtpClient client = new SmtpClient("smtpout.secureserver.net", 465); //Gmail smtp    
-            //SmtpClient client = new SmtpClient("smtpout.secureserver.net", 465); //Gmail smtp    
-            client.EnableSsl = true;
-
-            client.Credentials = new
-            NetworkCredential("edw@edigitalwiki.com", "EDW_arp@12345");
-            try
-            {
-                client.Send(message);
-            }
-
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+            
         }
 
-
-        static string smtpAddress = "relay-hosting.secureserver.net";
-        static int portNumber = 25;
-        static bool enableSSL = true;
-        static string emailFromAddress = "edw@edigitalwiki.com"; //Sender Email Address  
-        static string password = "EDW_arp@12345"; //Sender Password  
-        static string emailToAddress = "amit.s.kr31@gmail.com"; //Receiver Email Address  
-        static string subject = "Hello";
-        static string body = "Hello, This is Email sending test using gmail.";
-       
-        public static void SendMessage()
+        protected void btn_Submit_Click(object sender, EventArgs e)
         {
-            using (MailMessage mail = new MailMessage())
+
+            try
             {
-                mail.From = new MailAddress(emailFromAddress);
-                mail.To.Add(emailToAddress);
-                mail.Subject = subject;
-                mail.Body = body;
-                mail.IsBodyHtml = true;
-                //mail.Attachments.Add(new Attachment("D:\\TestFile.txt"));//--Uncomment this to send any attachment  
-                using (SmtpClient smtp = new SmtpClient(smtpAddress, portNumber))
+                //Create the msg object to be sent
+                MailMessage msg = new MailMessage();
+                //Add your email address to the recipients
+                msg.To.Add(txtEmail.Text);
+                if(txtCCEmail.Text.Trim() != "")
                 {
-                    smtp.Credentials = new NetworkCredential(emailFromAddress, password);
-                    smtp.EnableSsl = enableSSL;
-                    smtp.Send(mail);
+                    msg.CC.Add(txtCCEmail.Text);
                 }
+                
+                //Configure the address we are sending the mail from
+                MailAddress add = new MailAddress("edw@edigitalwiki.com");
+                msg.From = add;
+                msg.Subject = txtSubject.Text;
+                msg.Body = txtBody.Value;
+
+                //Configure an SmtpClient to send the mail.            
+                SmtpClient client = new SmtpClient();
+                client.DeliveryMethod = SmtpDeliveryMethod.Network;
+                client.EnableSsl = false;
+                //client.Host = "smtpout.secureserver.net";
+                client.Host = "relay-hosting.secureserver.net";
+                client.Port = 25;
+
+                //Setup credentials to login to our sender email address ("UserName", "Password")
+                NetworkCredential credentials = new NetworkCredential("edw@edigitalwiki.com", "EDW_arp@12345");
+                client.UseDefaultCredentials = true;
+                client.Credentials = credentials;
+
+                //Send the msg
+                client.Send(msg);
+                txtEmail.Text = "";
+                txtCCEmail.Text = "";
+                txtSubject.Text = "";
+                txtBody.Value = "";
+                //Display some feedback to the user to let them know it was sent
             }
-        }
-
-        public void SEndGmail()
-        {
-            string to = "amit.s.kr31@gmail.com"; //To address    
-            string from = "rajeshp2988@gmail.com"; //From address    
-            MailMessage message = new MailMessage(from, to);
-
-            string mailbody = "In this article you will learn how to send a email using Asp.Net & C#";
-            message.Subject = "Sending Email Using Asp.Net & C#";
-            message.Body = mailbody;
-            message.BodyEncoding = Encoding.UTF8;
-            message.IsBodyHtml = true;
-            SmtpClient client = new SmtpClient("smtp.gmail.com", 587); //Gmail smtp    
-            System.Net.NetworkCredential basicCredential1 = new
-            System.Net.NetworkCredential("rajeshp2988@gmail.com", "password");
-            client.EnableSsl = true;
-            client.UseDefaultCredentials = true;
-            client.Credentials = basicCredential1;
-            try
-            {
-                client.Send(message);
-            }
-
             catch (Exception ex)
             {
                 throw ex;
+                //If the message failed at some point, let the user know
+                //"Your message failed to send, please try again."
             }
         }
+
     }
 
 
