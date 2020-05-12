@@ -108,8 +108,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="css\notify.css" />
+    <Content Include="css\prettify.css" />
     <Content Include="js\app1.css" />
     <Content Include="js\game1.css" />
+    <Content Include="js\notify.js" />
+    <Content Include="js\prettify.js" />
     <Content Include="SendNotification.aspx" />
     <Content Include="AdminHome.aspx" />
     <Content Include="assets\css\styles.min.css" />

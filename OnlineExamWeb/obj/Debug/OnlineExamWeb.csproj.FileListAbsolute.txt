@@ -181,3 +181,4 @@ C:\Users\Administrator\source\repos\amitsaini31\OnlineExam\OnlineExamWeb\bin\Mic
 C:\Users\Administrator\source\repos\amitsaini31\OnlineExam\OnlineExamWeb\obj\Debug\OnlineExamWeb.csproj.CopyComplete
 C:\Users\Administrator\source\repos\amitsaini31\OnlineExam\OnlineExamWeb\obj\Debug\OnlineExamWeb.dll
 C:\Users\Administrator\source\repos\amitsaini31\OnlineExam\OnlineExamWeb\obj\Debug\OnlineExamWeb.pdb
+C:\Users\Administrator\source\repos\amitsaini31\OnlineExam\OnlineExamWeb\obj\Debug\OnlineExamWeb.csprojAssemblyReference.cache

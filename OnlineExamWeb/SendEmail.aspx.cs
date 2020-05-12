@@ -23,7 +23,7 @@ namespace OnlineExamWeb
             message.Body = mailbody;
             message.BodyEncoding = Encoding.UTF8;
             message.IsBodyHtml = true;
-            SmtpClient client = new SmtpClient("smtpout.secureserver.net", 465); //Gmail smtp    
+            SmtpClient client = new SmtpClient("relay-hosting.secureserver.net", 25); //Gmail smtp    
             //SmtpClient client = new SmtpClient("smtpout.secureserver.net", 465); //Gmail smtp    
             client.EnableSsl = true;
 
@@ -98,8 +98,8 @@ namespace OnlineExamWeb
 
         public void SEndGmail()
         {
-            string to = "nishasaini1709@gmail.com "; //To address    
-            string from = "amit.s.kr31@gmail.com"; //From address    
+            string to = "amit.s.kr31@gmail.com"; //To address    
+            string from = "rajeshp2988@gmail.com"; //From address    
             MailMessage message = new MailMessage(from, to);
 
             string mailbody = "In this article you will learn how to send a email using Asp.Net & C#";
@@ -109,7 +109,7 @@ namespace OnlineExamWeb
             message.IsBodyHtml = true;
             SmtpClient client = new SmtpClient("smtp.gmail.com", 587); //Gmail smtp    
             System.Net.NetworkCredential basicCredential1 = new
-            System.Net.NetworkCredential("amit.s.kr31@gmail.com", "password");
+            System.Net.NetworkCredential("rajeshp2988@gmail.com", "password");
             client.EnableSsl = true;
             client.UseDefaultCredentials = true;
             client.Credentials = basicCredential1;
