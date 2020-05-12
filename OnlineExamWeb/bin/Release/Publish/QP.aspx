@@ -15,6 +15,8 @@
     <title>Adminmart Template - The Ultimate Multipurpose admin template</title>
     <!-- Custom CSS -->
     <link href="../dist/css/style.min.css" rel="stylesheet">
+       <link rel="stylesheet" type="text/css" href="css/notify.css">
+    <link rel="stylesheet" type="text/css" href="css/prettify.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -385,7 +387,7 @@
                                     <h4 class="card-title">Add User Batch</h4>
                                     <h6 class="card-subtitle">Add new batch of users.</h6>
 
-                                     <div class="form-actions" style="margin-bottom:10px;">
+                                    <div class="form-actions" style="margin-bottom: 10px;">
                                         <div class="text-right">
                                             <button type="submit" class="btn btn-info" runat="server" onserverclick="btnSubmit_Click">Submit</button>
                                             <button type="reset" class="btn btn-dark" runat="server" onserverclick="Page_Load">Cancel</button>
@@ -478,7 +480,7 @@
                                         <div class="form-group">
                                             <div class="form-actions">
                                                 <div class="text-left">
-                                                    <asp:Button ID="btnAdd" class="btn btn-info" runat="server" Text="Add New" OnClick="btnAdd_Click" />
+                                                    <asp:Button ID="btnAdd" class="btn btn-info" runat="server" Text="Add New Question Paper" OnClick="btnAdd_Click" />
                                                 </div>
                                             </div>
                                         </div>
@@ -494,7 +496,6 @@
                                                 <th scope="col">Title</th>
                                                 <th scope="col">Question Count</th>
                                                 <%--<th scope="col" style="width: 20%;">Actions</th>--%>
-
                                             </tr>
                                         </thead>
                                         <tbody id="tbody">
@@ -505,10 +506,11 @@
                         </div>
                     </div>
                     <input type="hidden" id="hdnapi" runat="server" />
-                    <input type="hidden" id="hdnid" runat="server" value="0"/>
+                    <input type="hidden" id="hdnid" runat="server" value="0" />
                     <input type="hidden" id="hdnu" runat="server" />
+                </div>
             </form>
-            <!-- Modal -->
+            <!-- Modal Dialog-->
             <div class="modal fade" id="myModal" role="dialog">
                 <div class="modal-dialog modal-dialog-centered modal-sm">
                     <div class="modal-content">
@@ -519,13 +521,11 @@
                         <div class="modal-body">
                             <input type="hidden" id="trid" />
                             <div class="text-center" id="mdladdquestions">
-                               
-                            </div>                            
-                            
-                            <div class="text-center" id="mdledit">
-                                
                             </div>
-                           <hr>
+
+                            <div class="text-center" id="mdledit">
+                            </div>
+                            <hr>
                             <div class="text-center" id="mdldelete">
                             </div>
                             <hr>
@@ -595,6 +595,8 @@
     <!--Custom JavaScript -->
     <script src="../dist/js/custom.min.js"></script>
     <script src="https://cdn.ckeditor.com/4.5.1/standard/ckeditor.js"></script>
+      <script src="js/notify.js"></script>
+    <script src="js/prettify.js"></script>
     <script>
         $(document).ready(function () {
             Initialload();
@@ -647,6 +649,7 @@
                     "</td></tr>";
             }
             $("#tbody").html(str);
+            $.notify("Data Loaded successfully!", { type: "info" });
             $('tr').click(function () {
                 $("#myModal").modal("show");
                 $("#trid").val($(this).attr('data-id'));
@@ -664,7 +667,7 @@
                     + $(this).attr('data-id') + "'>Publish</a> ");
 
                 $("#mdlpublic").html("<a class='btn btn-primary' href='QP.aspx?pubcode="
-                    + $(this).attr('data-id') + "'>Make Publich</a> ");
+                    + $(this).attr('data-id') + "'>Make Public</a> ");
 
                 //$("#txtlname").val($(this).closest('tr').children()[1].textContent);
             });

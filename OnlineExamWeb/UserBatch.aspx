@@ -546,6 +546,7 @@
     <script src="js/prettify.js"></script>
     <script>
         $(document).ready(function () {
+
             $("#dvAdd").hide();
             $("#dvView").show();
             loadbatch();

@@ -15,6 +15,8 @@
     <title>Adminmart Template - The Ultimate Multipurpose admin template</title>
     <!-- Custom CSS -->
     <link href="../dist/css/style.min.css" rel="stylesheet">
+      <link rel="stylesheet" type="text/css" href="css/notify.css">
+    <link rel="stylesheet" type="text/css" href="css/prettify.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -420,7 +422,7 @@
                                     <div class="form-actions">
                                         <div class="text-right">
                                             <button type="submit" class="btn btn-info" runat="server" onserverclick="btn_Submit_Click">Submit</button>
-                                            <button type="reset" class="btn btn-dark" onclick="ShowdvView()">Cancel</button>
+                                            <button type="reset" class="btn btn-dark" runat="server" onserverclick="Unnamed_ServerClick">Cancel</button>
                                         </div>
                                     </div>
                                 </div>
@@ -528,6 +530,8 @@
     <script src="../dist/js/custom.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+       <script src="js/notify.js"></script>
+    <script src="js/prettify.js"></script>
     <script>
         $(document).ready(function () {
             //$("#dvAdd").hide();
@@ -606,6 +610,7 @@
                 $("#tblView").show();
                 $("#dvAdd").hide();
                 $("#lblNoRecords").hide();
+                $.notify("Data Loaded successfully!", { type: "info" });
             }
         }
 

@@ -32,7 +32,7 @@ namespace OnlineExamWeb
 
                 if (Request.QueryString["ecode"] != null)
                 {
-
+                    Page.ClientScript.RegisterStartupScript(this.GetType(), "myScript", "$.notify('Data Loaded successfully!', { type: 'info' });", true);
                     string id = Convert.ToString(Request.QueryString["ecode"]);
                     string user = "";
                     if (Session["user"] != null)

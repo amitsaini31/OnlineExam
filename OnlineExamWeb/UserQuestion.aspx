@@ -15,6 +15,8 @@
     <title>Adminmart Template - The Ultimate Multipurpose admin template</title>
     <!-- Custom CSS -->
     <link href="../dist/css/style.min.css" rel="stylesheet">
+       <link rel="stylesheet" type="text/css" href="css/notify.css">
+    <link rel="stylesheet" type="text/css" href="css/prettify.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -603,6 +605,8 @@
     <!--Custom JavaScript -->
     <script src="../dist/js/custom.min.js"></script>
     <script src="https://cdn.ckeditor.com/4.5.1/standard/ckeditor.js"></script>
+      <script src="js/notify.js"></script>
+    <script src="js/prettify.js"></script>
     <script>
         $(document).ready(function () {
             loadquestion();
@@ -661,6 +665,7 @@
                         + "</td></tr>";
                 }
                 $("#tbody").html(str);
+                $.notify("Data Loaded successfully!", { type: "info" });
                 $("#lblNoRecords").hide();
                 $('tr').click(function () {
                     $("#myModal").modal("show");

@@ -138,5 +138,10 @@ namespace OnlineExamWeb
             return customers.ToArray();
         }
 
+        protected void Unnamed_ServerClick(object sender, EventArgs e)
+        {
+            dvView.Visible = true;
+            dvAdd.Visible = false;
+        }
     }
 }

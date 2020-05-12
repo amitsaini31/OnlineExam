@@ -11,12 +11,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <!-- Favicon icon -->   
+    <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png">
     <title>Adminmart Template - The Ultimate Multipurpose admin template</title>
     <!-- Custom CSS -->
     <link href="../dist/css/style.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/notify.css">
+    <link rel="stylesheet" type="text/css" href="css/prettify.css">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -24,16 +26,17 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
     <style>
-        .action{
-            margin-right :5px;
-        }
-        .edit{
-            color:#35af43;
-        }
-        .delete{
-            color:#e01212ed;
+        .action {
+            margin-right: 5px;
         }
 
+        .edit {
+            color: #35af43;
+        }
+
+        .delete {
+            color: #e01212ed;
+        }
     </style>
 </head>
 
@@ -282,7 +285,7 @@
             <div class="scroll-sidebar" data-sidebarbg="skin6">
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav">
-                     <ul id="sidebarnav">
+                    <ul id="sidebarnav">
                         <li class="sidebar-item"><a class="sidebar-link sidebar-link " href="InstitutionHome.aspx"
                             aria-expanded="false"><i data-feather="home" class="feather-icon"></i><span
                                 class="hide-menu">Dashboard</span></a></li>
@@ -293,22 +296,22 @@
                                 class="hide-menu">Batches
                                 </span></a>
                         </li>
-                         <li class="sidebar-item"><a class="sidebar-link sidebar-link " href="UserBatchMap.aspx"
+                        <li class="sidebar-item"><a class="sidebar-link sidebar-link " href="UserBatchMap.aspx"
                             aria-expanded="false"><i data-feather="database" class="feather-icon"></i><span
                                 class="hide-menu">User Batch Mapping
                                 </span></a>
                         </li>
-                          <li class="sidebar-item"><a class="sidebar-link sidebar-link " href="QuestionPaper.aspx"
+                        <li class="sidebar-item"><a class="sidebar-link sidebar-link " href="QuestionPaper.aspx"
                             aria-expanded="false"><i data-feather="database" class="feather-icon"></i><span
                                 class="hide-menu">Question Paper
                                 </span></a>
                         </li>
-                           <li class="sidebar-item"><a class="sidebar-link sidebar-link " href="QuestionPaper.aspx"
+                        <li class="sidebar-item"><a class="sidebar-link sidebar-link " href="QuestionPaper.aspx"
                             aria-expanded="false"><i data-feather="database" class="feather-icon"></i><span
                                 class="hide-menu">Question Paper Old
                                 </span></a>
                         </li>
-                            <li class="sidebar-item"><a class="sidebar-link sidebar-link" href="UserQuestion.aspx"
+                        <li class="sidebar-item"><a class="sidebar-link sidebar-link" href="UserQuestion.aspx"
                             aria-expanded="false"><i data-feather="database" class="feather-icon"></i><span
                                 class="hide-menu">Question
                                 </span></a>
@@ -376,7 +379,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="card-title">Add User Batch</h4>
-                                 <h6 class="card-subtitle">Add new batch of users.</h6>
+                                <h6 class="card-subtitle">Add new batch of users.</h6>
                                 <form id="id" runat="server">
                                     <input type="hidden" id="hdnid" runat="server" value="0" />
                                     <input type="hidden" id="hdnu" runat="server" />
@@ -444,8 +447,8 @@
                                 </div>
                             </div>
 
-                            <div class="table-responsive" id="tblView"  style="overflow-y:scroll; max-height:400px;"> 
-                                <table class="table" >
+                            <div class="table-responsive" id="tblView" style="overflow-y: scroll; max-height: 400px;">
+                                <table class="table">
                                     <thead class="thead-light">
                                         <tr>
                                             <th scope="col">Batch Name</th>
@@ -515,6 +518,8 @@
     <script src="../dist/js/sidebarmenu.js"></script>
     <!--Custom JavaScript -->
     <script src="../dist/js/custom.min.js"></script>
+    <script src="js/notify.js"></script>
+    <script src="js/prettify.js"></script>
     <script>
         $(document).ready(function () {
             $("#dvAdd").hide();
@@ -572,13 +577,15 @@
                     str = str + "<tr><td  style='text-align:left;'>" + item.BatchName +
                         "</td><td  style='text-align:left;'>" + item.BatchDescription +
                         "</td><td><a href='#' onclick='loadbatchforedit(" + item.ID
-                        + ")' ><i class='fas fa-edit action edit' ></i></a><a href='#' onclick='loadbatchforedit(" + 
+                        + ")' ><i class='fas fa-edit action edit' ></i></a><a href='#' onclick='loadbatchforedit(" +
                         item.ID + ")' data-original-title='Delete'><i class='fas fa-trash delete'></i></a></td></tr>";
                 }
                 $("#tbody").html(str);
                 $("#tblView").show();
                 $("#dvAdd").hide();
                 $("#lblNoRecords").hide();
+                //notification
+                $.notify("Data Loaded successfully!", { type: "info" });
             }
         }
 
@@ -616,6 +623,7 @@
 
         }
     </script>
+
 </body>
 
 </html>
