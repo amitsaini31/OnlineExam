@@ -36,6 +36,7 @@ namespace OnlineExamWeb
                 msg.From = add;
                 msg.Subject = txtSubject.Text;
                 msg.Body = txtBody.Value;
+                msg.IsBodyHtml = true;
 
                 //Configure an SmtpClient to send the mail.            
                 SmtpClient client = new SmtpClient();
