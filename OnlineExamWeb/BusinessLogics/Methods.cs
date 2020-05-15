@@ -4,6 +4,8 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
 using System.Web;
 
 namespace OnlineExamWeb.BusinessLogics
@@ -294,6 +296,56 @@ namespace OnlineExamWeb.BusinessLogics
             da.SelectCommand = cmd;
             da.Fill(ds);
             return ds;
+        }
+
+
+        public bool SendEmail(string email, string cc, string subject, string body)
+        {
+            try
+            {
+                //Create the msg object to be sent
+                MailMessage msg = new MailMessage();
+                //Add your email address to the recipients
+                msg.To.Add(email);
+                if (cc.Trim() != "")
+                {
+                    msg.CC.Add(cc);
+                }
+
+                //Configure the address we are sending the mail from
+                MailAddress add = new MailAddress("edw@edigitalwiki.com");
+                msg.From = add;
+                msg.Subject = subject;
+                msg.Body = body;
+                msg.IsBodyHtml = true;
+
+                //Configure an SmtpClient to send the mail.            
+                SmtpClient client = new SmtpClient();
+                client.DeliveryMethod = SmtpDeliveryMethod.Network;
+                client.EnableSsl = false;
+                //client.Host = "smtpout.secureserver.net";
+                client.Host = ConfigurationManager.AppSettings["smtp"];
+                client.Port = Convert.ToInt32(ConfigurationManager.AppSettings["port"]);
+
+                //Setup credentials to login to our sender email address ("UserName", "Password")
+                NetworkCredential credentials = new NetworkCredential(ConfigurationManager.AppSettings["user"], ConfigurationManager.AppSettings["pass"]);
+                client.UseDefaultCredentials = true;
+                client.Credentials = credentials;
+
+                //Send the msg
+                client.Send(msg);
+               
+                return true;
+                //Display some feedback to the user to let them know it was sent
+            }
+            catch (Exception ex)
+            {
+                //throw ex;
+                return false;
+                //If the message failed at some point, let the user know
+                //"Your message failed to send, please try again."
+            }
+            
         }
         
     }

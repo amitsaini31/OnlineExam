@@ -48,6 +48,9 @@ namespace OnlineExamWeb
                 cmd.CommandType = CommandType.StoredProcedure;
                 da.SelectCommand = cmd;
                 da.Fill(ds);
+
+                DataTable dt = ds.Tables[0];
+                string urltoactivate = "http://localhost:52218/Auhorize.aspx?ia=" + ds.Tables[0].Rows[0]["UserID"];
             }
             catch (Exception)
             {
