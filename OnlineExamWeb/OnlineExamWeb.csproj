@@ -1271,6 +1271,7 @@
     <Content Include="Test\Quiz website\add-student.html" />
     <Content Include="Test\Quiz website\advance-form-element.html" />
     <Content Include="Test\Quiz website\alerts.html" />
+    <Content Include="Test\Quiz website\all-courses1.html" />
     <Content Include="Test\Quiz website\all-courses.html" />
     <Content Include="Test\Quiz website\all-professors.html" />
     <Content Include="Test\Quiz website\all-students.html" />
